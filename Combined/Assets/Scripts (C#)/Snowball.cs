@@ -35,8 +35,8 @@ public class Snowball : MonoBehaviour
         hit = true;
         circleCollider.enabled = false;
         GameObject effect = Instantiate(snowballEffect, transform.position, transform.rotation);
-        Destroy(effect, 1.5f);
         Deactivate();
+        Destroy(effect, 1.5f);
     }
 
     public void SetDirection(float direction) {
