@@ -1,4 +1,4 @@
-﻿**NUS Orbital 2024 - Milestone 1**
+﻿**NUS Orbital 2024**
 
 **Proposed Level of Achievement:** 
 
@@ -58,5 +58,9 @@ input url to download the zip file from
 
 **Technical Proof**
 
-Paste in screenshot of the gameplay and maps
+![Screenshot 2024-05-29 025447](https://github.com/LEESY02/ArcticMeltdown/assets/107560823/33fc56c6-c092-4ad8-8a51-57cb9b2cae03)
 
+![Screenshot 2024-05-29 023537](https://github.com/LEESY02/ArcticMeltdown/assets/107560823/0da1b9d8-f1a3-4534-93ab-12f869e219d3)
+
+![Screenshot 2024-05-29 025524](https://github.com/LEESY02/ArcticMeltdown/assets/107560823/8e695797-ff29-4438-b014-4bf7a695a350)
+![Screenshot 2024-05-29 023609](https://github.com/LEESY02/ArcticMeltdown/assets/107560823/41395073-bfaf-43d5-a685-963d2a8a4c99)
