@@ -43,7 +43,7 @@ input url to download the zip file from
 1. Double click the application file name “Arctic Meltdown” to run the game.
    <img src="https://github.com/LEESY02/ArcticMeltdown/assets/107560823/0f0e1cd9-ce09-4a94-87bd-6a0a75a61a0a">
 1. Once the game file runs, the game will begin. Control Player movements with
-<img src="https://github.com/LEESY02/ArcticMeltdown/assets/107560823/2af0b7b6-8a31-4962-b383-98dd09a40756">
+<img src="https://github.com/LEESY02/ArcticMeltdown/assets/107560823/4ff7ab7d-814d-42c0-9f45-8da22d0e786a">
    1. “W” or “Space” key to jump.
    1. “A” key to move left.
    1. “D” key to move right.
@@ -51,9 +51,9 @@ input url to download the zip file from
 1. Game objective is to make it to the last level without losing all your health.
 
 <div class="poster">
-  <h3 class="header">Poster</h3>
-  <p>Click <a href="https://drive.google.com/file/d/1VuoiV9U26xbcJsAz3G-JJJTfVJaiXJs-/view?usp=drive_link">here</a> to watch our trailer</p>
-  <img id="poster" src="https://github.com/LEESY02/ArcticMeltdown/assets/107560823/28e07acc-e315-486c-9118-c7e84bfcc9c9">
+   <h3 class="header">Poster</h3>
+   <p>Click <a href="https://drive.google.com/file/d/1VuoiV9U26xbcJsAz3G-JJJTfVJaiXJs-/view?usp=drive_link">here</a> to watch our trailer</p>
+   <img id="poster" src="https://github.com/LEESY02/ArcticMeltdown/assets/107560823/28e07acc-e315-486c-9118-c7e84bfcc9c9">
 </div>
 
 **Technical Proof**
