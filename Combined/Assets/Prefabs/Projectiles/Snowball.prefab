@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1776357621
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 54bffe34953dc814790bb85adb58eae7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   snowballEffect: {fileID: 6508336373424348059, guid: ff43a150cece3a146b90f66873bcacac, type: 3}
+  smashSound: {fileID: 8300000, guid: 78208c5481c43854ca8bd108d24987a5, type: 3}
 --- !u!50 &4664204075931116296
 Rigidbody2D:
   serializedVersion: 4

@@ -8,6 +8,10 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject[] snowballs;
+
+    [Header ("Audio")]
+    [SerializeField] private AudioClip backgroundMusic;
+    [SerializeField] private AudioClip attackSound;
     private Animator anim;
     private Player playerMovement;
     private float cooldownTimer = Mathf.Infinity;
@@ -15,6 +19,7 @@ public class PlayerAttack : MonoBehaviour
     private void Awake() {
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<Player>();
+        SoundManager.instance.PlaySound(backgroundMusic);
     }
 
     private void Update() {
@@ -25,6 +30,7 @@ public class PlayerAttack : MonoBehaviour
     }
 
     private void Attack() {
+        SoundManager.instance.PlaySound(attackSound);
         anim.SetTrigger("Attack");
         cooldownTimer = 0;
         //pool Snowball

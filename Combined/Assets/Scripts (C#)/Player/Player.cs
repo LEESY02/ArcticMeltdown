@@ -2,11 +2,16 @@ using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
+    [Header ("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float bounceForce;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
+
+    [Header ("Audio")]
+    [SerializeField] private AudioClip jumpSound;
+
     private Rigidbody2D body;
     private Animator anim;
     private bool isCrouched;
@@ -98,6 +103,7 @@ public class Player : MonoBehaviour {
 
     private void Jump()
     {
+        SoundManager.instance.PlaySound(jumpSound);
         if (isGrounded())
         {
             // Regular jump if grounded

@@ -9,6 +9,9 @@ public class Snowball : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private GameObject snowballEffect;
+
+    [Header ("Audio")]
+    [SerializeField] private AudioClip smashSound;
     private bool hit;
     private float direction;
     private float lifetime;
@@ -32,6 +35,7 @@ public class Snowball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Coin") || collision.CompareTag("Health")) return;
+        SoundManager.instance.PlaySound(smashSound);
         hit = true;
         circleCollider.enabled = false;
         GameObject effect = Instantiate(snowballEffect, transform.position, transform.rotation);
