@@ -10,7 +10,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject[] snowballs;
 
     [Header ("Audio")]
-    [SerializeField] private AudioClip backgroundMusic;
     [SerializeField] private AudioClip attackSound;
     private Animator anim;
     private Player playerMovement;
@@ -19,7 +18,6 @@ public class PlayerAttack : MonoBehaviour
     private void Awake() {
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<Player>();
-        SoundManager.instance.PlaySound(backgroundMusic);
     }
 
     private void Update() {
