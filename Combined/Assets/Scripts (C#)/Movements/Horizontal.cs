@@ -33,7 +33,7 @@ public class Horizontal : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.CompareTag("Wall")) {
+        if (collision.CompareTag("Wall") || collision.CompareTag("Ground")) {
             movingLeft = !movingLeft;
             gameObject.transform.localScale = new Vector3(
                 -gameObject.transform.localScale.x,
@@ -41,4 +41,14 @@ public class Horizontal : MonoBehaviour
                 gameObject.transform.localScale.z); 
         }
     }
+
+    // private void OnCollisionEnter2D(Collision2D collision) {
+    //     if (collision.gameObject.CompareTag("Wall")) {
+    //         movingLeft = !movingLeft;
+    //         gameObject.transform.localScale = new Vector3(
+    //             -gameObject.transform.localScale.x,
+    //             gameObject.transform.localScale.y,
+    //             gameObject.transform.localScale.z); 
+    //     }
+    // }
 }

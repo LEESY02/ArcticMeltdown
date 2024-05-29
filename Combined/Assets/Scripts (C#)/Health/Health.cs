@@ -10,11 +10,16 @@ public class Health : MonoBehaviour
 {
     [Header ("Health")]
     [SerializeField] public float startingHealth;
-    [Header ("Camera")]
-    [SerializeField] private CameraController cam;
+    // [Header ("Camera")]
+    // [SerializeField] private CameraController cam;
     [Header ("iFrames")]
     [SerializeField] private float invulnerabilityDuration;
     [SerializeField] private int numberOfFlashes; //number of times player will flash red before returning back to normal state
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip deadSound;
+
     private SpriteRenderer spriteRend;
     private GameObject room;
     private GameObject startingPlatform;
@@ -24,21 +29,22 @@ public class Health : MonoBehaviour
     private void Start() {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
-        room = cam.GetRoom();
-        startingPlatform = room.GetComponent<Room>().startingObject;
+        // room = cam.GetRoom();
+        // startingPlatform = room.GetComponent<Room>().startingObject;
         //Spawn();
         spriteRend = GetComponent<SpriteRenderer>();
     }
 
-    private void Update() {
-        room = cam.GetRoom();
-        startingPlatform = room.GetComponent<Room>().startingObject;
-    }
+    // private void Update() {
+    //     room = cam.GetRoom();
+    //     startingPlatform = room.GetComponent<Room>().startingObject;
+    // }
 
     public void TakeDamage(float damage) {
         currentHealth = Math.Clamp(currentHealth - damage, 0, startingHealth);
         if (currentHealth > 0) {
             //player hurt
+            SoundManager.instance.PlaySound(hurtSound);
             anim.SetTrigger("Hurt");
             //respawn player back to the start
             //Spawn();
@@ -47,6 +53,7 @@ public class Health : MonoBehaviour
         } else {
             anim.SetTrigger("Dead");
             spriteRend.color = Color.red;
+            SoundManager.instance.PlaySound(deadSound);
             //player
             if (GetComponent<Player>() != null)
                 GetComponent<Player>().enabled = false;
@@ -55,7 +62,6 @@ public class Health : MonoBehaviour
                 GetComponent<MeleeEnemy>().enabled = false; //stop enemy attacking
             if (GetComponent<Horizontal>() != null)
                 GetComponent<Horizontal>().enabled = false; //stop enemy moving
-
         }
     }
 
