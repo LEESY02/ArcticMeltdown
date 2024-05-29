@@ -33,6 +33,12 @@ public class Horizontal : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == "Wall") movingLeft = !movingLeft;
+        if (collision.CompareTag("Wall")) {
+            movingLeft = !movingLeft;
+            gameObject.transform.localScale = new Vector3(
+                -gameObject.transform.localScale.x,
+                gameObject.transform.localScale.y,
+                gameObject.transform.localScale.z); 
+        }
     }
 }

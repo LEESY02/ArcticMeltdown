@@ -36,7 +36,7 @@ public class Player : MonoBehaviour {
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        if (isGrounded()) jumpCount = 0;
+        if (isGrounded() || onwall) jumpCount = 0;
 
         // Update isFalling based on the player's vertical velocity and ground status
         isFalling = body.velocity.y < 0 && !isGrounded();

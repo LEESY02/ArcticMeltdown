@@ -15,10 +15,6 @@ public class Health : MonoBehaviour
     [Header ("iFrames")]
     [SerializeField] private float invulnerabilityDuration;
     [SerializeField] private int numberOfFlashes; //number of times player will flash red before returning back to normal state
-
-    [Header ("Audio")]
-    [SerializeField] private AudioClip hurtSound;
-    [SerializeField] private AudioClip deadSound;
     private SpriteRenderer spriteRend;
     private GameObject room;
     private GameObject startingPlatform;
@@ -30,7 +26,7 @@ public class Health : MonoBehaviour
         anim = GetComponent<Animator>();
         room = cam.GetRoom();
         startingPlatform = room.GetComponent<Room>().startingObject;
-        Spawn();
+        //Spawn();
         spriteRend = GetComponent<SpriteRenderer>();
     }
 
@@ -45,16 +41,21 @@ public class Health : MonoBehaviour
             //player hurt
             anim.SetTrigger("Hurt");
             //respawn player back to the start
-            Spawn();
+            //Spawn();
             //iframes
             StartCoroutine(Invunerability());
-            //play hurt sound
-            SoundManager.instance.PlaySound(hurtSound);
         } else {
-            //player dead
             anim.SetTrigger("Dead");
-            GetComponent<Player>().enabled = false;
-            SoundManager.instance.PlaySound(deadSound);
+            spriteRend.color = Color.red;
+            //player
+            if (GetComponent<Player>() != null)
+                GetComponent<Player>().enabled = false;
+            //enemy
+            if (GetComponent<MeleeEnemy>() != null)
+                GetComponent<MeleeEnemy>().enabled = false; //stop enemy attacking
+            if (GetComponent<Horizontal>() != null)
+                GetComponent<Horizontal>().enabled = false; //stop enemy moving
+
         }
     }
 

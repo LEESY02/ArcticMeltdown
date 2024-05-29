@@ -37,6 +37,9 @@ public class Snowball : MonoBehaviour
         GameObject effect = Instantiate(snowballEffect, transform.position, transform.rotation);
         Destroy(effect, 1.5f);
         Deactivate();
+
+        if (collision.CompareTag("Enemy")) //damage enemies
+            collision.GetComponent<Health>().TakeDamage(1);
     }
 
     public void SetDirection(float direction) {

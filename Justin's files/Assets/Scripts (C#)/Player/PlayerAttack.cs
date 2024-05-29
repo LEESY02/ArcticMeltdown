@@ -8,13 +8,14 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject[] snowballs;
+
     private Animator anim;
-    private PlayerMovement playerMovement;
+    private Player playerMovement;
     private float cooldownTimer = Mathf.Infinity;
 
     private void Awake() {
         anim = GetComponent<Animator>();
-        playerMovement = GetComponent<PlayerMovement>();
+        playerMovement = GetComponent<Player>();
     }
 
     private void Update() {
