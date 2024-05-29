@@ -54,9 +54,11 @@ public class Health : MonoBehaviour
             anim.SetTrigger("Dead");
             spriteRend.color = Color.red;
             SoundManager.instance.PlaySound(deadSound);
+            GetComponent<BoxCollider2D>().enabled = false;
             //player
             if (GetComponent<Player>() != null)
                 GetComponent<Player>().enabled = false;
+                GetComponent<CircleCollider2D>().enabled = false;
             //enemy
             if (GetComponent<MeleeEnemy>() != null)
                 GetComponent<MeleeEnemy>().enabled = false; //stop enemy attacking
