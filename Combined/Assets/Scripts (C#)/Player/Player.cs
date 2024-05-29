@@ -72,22 +72,48 @@ public class Player : MonoBehaviour {
         anim.SetBool("Crouch", isCrouched);
         anim.SetBool("Falling", isFalling); // Update the animator with the falling status
 
+        // // Wall jump logic
+        // if (wallJumpCooldown > 0.2f)
+        // {
+        //     if (OnWall() && !isGrounded())
+        //     {
+        //         // Reduce vertical velocity to make the player slide off walls
+        //         body.velocity = new Vector2(body.velocity.x, body.velocity.y * 0.8f);
+
+        //         // Prevent horizontal movement when on a wall
+        //         horizontalInput = 0f;
+
+        //         // Reset horizontal velocity to prevent sticking to the wall
+        //         body.velocity = new Vector2(0, body.velocity.y);
+        //     } 
+        //     else 
+        //     {
+        //         body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+        //     }
+        //     body.gravityScale = gravityScale;
+
+        //     if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+        //     {
+        //         Jump();
+        //     }
+        // }
+        // else
+        // {
+        //     wallJumpCooldown += Time.deltaTime;
+        // }
+
         // Wall jump logic
         if (wallJumpCooldown > 0.2f)
         {
             if (OnWall() && !isGrounded())
             {
                 // Reduce vertical velocity to make the player slide off walls
-                body.velocity = new Vector2(body.velocity.x, body.velocity.y * 0.8f);
-
-                // Prevent horizontal movement when on a wall
-                horizontalInput = 0f;
-
-                // Reset horizontal velocity to prevent sticking to the wall
-                body.velocity = new Vector2(0, body.velocity.y);
+                body.velocity = new Vector2(horizontalInput * speed, body.velocity.y * 0.8f);
+            } 
+            else 
+            {
+                body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
             }
-
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
             body.gravityScale = gravityScale;
 
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
@@ -170,20 +196,6 @@ public class Player : MonoBehaviour {
     }
 
     private bool OnWall() {
-        // RaycastHit2D raycastHitCircle = Physics2D.CircleCast(
-        //     circleCollider.bounds.center, 
-        //     circleCollider.radius, 
-        //     new Vector2(transform.localScale.x, 0), 
-        //     0.1f, 
-        //     wallLayer);
-        // RaycastHit2D raycastHitBox = Physics2D.BoxCast(
-        //     boxCollider.bounds.center, 
-        //     boxCollider.bounds.size, 
-        //     0, 
-        //     new Vector2(transform.localScale.x, 0), 
-        //     0.1f, 
-        //     wallLayer);
-        // return raycastHitCircle.collider != null || raycastHitBox.collider != null;
         return onwall;
     }
 
