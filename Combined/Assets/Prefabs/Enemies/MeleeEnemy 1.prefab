@@ -172,6 +172,8 @@ MonoBehaviour:
   startingHealth: 3
   invulnerabilityDuration: 0
   numberOfFlashes: 0
+  hurtSound: {fileID: 0}
+  deadSound: {fileID: 0}
 --- !u!114 &6921689399856037496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +229,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 1032
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
