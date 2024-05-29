@@ -15,6 +15,10 @@ public class Health : MonoBehaviour
     [Header ("iFrames")]
     [SerializeField] private float invulnerabilityDuration;
     [SerializeField] private int numberOfFlashes; //number of times player will flash red before returning back to normal state
+
+    [Header ("Audio")]
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip deadSound;
     private SpriteRenderer spriteRend;
     private GameObject room;
     private GameObject startingPlatform;
@@ -44,11 +48,13 @@ public class Health : MonoBehaviour
             Spawn();
             //iframes
             StartCoroutine(Invunerability());
+            //play hurt sound
+            SoundManager.instance.PlaySound(hurtSound);
         } else {
             //player dead
             anim.SetTrigger("Dead");
-            GetComponent<PlayerMovement>().enabled = false;
             GetComponent<Player>().enabled = false;
+            SoundManager.instance.PlaySound(deadSound);
         }
     }
 

@@ -72,48 +72,20 @@ public class Player : MonoBehaviour {
         anim.SetBool("Crouch", isCrouched);
         anim.SetBool("Falling", isFalling); // Update the animator with the falling status
 
-        // // Wall jump logic
-        // if (wallJumpCooldown > 0.2f)
-        // {
-        //     if (OnWall() && !isGrounded())
-        //     {
-        //         // Reduce vertical velocity to make the player slide off walls
-        //         body.velocity = new Vector2(body.velocity.x, body.velocity.y * 0.8f);
-
-        //         // Prevent horizontal movement when on a wall
-        //         horizontalInput = 0f;
-
-        //         // Reset horizontal velocity to prevent sticking to the wall
-        //         body.velocity = new Vector2(0, body.velocity.y);
-        //     } 
-        //     else 
-        //     {
-        //         body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-        //     }
-        //     body.gravityScale = gravityScale;
-
-        //     if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
-        //     {
-        //         Jump();
-        //     }
-        // }
-        // else
-        // {
-        //     wallJumpCooldown += Time.deltaTime;
-        // }
-
         // Wall jump logic
         if (wallJumpCooldown > 0.2f)
         {
             if (OnWall() && !isGrounded())
             {
                 // Reduce vertical velocity to make the player slide off walls
-                body.velocity = new Vector2(horizontalInput * speed, body.velocity.y * 0.8f);
+                body.velocity = new Vector2(body.velocity.x, body.velocity.y * 0.8f);
+                // Prevent horizontal movement when on a wall
+                horizontalInput = 0f;
+                // Reset horizontal velocity to prevent sticking to the wall
+                body.velocity = new Vector2(0, body.velocity.y);
             } 
-            else 
-            {
-                body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-            }
+            
+            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
             body.gravityScale = gravityScale;
 
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
@@ -129,13 +101,13 @@ public class Player : MonoBehaviour {
 
     private void Jump()
     {
-        SoundManager.instance.PlaySound(jumpSound);
-        if (isGrounded())
+        if (isGrounded() || jumpCount < 2)
         {
-            // Regular jump if grounded
+            // Regular jump if grounded OR if not grounded and not on a wall
             body.velocity = new Vector2(body.velocity.x, jumpForce);
             anim.SetTrigger("Jump");
             jumpCount++;
+            SoundManager.instance.PlaySound(jumpSound);
         }
         else if (OnWall())
         {
@@ -145,13 +117,7 @@ public class Player : MonoBehaviour {
             anim.SetTrigger("Jump");
             jumpCount++;
             wallJumpCooldown = 0; // Reset wall jump cooldown
-        }
-        else if (jumpCount < 2)
-        {
-            // Double jump if not grounded and not on a wall
-            body.velocity = new Vector2(body.velocity.x, jumpForce);
-            anim.SetTrigger("Jump");
-            jumpCount++;
+            SoundManager.instance.PlaySound(jumpSound);
         }
     }
 
