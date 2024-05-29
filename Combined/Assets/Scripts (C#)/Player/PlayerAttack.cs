@@ -24,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
         if (playerMovement.CanAttack() && Input.GetMouseButton(0) && cooldownTimer > attackCooldown) { // left click to attack
             Attack();
         }
-        cooldownTimer += Time.deltaTime;
+        cooldownTimer = Time.deltaTime;
     }
 
     private void Attack() {
