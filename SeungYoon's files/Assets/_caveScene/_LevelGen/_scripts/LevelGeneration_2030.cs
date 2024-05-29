@@ -17,15 +17,23 @@ public class LevelGeneration_2030 : MonoBehaviour
     public GameObject[] top_layout;
     public GameObject[] bot_layout;
 
+    // Exit
+    public GameObject exit_layout;
+
+    // Traps
+    public GameObject[] trap_layout;
+
+
     // Fill in the borders
     void fill_all_rows(int[] open)
     {
-        fillrow(4, 4, open[0]);
-        for (int i = 3; i > 1; i -= 1)
+        fillrow(1, open[0], 4); // r1
+        for (int i = 2; i < 4; i += 1)
         {
-            fillrow(i, open[-i + 3], open[-i + 4]);
+            fillrow(i, open[i - 1], open[i - 2]);
         }
-        fillrow(1, open[2], 4);
+        fillrow(4, 4, open[2]); // r4
+
     }
     void remaining_rooms_r1(int bottom, int top)
     {
@@ -254,58 +262,110 @@ public class LevelGeneration_2030 : MonoBehaviour
     }
 
     // Fill in the interior
-
-    void fill_interior(int x, int y)
+    void fill_interior(int row, int col, int exit)
     {
         // End case
-        if (y == 5)
+        if (row == 5)
         {
             return;
         }
 
         // End of row
-        if (x == 5)
+        if (col == 5)
         {
-            fill_interior(1, y + 1);
+            fill_interior(row + 1, 1, exit);
             return;
         }
 
         // Fill one room
-        fill_interior_once(x, y);
+        fill_interior_once(row, col, exit);
 
         // Recursive case
-        fill_interior(x + 1, y);
+        fill_interior(row, col + 1, exit);
+    }
+    void fill_interior_once(int row, int col, int exit)
+    {
+        // Exit room?
+        if (col == exit + 1 && row == 1)
+        {           
+            transform.position = row1[col - 1].transform.position;
+            Instantiate(exit_layout, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            // Get random layout
+            int top = Random.Range(0, top_layout.Length);
+            int bot = Random.Range(0, bot_layout.Length);
+
+            // Get spawn location
+            switch (row)
+            {
+                case 1:
+                    transform.position = row1[col - 1].transform.position;
+                    break;
+                case 2:
+                    transform.position = row2[col - 1].transform.position;
+                    break;
+                case 3:
+                    transform.position = row3[col - 1].transform.position;
+                    break;
+                case 4:
+                    transform.position = row4[col - 1].transform.position;
+                    break;
+                default:
+                    Debug.Log("In default (fill_interior_once)");
+                    break;
+            }
+
+            // Spawn random layouts
+            Instantiate(top_layout[top], transform.position, Quaternion.identity);
+            Instantiate(bot_layout[bot], transform.position, Quaternion.identity);
+        }
     }
 
-    void fill_interior_once(int x, int y)
+    // Fill in the traps
+    void fill_trap(int row, int col, int exit, int[] open)
     {
-        // Get random layout
-        int top = Random.Range(0, top_layout.Length);
-        int bot = Random.Range(0, bot_layout.Length);
-
-        // Get spawn location
-        switch (y)
+        // End case
+        if (row == 5)
         {
-            case 1:
-                transform.position = row1[x - 1].transform.position;
-                break;
-            case 2:
-                transform.position = row2[x - 1].transform.position;
-                break;
-            case 3:
-                transform.position = row3[x - 1].transform.position;
-                break;
-            case 4:
-                transform.position = row4[x - 1].transform.position;
-                break;
-            default:
-                Debug.Log("In default (fill_interior_once)");
-                break;
+            return;
         }
 
-        // Spawn random layouts
-        Instantiate(top_layout[top], transform.position, Quaternion.identity);
-        Instantiate(bot_layout[bot], transform.position, Quaternion.identity);
+        // End of row
+        if (col == 5)
+        {
+            fill_trap(row + 1, 1, exit, open);
+            return;
+        }
+
+        if (!(row == 1 && col == exit + 1) && !(row < 4 && col == open[row - 1] + 1)) { // Not in exit room || No opening on the floor
+/*            Debug.Log("Generating trap");
+            Debug.Log(row); 
+            Debug.Log(col); */
+            int layout = Random.Range(0, trap_layout.Length);
+            switch (row)
+            {
+                case 1:
+                    transform.position = row1[col - 1].transform.position;
+                    break;
+                case 2:
+                    transform.position = row2[col - 1].transform.position;
+                    break;
+                case 3:
+                    transform.position = row3[col - 1].transform.position;
+                    break;
+                case 4:
+                    transform.position = row4[col - 1].transform.position;
+                    break;
+                default:
+                    Debug.Log("In default (fill_trap)");
+                    break;
+            }
+            Instantiate(trap_layout[layout], transform.position, Quaternion.identity);
+        }
+
+        fill_trap(row, col + 1, exit, open);
     }
 
     // Start is called before the first frame update
@@ -316,7 +376,39 @@ public class LevelGeneration_2030 : MonoBehaviour
         fill_all_rows(open);
 
         // Fill interior
-        fill_interior(1,1);
+        int exit = Random.Range(0, 4);
+        if (exit == open[0]) // Reassign exit if it collides with the opening
+        {
+            if (open[0] == 0)
+            {
+                exit += Random.Range(1, 4);
+            } else if (open[0] == 3)
+            {
+                exit -= Random.Range(1, 4);
+            } else
+            {
+                int plusMinus = Random.Range(0, 2);
+                if (plusMinus == 0)
+                {
+                    exit += 1;
+                } else
+                {
+                    exit -= 1;
+                }
+            }
+        }
+        /*
+        Debug.Log("Openings: \n");
+        Debug.Log(open[0]);
+        Debug.Log(open[1]); 
+        Debug.Log(open[2]);
+        Debug.Log("Exit: \n");
+        Debug.Log(exit);
+        */
+        fill_interior(1,1, exit);
+
+        // Fill Traps
+        fill_trap(1, 1, exit, open);
     }
     /*
         // Update is called once per frame
