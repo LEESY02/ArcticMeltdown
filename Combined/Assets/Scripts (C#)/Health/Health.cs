@@ -1,9 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using Unity.VisualScripting;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -29,16 +25,8 @@ public class Health : MonoBehaviour
     private void Start() {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
-        // room = cam.GetRoom();
-        // startingPlatform = room.GetComponent<Room>().startingObject;
-        //Spawn();
         spriteRend = GetComponent<SpriteRenderer>();
     }
-
-    // private void Update() {
-    //     room = cam.GetRoom();
-    //     startingPlatform = room.GetComponent<Room>().startingObject;
-    // }
 
     public void TakeDamage(float damage) {
         currentHealth = Math.Clamp(currentHealth - damage, 0, startingHealth);
@@ -53,17 +41,21 @@ public class Health : MonoBehaviour
         } else {
             anim.SetTrigger("Dead");
             spriteRend.color = Color.red;
-            SoundManager.instance.PlaySound(deadSound);
-            GetComponent<BoxCollider2D>().enabled = false;
             //player
             if (GetComponent<Player>() != null)
+            {
                 GetComponent<Player>().enabled = false;
+                GetComponent<Rigidbody2D>().gravityScale = 0.2f; //player floats down
                 GetComponent<CircleCollider2D>().enabled = false;
+                GetComponent<BoxCollider2D>().enabled = false;
+            }
             //enemy
             if (GetComponent<MeleeEnemy>() != null)
                 GetComponent<MeleeEnemy>().enabled = false; //stop enemy attacking
             if (GetComponent<Horizontal>() != null)
                 GetComponent<Horizontal>().enabled = false; //stop enemy moving
+            SoundManager.instance.PlaySound(deadSound);
+            deadSound = null;
         }
     }
 
@@ -79,7 +71,7 @@ public class Health : MonoBehaviour
     }
     
     private IEnumerator Invunerability() {
-        Physics2D.IgnoreLayerCollision(10, 11, true); //ignore collisions for layers 10(Player) & 11(Enemy)
+        Physics2D.IgnoreLayerCollision(9, 10, true); //ignore collisions for layers 9(Player) & 10(Enemy)
         //invulnerability duration
         for (int i = 0; i < numberOfFlashes; i++)
         {
@@ -95,4 +87,5 @@ public class Health : MonoBehaviour
     public float GetStartingHealth() {
         return startingHealth;
     }
+
 }

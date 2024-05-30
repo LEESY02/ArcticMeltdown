@@ -362,7 +362,18 @@ public class LevelGeneration_2030 : MonoBehaviour
                     Debug.Log("In default (fill_trap)");
                     break;
             }
-            Instantiate(trap_layout[layout], transform.position, Quaternion.identity);
+            if (layout == 0 || layout == 1) // if is firetrap, spawn slightly lower into the ground
+            {
+                Instantiate(trap_layout[layout], 
+                    new Vector3(
+                        transform.position.x,
+                        transform.position.y - 0.5f,
+                        transform.position.z
+                    ), 
+                    Quaternion.identity);
+            } else {
+                Instantiate(trap_layout[layout], transform.position, Quaternion.identity);
+            }
         }
 
         fill_trap(row, col + 1, exit, open);

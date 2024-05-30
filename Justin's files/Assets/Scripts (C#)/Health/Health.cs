@@ -1,20 +1,21 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using Unity.VisualScripting;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     [Header ("Health")]
     [SerializeField] public float startingHealth;
-    [Header ("Camera")]
-    [SerializeField] private CameraController cam;
+    // [Header ("Camera")]
+    // [SerializeField] private CameraController cam;
     [Header ("iFrames")]
     [SerializeField] private float invulnerabilityDuration;
     [SerializeField] private int numberOfFlashes; //number of times player will flash red before returning back to normal state
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip deadSound;
+
     private SpriteRenderer spriteRend;
     private GameObject room;
     private GameObject startingPlatform;
@@ -24,16 +25,16 @@ public class Health : MonoBehaviour
     private void Start() {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
-        room = cam.GetRoom();
-        startingPlatform = room.GetComponent<Room>().startingObject;
+        // room = cam.GetRoom();
+        // startingPlatform = room.GetComponent<Room>().startingObject;
         //Spawn();
         spriteRend = GetComponent<SpriteRenderer>();
     }
 
-    private void Update() {
-        room = cam.GetRoom();
-        startingPlatform = room.GetComponent<Room>().startingObject;
-    }
+    // private void Update() {
+    //     room = cam.GetRoom();
+    //     startingPlatform = room.GetComponent<Room>().startingObject;
+    // }
 
     public void TakeDamage(float damage) {
         currentHealth = Math.Clamp(currentHealth - damage, 0, startingHealth);
@@ -46,15 +47,19 @@ public class Health : MonoBehaviour
             StartCoroutine(Invunerability());
         } else {
             anim.SetTrigger("Dead");
+            spriteRend.color = Color.red;
             //player
             if (GetComponent<Player>() != null)
                 GetComponent<Player>().enabled = false;
+                GetComponent<Rigidbody2D>().gravityScale = 0.2f; //player floats down
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
             //enemy
             if (GetComponent<MeleeEnemy>() != null)
                 GetComponent<MeleeEnemy>().enabled = false; //stop enemy attacking
             if (GetComponent<Horizontal>() != null)
                 GetComponent<Horizontal>().enabled = false; //stop enemy moving
-
+            deadSound = null;
         }
     }
 
@@ -70,7 +75,7 @@ public class Health : MonoBehaviour
     }
     
     private IEnumerator Invunerability() {
-        Physics2D.IgnoreLayerCollision(10, 11, true); //ignore collisions for layers 10(Player) & 11(Enemy)
+        Physics2D.IgnoreLayerCollision(9, 10, true); //ignore collisions for layers 9(Player) & 10(Enemy)
         //invulnerability duration
         for (int i = 0; i < numberOfFlashes; i++)
         {
@@ -85,5 +90,10 @@ public class Health : MonoBehaviour
 
     public float GetStartingHealth() {
         return startingHealth;
+    }
+
+    public bool IsDead()
+    {
+        return currentHealth == 0;
     }
 }

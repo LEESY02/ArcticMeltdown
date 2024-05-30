@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 607742223834326120}
   - component: {fileID: 6341853251322227422}
   - component: {fileID: 521102367268872892}
-  - component: {fileID: -3804389547013596647}
+  - component: {fileID: 3733045825333811700}
   m_Layer: 0
   m_Name: Saw
   m_TagString: Untagged
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
---- !u!50 &-3804389547013596647
+--- !u!50 &3733045825333811700
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -196,5 +196,5 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 6
+  m_CollisionDetection: 0
+  m_Constraints: 0
