@@ -50,7 +50,7 @@ public class Horizontal : MonoBehaviour
         {
             // Only change direction if the enemy is no longer in contact with the wall
             transform.position =new Vector3(
-                movingLeft ? transform.position.x + 0.1f : transform.position.x - 0.1f,
+                movingLeft ? transform.position.x + 0.5f : transform.position.x - 0.5f,
                 transform.position.y + 0.1f,
                 transform.position.z);
             ChangeDirection();

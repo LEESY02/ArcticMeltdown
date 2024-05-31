@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
 
     [Header ("Audio")]
     [SerializeField] private AudioClip attackSound;
+    [SerializeField] private float attackVolume;
     private Animator anim;
     private Player playerMovement;
     private float cooldownTimer = Mathf.Infinity;
@@ -28,7 +29,7 @@ public class PlayerAttack : MonoBehaviour
     }
 
     private void Attack() {
-        SoundManager.instance.PlaySound(attackSound);
+        SoundManager.instance.PlaySound(attackSound, attackVolume);
         anim.SetTrigger("Attack");
         cooldownTimer = 0;
         //pool Snowball

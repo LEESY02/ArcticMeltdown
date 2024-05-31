@@ -14,7 +14,9 @@ public class Health : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private float hurtVolume;
     [SerializeField] private AudioClip deadSound;
+    [SerializeField] private float deadVolume;
 
     private SpriteRenderer spriteRend;
     private GameObject room;
@@ -32,7 +34,7 @@ public class Health : MonoBehaviour
         currentHealth = Math.Clamp(currentHealth - damage, 0, startingHealth);
         if (currentHealth > 0) {
             //player hurt
-            SoundManager.instance.PlaySound(hurtSound);
+            SoundManager.instance.PlaySound(hurtSound, hurtVolume);
             anim.SetTrigger("Hurt");
             //respawn player back to the start
             //Spawn();
@@ -54,7 +56,7 @@ public class Health : MonoBehaviour
                 GetComponent<MeleeEnemy>().enabled = false; //stop enemy attacking
             if (GetComponent<Horizontal>() != null)
                 GetComponent<Horizontal>().enabled = false; //stop enemy moving
-            SoundManager.instance.PlaySound(deadSound);
+            SoundManager.instance.PlaySound(deadSound, deadVolume);
             deadSound = null;
         }
     }

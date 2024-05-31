@@ -2,15 +2,27 @@ using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-    [Header ("Movement")]
+    [Header("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
-    [SerializeField] private float bounceForce;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
 
+    [Header("Coyote Time")]
+    [SerializeField] private float coyoteTime; //How much time the player can hang in the air before jumping
+    private float coyoteCounter; //How much time passed since the player ran off the edge
+
+    [Header("Multiple Jumps")]
+    [SerializeField] private int extraJumps;
+    private int jumpCounter;
+
+    [Header("Wall Jumping")]
+    [SerializeField] private float wallJumpX; //horizontal wall jump force
+    [SerializeField] private float wallJumpY; //vertical wall jump force
+
     [Header ("Audio")]
     [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private float jumpVolume;
 
     private Rigidbody2D body;
     private Animator anim;
@@ -19,8 +31,6 @@ public class Player : MonoBehaviour {
     private CircleCollider2D circleCollider;
     private float wallJumpCooldown;
     private float horizontalInput;
-    private float gravityScale;
-    private int jumpCount;
     private bool isFalling; // track if the player is falling
     private bool onwall;
 
@@ -30,13 +40,11 @@ public class Player : MonoBehaviour {
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         circleCollider = GetComponent<CircleCollider2D>();
-        gravityScale = body.gravityScale;
     }
 
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        if (isGrounded() || onwall) jumpCount = 0;
 
         // Update isFalling based on the player's vertical velocity and ground status
         isFalling = body.velocity.y < 0 && !isGrounded();
@@ -48,23 +56,15 @@ public class Player : MonoBehaviour {
 
         // flip player when moving left-right
         if (horizontalInput > 0f)
-        {
             transform.localScale = new Vector3(xScale, yScale, zScale);
-        }
         else if (horizontalInput < 0f)
-        {
             transform.localScale = new Vector3(-xScale, yScale, zScale);
-        }
 
         // Crouch logic
         if (Input.GetKey(KeyCode.S) && isGrounded())
-        {
             Crouch();
-        }
         else
-        {
             isCrouched = false;
-        }
 
         // Set animator parameters
         anim.SetBool("Run", horizontalInput != 0);
@@ -72,53 +72,66 @@ public class Player : MonoBehaviour {
         anim.SetBool("Crouch", isCrouched);
         anim.SetBool("Falling", isFalling); // Update the animator with the falling status
 
-        // Wall jump logic
-        if (wallJumpCooldown > 0.2f)
-        {
-            if (OnWall() && !isGrounded())
-            {
-                // Reduce vertical velocity to make the player slide off walls
-                body.velocity = new Vector2(body.velocity.x, body.velocity.y * 0.8f);
-                // Prevent horizontal movement when on a wall
-                horizontalInput = 0f;
-                // Reset horizontal velocity to prevent sticking to the wall
-                body.velocity = new Vector2(0, body.velocity.y);
-            } 
-            
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-            body.gravityScale = gravityScale;
+        //Jump
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+            Jump();
 
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
-            {
-                Jump();
-            }
-        }
-        else
+        //Adjustable jump height
+        if ((Input.GetKeyUp(KeyCode.Space) && body.velocity.y > 0) || (Input.GetKeyUp(KeyCode.W) && body.velocity.y > 0))
+            body.velocity = new Vector2(body.velocity.x, body.velocity.y / 2);
+
+        if (OnWall())
         {
-            wallJumpCooldown += Time.deltaTime;
+            body.gravityScale = 0.8f;
+            // Allow horizontal movement while on the wall
+            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+        }
+        else {
+            body.gravityScale = 1.5f;
+            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+            if (isGrounded() || OnWall()) {
+                coyoteCounter = coyoteTime; //Reset coyote counter when on the ground
+                jumpCounter = extraJumps; //Reset jump counter to extra jump value
+            } else {
+                coyoteCounter -= Time.deltaTime; //Start decreasing coyote counter when not on the ground
+            }
         }
     }
 
     private void Jump()
     {
-        if (isGrounded() || jumpCount < 2)
-        {
-            // Regular jump if grounded OR if not grounded and not on a wall
-            body.velocity = new Vector2(body.velocity.x, jumpForce);
-            anim.SetTrigger("Jump");
-            jumpCount++;
-            SoundManager.instance.PlaySound(jumpSound);
+        //if coyote couter is 0 or less and not on the wall and dont have any extra jumps, don't do anything
+        if (coyoteCounter <= 0 && !OnWall() && jumpCounter <= 0) return;
+        SoundManager.instance.PlaySound(jumpSound, jumpVolume);
+
+        if (OnWall()) {
+            WallJump();
+        } else {
+            if (!isGrounded())
+            {
+                body.velocity = new Vector2(body.velocity.x, jumpForce);
+                jumpCounter--;
+            }
+            else
+            {
+                if (isGrounded() || coyoteCounter > 0) {
+                    body.velocity = new Vector2(body.velocity.x, jumpForce);
+                    coyoteCounter = 0; // Reset coyote counter to avoid double jumps
+                } else if (jumpCounter > 0) {
+                    body.velocity = new Vector2(body.velocity.x, jumpForce);
+                    jumpCounter--;
+                }
+            }
+
+            //Reset coyote counter to 0 to avoid double jumps
+            coyoteCounter = 0;
         }
-        else if (OnWall())
-        {
-            // Wall jump if on a wall
-            float wallSide = Mathf.Sign(transform.position.x - GetNearestWallPosition().x); // Determine which side of the wall the player is on
-            body.velocity = new Vector2(wallSide * speed, jumpForce);
-            anim.SetTrigger("Jump");
-            jumpCount++;
-            wallJumpCooldown = 0; // Reset wall jump cooldown
-            SoundManager.instance.PlaySound(jumpSound);
-        }
+    }
+
+    private void WallJump()
+    {
+        body.AddForce(new Vector2(-Mathf.Sign(transform.localScale.x) * wallJumpX, wallJumpY));
+        wallJumpCooldown = 0;
     }
 
 
