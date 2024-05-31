@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
+    [SerializeField] Health health;
     [Header("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
@@ -29,10 +30,10 @@ public class Player : MonoBehaviour {
     private bool isCrouched;
     private BoxCollider2D boxCollider;
     private CircleCollider2D circleCollider;
-    private float wallJumpCooldown;
     private float horizontalInput;
     private bool isFalling; // track if the player is falling
     private bool onwall;
+    private UIManager uiManager;
 
     private void Awake() {
         // Grab reference for rigidbody and animator from object
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour {
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         circleCollider = GetComponent<CircleCollider2D>();
+        uiManager = FindObjectOfType<UIManager>();
     }
 
     private void Update()
@@ -106,6 +108,7 @@ public class Player : MonoBehaviour {
 
         if (OnWall()) {
             WallJump();
+            jumpCounter--;
         } else {
             if (!isGrounded())
             {
@@ -131,7 +134,6 @@ public class Player : MonoBehaviour {
     private void WallJump()
     {
         body.AddForce(new Vector2(-Mathf.Sign(transform.localScale.x) * wallJumpX, wallJumpY));
-        wallJumpCooldown = 0;
     }
 
 
@@ -192,5 +194,10 @@ public class Player : MonoBehaviour {
 
     public bool CanAttack() {
         return !OnWall();
+    }
+
+    public void GameOver() {
+        uiManager.GameOver();
+        return;
     }
 }
