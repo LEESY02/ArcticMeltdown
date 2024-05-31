@@ -111,7 +111,7 @@ Are you ready to step into the ice and relive the past? Guide Pippin through his
 
 **Application usage (Only supports Windows OS)**
 
-1. Download the zip file from ***(input url here)***
+1. Download the zip file from <a src="https://drive.google.com/file/d/1ssM4o2_girlI4uAfwzNWs9jmXX8BkEJj/view?usp=sharing">here</a>
 
 2. Extract the contents of the zip file to your preferred destination.
 
