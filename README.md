@@ -8,8 +8,7 @@ Finding Diego
 
 **Team Members:**
 
-Justin Jiang Wei Ren
-
+Justin Jiang Wei Ren <br>
 Lee Seung-Yoon
 
 **Proposed Level of Achievement:**
@@ -25,8 +24,6 @@ We have always enjoyed playing games since we were young and wanted to try makin
 We want to create a 2D Platformer Game that is engaging and accessible. This means focusing on clear mechanics that are easy to grasp but offer depth and challenge as players progress. On the technical side, smooth gameplay is a priority. We'll strive for clean, efficient code that minimizes bugs and ensures a frustration-free experience. This might involve using beginner-friendly tools or frameworks initially, while keeping an eye on learning more advanced coding techniques as we develop our skills.
 
 **Storyline**
-
-
 
 Deep beneath the ice, where the ancient whispers of the Earth are frozen in time, lived a prehistoric penguin named Pippin. Pippin, whose existence was a testament to a forgotten era, had been in a state of suspended animation for millennia. His coat was as dark as the midnight sea, and his eyes sparkled with the wisdom of ages past. However, the relentless grip of global warming had finally reached his icy sanctuary, and the thawing ice gently nudged him back to consciousness.
 
