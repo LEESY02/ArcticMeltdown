@@ -50,33 +50,27 @@ Are you ready to step into the ice and relive the past? Guide Pippin through his
 
 **Features**
 
-1. Story:
+1. Story: <br>
+   Immersive storyline focusing on Pippin's awakening and journey overcoming enemies within the Earth’s crust.
 
-1. Immersive storyline focusing on Pippin's awakening and journey overcoming enemies within the Earth’s crust.
+2. Levels and Environments: <br>
+   Progressive Difficulty: Increasingly challenging levels with new obstacles and enemies.
 
-2. Levels and Environments: .
+3. Randomised Maps: <br>
+   Every replay of the game will regenerate a new map at random, ensuring an almost new feel to the game, no matter how many times you replay it.
 
-2. Progressive Difficulty: Increasingly challenging levels with new obstacles and enemies.
+5. Character Abilities: <br>
+   Basic Movements: Walking, jumping, sliding
 
-3. Randomised Maps: Every replay of the game will regenerate a new map at random, ensuring an almost new feel to the game, no matter how many times you replay it.
+6. Attacks: Melee and Ranged
 
-3. Character Abilities:
-
-4. Basic Movements: Walking, jumping, sliding
-
-5. Attacks: Melee and Ranged
-
-4. Enemies and Obstacles:
-
-6. Hazards: Traps
-
-7. Enemies: Ancient Creatures that have awakened alongside Pippin, consisting of 3 main types:
-
-1. Prowling (Melee)
-
-2. Ranged
-
-3. Airborne
+4. Enemies and Obstacles: <br>
+   Hazards: Traps <br>
+   Enemies: <br>
+      Ancient Creatures that have awakened alongside Pippin, consisting of 3 main types: <br>
+      1. Prowling (Melee) <br>
+      2. Ranged <br>
+      3. Airborne
 
 
 **Technical Specifications**
@@ -124,11 +118,11 @@ Are you ready to step into the ice and relive the past? Guide Pippin through his
 
 2. Extract the contents of the zip file to your preferred destination.
 
-![Enter image alt description](Images/Ib7_Image_1.png)
+![Game Folder](https://github.com/LEESY02/ArcticMeltdown/assets/107560823/eab9e950-5c02-4c50-be17-994d3eaec2f8)
 
 4. Once the game file runs, the game will begin. Control Player movements with
 
-![Enter image alt description](Images/nHX_Image_2.png)
+![KeyBindings](https://github.com/LEESY02/ArcticMeltdown/assets/107560823/eadbd57c-63aa-4ee2-b03c-ad6657615123)
 
 1. “W” or “Space” key to jump.
 
@@ -143,11 +137,11 @@ Are you ready to step into the ice and relive the past? Guide Pippin through his
 
 **Technical Proof**
 
-![Enter image alt description](Images/UFa_Image_3.png)
+![Screenshot 2024-05-30 133926](https://github.com/LEESY02/ArcticMeltdown/assets/107560823/ac46f689-d58a-4bcc-8b59-d3858e0068f8)
 
-![Enter image alt description](Images/Ukn_Image_4.png)
+![Screenshot 2024-05-30 134122](https://github.com/LEESY02/ArcticMeltdown/assets/107560823/0d68dd14-7d1d-49c1-a560-ed90c896ed3c)
 
-![Enter image alt description](Images/FL3_Image_5.png)
+![Screenshot 2024-05-31 010729](https://github.com/LEESY02/ArcticMeltdown/assets/107560823/3fd38b14-637a-4ffb-9de5-1636d2d7b672)
 
 
 Sound Effects:
