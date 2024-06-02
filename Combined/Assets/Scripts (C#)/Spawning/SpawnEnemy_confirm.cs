@@ -27,12 +27,12 @@ public class SpawnEnemy_confirm : MonoBehaviour
             case 1:
                 int range_type = Random.Range(0, enemy_range.Length);
                 transform.position = spawn_locations[type].transform.position;
-                Instantiate(enemy_patrol[range_type], transform.position, Quaternion.identity);
+                Instantiate(enemy_range[range_type], transform.position, Quaternion.identity);
                 break;
             case 2:
                 int flying_type = Random.Range(0, enemy_range.Length);
                 transform.position = spawn_locations[type].transform.position;
-                Instantiate(enemy_patrol[flying_type], transform.position, Quaternion.identity);
+                Instantiate(enemy_flying[flying_type], transform.position, Quaternion.identity);
                 break;
         }
     }

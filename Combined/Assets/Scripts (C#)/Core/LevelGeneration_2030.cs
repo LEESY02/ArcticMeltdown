@@ -339,10 +339,11 @@ public class LevelGeneration_2030 : MonoBehaviour
             return;
         }
 
-        if (!(row == 1 && col == exit + 1) && !(row < 4 && col == open[row - 1] + 1)) { // Not in exit room || No opening on the floor
-/*            Debug.Log("Generating trap");
-            Debug.Log(row); 
-            Debug.Log(col); */
+        if (!(row == 1 && col == exit + 1) && !(row < 4 && col == open[row - 1] + 1) && !(row == 4 && col == 1)) 
+        { // Not in exit room || No opening on the floor || Not in Start room
+            // Debug.Log("Generating trap");
+            // Debug.Log(row); 
+            // Debug.Log(col);
             int layout = Random.Range(0, trap_layout.Length);
             switch (row)
             {
