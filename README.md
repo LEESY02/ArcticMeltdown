@@ -58,6 +58,9 @@ Are you ready to step into the ice and relive the past? Guide Pippin through his
    
 ![Orbital algo](https://github.com/LEESY02/ArcticMeltdown/assets/141756475/57d7be0f-2509-4660-8013-0d91ce49dfbf)
 
+<img width="709" alt="image" src="https://github.com/LEESY02/ArcticMeltdown/assets/141756475/47537f39-3a14-4794-96e2-d6597f6aa92b">
+
+
 5. Character Abilities: <br>
    Basic Movements: Walking, jumping, sliding
 
