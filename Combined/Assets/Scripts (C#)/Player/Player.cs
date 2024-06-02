@@ -5,6 +5,7 @@ public class Player : MonoBehaviour {
     [SerializeField] Health health;
     [Header("Movement")]
     [SerializeField] private float speed;
+    [SerializeField] private float speedBoost;
     [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour {
             transform.localScale = new Vector3(-xScale, yScale, zScale);
 
         // Crouch logic
-        if (Input.GetKey(KeyCode.S) && isGrounded())
+        if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && isGrounded())
             Crouch();
         else
             isCrouched = false;
@@ -74,13 +75,14 @@ public class Player : MonoBehaviour {
         anim.SetBool("Crouch", isCrouched);
         anim.SetBool("Falling", isFalling); // Update the animator with the falling status
 
+
         //Jump
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             Jump();
 
-        //Adjustable jump height
-        if ((Input.GetKeyUp(KeyCode.Space) && body.velocity.y > 0) || (Input.GetKeyUp(KeyCode.W) && body.velocity.y > 0))
-            body.velocity = new Vector2(body.velocity.x, body.velocity.y / 2);
+        // //Adjustable jump height
+        // if ((Input.GetKeyUp(KeyCode.Space) && body.velocity.y > 0) || (Input.GetKeyUp(KeyCode.W) && body.velocity.y > 0))
+        //     body.velocity = new Vector2(body.velocity.x, body.velocity.y / 2);
 
         if (OnWall())
         {
@@ -90,11 +92,21 @@ public class Player : MonoBehaviour {
         }
         else {
             body.gravityScale = 1.5f;
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-            if (isGrounded() || OnWall()) {
+            if (anim.GetBool("Run") && anim.GetBool("Crouch"))
+            {
+                body.velocity = new Vector2(horizontalInput * (speed + speedBoost), body.velocity.y); //sliding has increased speed
+            }
+            else
+            {
+                body.velocity = new Vector2(horizontalInput * speed, body.velocity.y); //normal speed
+            }
+
+            if (isGrounded() || OnWall()) 
+            {
                 coyoteCounter = coyoteTime; //Reset coyote counter when on the ground
                 jumpCounter = extraJumps; //Reset jump counter to extra jump value
-            } else {
+            } else 
+            {
                 coyoteCounter -= Time.deltaTime; //Start decreasing coyote counter when not on the ground
             }
         }
