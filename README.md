@@ -55,6 +55,7 @@ Are you ready to step into the ice and relive the past? Guide Pippin through his
 
 3. Randomised Maps: <br>
    Every replay of the game will regenerate a new map at random, ensuring an almost new feel to the game, no matter how many times you replay it.
+   
 ![Orbital algo](https://github.com/LEESY02/ArcticMeltdown/assets/141756475/57d7be0f-2509-4660-8013-0d91ce49dfbf)
 
 5. Character Abilities: <br>
