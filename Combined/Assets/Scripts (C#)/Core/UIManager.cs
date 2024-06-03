@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
     [Header("Game Over")]
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private AudioClip gameOverSound;
-    [SerializeField] private float SoundVolume;
+    [SerializeField] private float volume;
 
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
     public void GameOver() 
     {
         gameOverScreen.SetActive(true);
-        SoundManager.instance.PlaySound(gameOverSound, SoundVolume);
+        SoundManager.instance.PlaySound(gameOverSound, volume);
     }
 
     //game over functions
@@ -59,15 +59,32 @@ public class UIManager : MonoBehaviour
     #endregion
 
     #region Pause
-    private void PauseGame(bool status)
+    public void PauseGame(bool status)
     {
         //if status == true pause | if status == false unpause
         pauseScreen.SetActive(status);
 
         if (status)
+        {
             Time.timeScale = 0; //pauses the time
+            FindFirstObjectByType<Player>().enabled = false;
+        }
         else
+        {
             Time.timeScale = 1; //time continues at 1x speed
+            FindFirstObjectByType<Player>().enabled = true;
+        }
     }
+
+    public void SoundVolume()
+    {
+
+    }
+
+    public void MusicVolume()
+    {
+
+    }
+
     #endregion
 }

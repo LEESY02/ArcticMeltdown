@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private float slamDownForce; //Force applied during slam down
 
     [Header("Coyote Time")]
     [SerializeField] private float coyoteTime; //How much time the player can hang in the air before jumping
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour {
     private float horizontalInput;
     private bool isFalling; // track if the player is falling
     private bool onwall;
+    private bool isSlamming; // track if the player is slamming down
     private UIManager uiManager;
 
     private void Awake() {
@@ -52,6 +54,12 @@ public class Player : MonoBehaviour {
         // Update isFalling based on the player's vertical velocity and ground status
         isFalling = body.velocity.y < 0 && !isGrounded();
 
+        // Adjust gravity scale based on whether the player is falling or slamming
+        if (isSlamming)
+        {
+            body.velocity = new Vector2(0, -slamDownForce); // Slam straight down
+        }
+        
         // scale values in Vector3 of player scale
         float xScale = Mathf.Abs(transform.localScale.x);
         float yScale = Mathf.Abs(transform.localScale.y);
@@ -64,10 +72,14 @@ public class Player : MonoBehaviour {
             transform.localScale = new Vector3(-xScale, yScale, zScale);
 
         // Crouch logic
-        if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && isGrounded())
+        if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
+        {
             Crouch();
+        }
         else
+        {
             isCrouched = false;
+        }
 
         // Set animator parameters
         anim.SetBool("Run", horizontalInput != 0);
@@ -176,6 +188,12 @@ public class Player : MonoBehaviour {
 
     private void Crouch() {
         isCrouched = true;
+
+        // Check if the player is in the air
+        if (!isGrounded())
+        {
+            isSlamming = true;
+        }
     }
 
     private bool isGrounded() {
@@ -195,6 +213,9 @@ public class Player : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Wall")) {
             onwall = true;
+        } else if (isSlamming && isGrounded()) {
+            isSlamming = false; // Stop slamming once the player hits the ground
+            body.velocity = Vector2.zero; // Reset velocity to stop downward movement
         }
     }
 
