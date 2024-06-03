@@ -73,7 +73,7 @@ public class Health : MonoBehaviour
     }
     
     private IEnumerator Invunerability() {
-        Physics2D.IgnoreLayerCollision(9, 10, true); //ignore collisions for layers 9(Player) & 10(Enemy)
+        Physics2D.IgnoreLayerCollision(3, 10, true); //ignore collisions for layers 3(Player) & 10(Enemy)
         //invulnerability duration
         for (int i = 0; i < numberOfFlashes; i++)
         {

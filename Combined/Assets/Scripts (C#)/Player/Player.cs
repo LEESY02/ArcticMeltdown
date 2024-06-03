@@ -44,7 +44,7 @@ public class Player : MonoBehaviour {
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         circleCollider = GetComponent<CircleCollider2D>();
-        uiManager = FindObjectOfType<UIManager>();
+        uiManager = Resources.FindObjectsOfTypeAll<UIManager>()[0];
     }
 
     private void Update()
@@ -231,6 +231,5 @@ public class Player : MonoBehaviour {
 
     public void GameOver() {
         uiManager.GameOver();
-        return;
     }
 }

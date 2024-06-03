@@ -3443,6 +3443,7 @@ GameObject:
   - component: {fileID: 1522759061703106834}
   - component: {fileID: 5591757408603888257}
   - component: {fileID: 1631148421014861645}
+  - component: {fileID: 2305823275755721084}
   m_Layer: 7
   m_Name: L5
   m_TagString: Ground
@@ -3463,7 +3464,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8430000889383811695}
+  m_Father: {fileID: 773480098268910935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5591757408603888257
 MonoBehaviour:
@@ -3508,6 +3509,51 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!61 &2305823275755721084
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5408312925611565335}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &5552885011882544857
 GameObject:
   m_ObjectHideFlags: 0
@@ -3846,6 +3892,7 @@ Transform:
   - {fileID: 3397837098791373295}
   - {fileID: 3200432524834410326}
   - {fileID: 311309179256722345}
+  - {fileID: 1522759061703106834}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6229444785560251947
@@ -6240,7 +6287,6 @@ Transform:
   - {fileID: 5947224888408052653}
   - {fileID: 6620440950912352653}
   - {fileID: 2200585420605254881}
-  - {fileID: 1522759061703106834}
   m_Father: {fileID: 773480098268910935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2562025615249269431
@@ -6275,7 +6321,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -14.500417, y: -7.0031157}
+  m_Offset: {x: -14.500417, y: -7.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6286,7 +6332,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0008068, y: 5.9999714}
+  m_Size: {x: 1.0008068, y: 5}
   m_EdgeRadius: 0
 --- !u!50 &2552156646129044182
 Rigidbody2D:
