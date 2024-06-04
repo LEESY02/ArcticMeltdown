@@ -18,12 +18,12 @@ public class SoundManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // Check if the current scene is the menu scene
-            if (SceneManager.GetActiveScene().name == "_MainMenu")
-            {
-                // Destroy the SoundManager object if in the menu scene
-                Destroy(gameObject);
-            }
+            // // Check if the current scene is the menu scene
+            // if (SceneManager.GetActiveScene().name == "_MainMenu")
+            // {
+            //     // Destroy the SoundManager object if in the menu scene
+            //     Destroy(gameObject);
+            // }
         }
         //Destroy duplicate gameobjects
         else if (instance != null && instance != this)
