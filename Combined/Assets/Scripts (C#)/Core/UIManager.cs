@@ -40,11 +40,20 @@ public class UIManager : MonoBehaviour
     //game over functions
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // Health player = FindObjectOfType<Health>();
+        // if (player != null)
+        // {
+        //     // Implement your logic for player death here
+        //     // For example:
+        //     player.TakeDamage(10); // Assuming you have a method called Die() in your Player script
+        // }
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(1);
     }
 
     public void MainMenu()
     {
+        SceneManager.UnloadSceneAsync(1);
         SceneManager.LoadScene(0);
     }
 
@@ -78,12 +87,12 @@ public class UIManager : MonoBehaviour
 
     public void SoundVolume()
     {
-
+        SoundManager.instance.ChangeSoundVolume(0.2f); //increase sound volume by 20%
     }
 
     public void MusicVolume()
     {
-
+        SoundManager.instance.ChangeMusicVolume(0.2f); //increase music volume by 20%
     }
 
     #endregion

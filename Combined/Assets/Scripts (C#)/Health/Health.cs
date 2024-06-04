@@ -20,7 +20,6 @@ public class Health : MonoBehaviour
 
     private SpriteRenderer spriteRend;
     private GameObject room;
-    private GameObject startingPlatform;
     public float currentHealth {get; private set;} //all scripts can access the value, but ONLY this scrpt can set the value
     private Animator anim;
 
@@ -59,13 +58,6 @@ public class Health : MonoBehaviour
             SoundManager.instance.PlaySound(deadSound, deadVolume);
             deadSound = null;
         }
-    }
-
-    private void Spawn() {
-        transform.position  = new Vector3(
-                startingPlatform.transform.position.x,
-                startingPlatform.transform.position.y + 1,
-                startingPlatform.transform.position.z);
     }
 
     public void AddHealth(float _value) {
