@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private float slamDownForce;
+    [SerializeField] private float defaultGravity;
 
     [Header("Coyote Time")]
     [SerializeField] private float coyoteTime;
@@ -86,6 +87,14 @@ public class Player : MonoBehaviour
         anim.SetBool("Crouch", isCrouched);
         anim.SetBool("OnWall", OnWall() && !isGrounded());
         anim.SetBool("Falling", isFalling);
+
+        if (isFalling) {
+            body.gravityScale = defaultGravity * 4;
+        } else {
+            body.gravityScale = defaultGravity;
+        }
+
+        print("Grounded: " + isGrounded() + "\nWalled: " + OnWall());
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             Jump();
@@ -184,13 +193,8 @@ public class Player : MonoBehaviour
 
     private bool isGrounded()
     {
-        RaycastHit2D raycastHit = Physics2D.CircleCast(
-            circleCollider.bounds.center,
-            circleCollider.radius,
-            Vector2.down,
-            0.01f,
-            groundLayer);
-        return raycastHit.collider != null;
+        RaycastHit2D hitFloor = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundLayer);
+        return hitFloor.collider != null;
     }
 
     private bool OnWall()

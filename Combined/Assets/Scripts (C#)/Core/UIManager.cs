@@ -54,6 +54,7 @@ public class UIManager : MonoBehaviour
 
     public void MainMenu()
     {
+        // SceneManager.UnloadSceneAsync(1);
         SceneManager.LoadScene(0);
     }
 
