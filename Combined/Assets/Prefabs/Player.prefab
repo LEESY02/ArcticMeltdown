@@ -233,7 +233,8 @@ MonoBehaviour:
   health: {fileID: 165485024435489945}
   speed: 6
   speedBoost: 2
-  jumpForce: 8
+  jumpForce: 9
+  slideSpeed: 3
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -243,10 +244,12 @@ MonoBehaviour:
   slamDownForce: 15
   coyoteTime: 0.25
   extraJumps: 2
-  wallJumpX: 800
-  wallJumpY: 500
+  wallJumpX: 5
+  wallBounce: 0.5
+  moveDelay: 10
   jumpSound: {fileID: 8300000, guid: 8e397eedde2d3e8408b05d6f4b62b0f3, type: 3}
   jumpVolume: 0.5
+  coinCount: 0
 --- !u!95 &6471395289067444214
 Animator:
   serializedVersion: 5
@@ -283,7 +286,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1.5
+  m_GravityScale: 2.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

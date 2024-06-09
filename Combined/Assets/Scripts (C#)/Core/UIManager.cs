@@ -1,5 +1,6 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEditor;
 
 public class UIManager : MonoBehaviour
 {
@@ -53,7 +54,6 @@ public class UIManager : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.UnloadSceneAsync(1);
         SceneManager.LoadScene(0);
     }
 

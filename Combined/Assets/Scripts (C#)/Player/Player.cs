@@ -1,29 +1,35 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
     [SerializeField] Health health;
     [Header("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float speedBoost;
     [SerializeField] private float jumpForce;
+    [SerializeField] private float slideSpeed;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
-    [SerializeField] private float slamDownForce; //Force applied during slam down
+    [SerializeField] private float slamDownForce;
 
     [Header("Coyote Time")]
-    [SerializeField] private float coyoteTime; //How much time the player can hang in the air before jumping
-    private float coyoteCounter; //How much time passed since the player ran off the edge
+    [SerializeField] private float coyoteTime;
+    private float coyoteCounter;
 
     [Header("Multiple Jumps")]
     [SerializeField] private int extraJumps;
     private int jumpCounter;
 
     [Header("Wall Jumping")]
-    [SerializeField] private float wallJumpX; //horizontal wall jump force
-    [SerializeField] private float wallJumpY; //vertical wall jump force
+    [SerializeField] private float wallJumpX;
+    [SerializeField] private float wallBounce;
+    [SerializeField] private float moveDelay;
 
-    [Header ("Audio")]
+    [Header("Audio")]
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private float jumpVolume;
 
@@ -33,13 +39,13 @@ public class Player : MonoBehaviour {
     private BoxCollider2D boxCollider;
     private CircleCollider2D circleCollider;
     private float horizontalInput;
-    private bool isFalling; // track if the player is falling
-    private bool onwall;
-    private bool isSlamming; // track if the player is slamming down
+    private bool isFalling;
+    private bool isSlamming;
     private UIManager uiManager;
+    public int coinCount = 0;
 
-    private void Awake() {
-        // Grab reference for rigidbody and animator from object
+    private void Awake()
+    {
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
@@ -50,28 +56,22 @@ public class Player : MonoBehaviour {
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-
-        // Update isFalling based on the player's vertical velocity and ground status
         isFalling = body.velocity.y < 0 && !isGrounded();
 
-        // Adjust gravity scale based on whether the player is falling or slamming
         if (isSlamming)
         {
-            body.velocity = new Vector2(0, -slamDownForce); // Slam straight down
+            body.velocity = new Vector2(0, -slamDownForce);
         }
-        
-        // scale values in Vector3 of player scale
+
         float xScale = Mathf.Abs(transform.localScale.x);
         float yScale = Mathf.Abs(transform.localScale.y);
         float zScale = Mathf.Abs(transform.localScale.z);
 
-        // flip player when moving left-right
         if (horizontalInput > 0f)
             transform.localScale = new Vector3(xScale, yScale, zScale);
         else if (horizontalInput < 0f)
             transform.localScale = new Vector3(-xScale, yScale, zScale);
 
-        // Crouch logic
         if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
             Crouch();
@@ -81,155 +81,149 @@ public class Player : MonoBehaviour {
             isCrouched = false;
         }
 
-        // Set animator parameters
         anim.SetBool("Run", horizontalInput != 0);
         anim.SetBool("Grounded", isGrounded());
         anim.SetBool("Crouch", isCrouched);
-        anim.SetBool("Falling", isFalling); // Update the animator with the falling status
+        anim.SetBool("OnWall", OnWall() && !isGrounded());
+        anim.SetBool("Falling", isFalling);
 
-
-        //Jump
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             Jump();
 
-        // //Adjustable jump height
-        // if ((Input.GetKeyUp(KeyCode.Space) && body.velocity.y > 0) || (Input.GetKeyUp(KeyCode.W) && body.velocity.y > 0))
-        //     body.velocity = new Vector2(body.velocity.x, body.velocity.y / 2);
-
-        if (OnWall())
+        if (OnWall() && !isGrounded())
         {
-            body.gravityScale = 0.8f;
-            // Allow horizontal movement while on the wall
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+            body.velocity = new Vector2(horizontalInput * speed, -slideSpeed);
         }
-        else {
+        else
+        {
             body.gravityScale = 1.5f;
             if (anim.GetBool("Run") && anim.GetBool("Crouch"))
             {
-                body.velocity = new Vector2(horizontalInput * (speed + speedBoost), body.velocity.y); //sliding has increased speed
+                body.velocity = new Vector2(horizontalInput * (speed + speedBoost), body.velocity.y);
             }
             else
             {
-                body.velocity = new Vector2(horizontalInput * speed, body.velocity.y); //normal speed
+                body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
             }
 
-            if (isGrounded() || OnWall()) 
+            if (isGrounded() || OnWall2())
             {
-                coyoteCounter = coyoteTime; //Reset coyote counter when on the ground
-                jumpCounter = extraJumps; //Reset jump counter to extra jump value
-            } else 
+                coyoteCounter = coyoteTime;
+                jumpCounter = extraJumps;
+            }
+            else
             {
-                coyoteCounter -= Time.deltaTime; //Start decreasing coyote counter when not on the ground
+                coyoteCounter -= Time.deltaTime;
             }
         }
     }
 
     private void Jump()
     {
-        //if coyote couter is 0 or less and not on the wall and dont have any extra jumps, don't do anything
         if (coyoteCounter <= 0 && !OnWall() && jumpCounter <= 0) return;
         SoundManager.instance.PlaySound(jumpSound, jumpVolume);
 
-        if (OnWall()) {
+        if (OnWall())
+        {
             WallJump();
-            jumpCounter--;
-        } else {
-            if (!isGrounded())
-            {
-                body.velocity = new Vector2(body.velocity.x, jumpForce);
-                jumpCounter--;
-            }
-            else
-            {
-                if (isGrounded() || coyoteCounter > 0) {
-                    body.velocity = new Vector2(body.velocity.x, jumpForce);
-                    coyoteCounter = 0; // Reset coyote counter to avoid double jumps
-                } else if (jumpCounter > 0) {
-                    body.velocity = new Vector2(body.velocity.x, jumpForce);
-                    jumpCounter--;
-                }
-            }
-
-            //Reset coyote counter to 0 to avoid double jumps
+        }
+        else if (isGrounded() || coyoteCounter > 0)
+        {
+            body.velocity = new Vector2(body.velocity.x, jumpForce);
             coyoteCounter = 0;
+        }
+        else if (jumpCounter > 0)
+        {
+            body.velocity = new Vector2(body.velocity.x, jumpForce);
+            jumpCounter--;
         }
     }
 
     private void WallJump()
     {
-        body.AddForce(new Vector2(-Mathf.Sign(transform.localScale.x) * wallJumpX, wallJumpY));
+        // Determine the direction of the wall (left or right)
+        float wallDirection = transform.localScale.x > 0 ? -1 : 1;
+
+        // Apply the wall jump force only along the Y-axis
+        body.velocity = new Vector2(body.velocity.x, jumpForce);
+
+        // Disable horizontal input in the direction of the wall for a short moment
+        StartCoroutine(DisableInputForDuration(moveDelay));
+
+        transform.position = new Vector3(
+            transform.position.x + wallBounce * wallDirection, // Adjusted by wall direction
+            transform.position.y,
+            transform.position.z
+        );
+        jumpCounter = extraJumps - 1;
     }
 
-
-    private Vector2 GetNearestWallPosition()
+    private IEnumerator DisableInputForDuration(float duration)
     {
-        Vector2 playerPosition = transform.position;
-        RaycastHit2D hitLeft = Physics2D.Raycast(playerPosition, Vector2.left, Mathf.Infinity, wallLayer);
-        RaycastHit2D hitRight = Physics2D.Raycast(playerPosition, Vector2.right, Mathf.Infinity, wallLayer);
-
-        Vector2 nearestWallPosition = Vector2.zero;
-
-        // Check which direction has a wall and find the nearest position
-        if (hitLeft.collider != null && hitRight.collider != null)
-        {
-            nearestWallPosition = hitLeft.distance < hitRight.distance ? hitLeft.point : hitRight.point;
-        }
-        else if (hitLeft.collider != null)
-        {
-            nearestWallPosition = hitLeft.point;
-        }
-        else if (hitRight.collider != null)
-        {
-            nearestWallPosition = hitRight.point;
-        }
-
-        return nearestWallPosition;
+        horizontalInput = 0f; // Reset horizontal input
+        yield return new WaitForSeconds(duration);
+        horizontalInput = Input.GetAxis("Horizontal"); // Re-enable horizontal input after the duration
     }
 
-    private void Crouch() {
+    // Check if the player is sliding down the wall
+    private bool isSlidingDownWall()
+    {
+        // If the player is on the wall and moving downwards, they are sliding down
+        return OnWall() && body.velocity.y < 0;
+    }
+
+    private void Crouch()
+    {
         isCrouched = true;
 
-        // Check if the player is in the air
         if (!isGrounded())
         {
             isSlamming = true;
         }
     }
 
-    private bool isGrounded() {
+    private bool isGrounded()
+    {
         RaycastHit2D raycastHit = Physics2D.CircleCast(
-            circleCollider.bounds.center, 
-            circleCollider.radius, 
-            Vector2.down, 
-            0.1f, 
+            circleCollider.bounds.center,
+            circleCollider.radius,
+            Vector2.down,
+            0.01f,
             groundLayer);
         return raycastHit.collider != null;
     }
 
-    private bool OnWall() {
-        return onwall;
+    private bool OnWall()
+    {
+        Vector2 playerPosition = transform.position;
+        RaycastHit2D hitLeft = Physics2D.Raycast(playerPosition, Vector2.left, 0.5f, wallLayer);
+        RaycastHit2D hitRight = Physics2D.Raycast(playerPosition, Vector2.right, 0.5f, wallLayer);
+        return hitLeft.collider != null || hitRight.collider != null;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Wall")) {
-            onwall = true;
-        } else if (isSlamming && isGrounded()) {
-            isSlamming = false; // Stop slamming once the player hits the ground
-            body.velocity = Vector2.zero; // Reset velocity to stop downward movement
+    private bool OnWall2()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.2f, wallLayer);
+        return colliders.Length > 0;
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isSlamming && isGrounded())
+        {
+            isSlamming = false;
+            body.velocity = Vector2.zero;
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Wall")) {
-            onwall = false;
-        }
-    }
-
-    public bool CanAttack() {
+    public bool CanAttack()
+    {
         return !OnWall();
     }
 
-    public void GameOver() {
+    public void GameOver()
+    {
         uiManager.GameOver();
     }
 }
