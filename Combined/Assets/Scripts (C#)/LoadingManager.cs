@@ -7,6 +7,6 @@ public class LoadingManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
-            SceneManager.LoadScene(1); //Load level 2 (at index 1)
+            SceneManager.LoadScene(2); //Load level 2 (at index 1)
     }
 }

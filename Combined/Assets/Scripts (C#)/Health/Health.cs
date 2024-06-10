@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     [Header ("Health")]
     [SerializeField] public float startingHealth;
+    [SerializeField] public float postDeathPresence;
     // [Header ("Camera")]
     // [SerializeField] private CameraController cam;
     [Header ("iFrames")]
@@ -42,6 +43,9 @@ public class Health : MonoBehaviour
         } else {
             anim.SetTrigger("Dead");
             spriteRend.color = Color.red;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().gravityScale = 0;
+            
             //player
             if (GetComponent<Player>() != null)
             {
@@ -52,7 +56,10 @@ public class Health : MonoBehaviour
             }
             //enemy
             if (GetComponent<MeleeEnemy>() != null)
+            {
                 GetComponent<MeleeEnemy>().enabled = false; //stop enemy attacking
+                StartCoroutine(Despawn());
+            }
             if (GetComponent<Horizontal>() != null)
                 GetComponent<Horizontal>().enabled = false; //stop enemy moving
             SoundManager.instance.PlaySound(deadSound, deadVolume);
@@ -76,6 +83,12 @@ public class Health : MonoBehaviour
 
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
+    }
+
+    private IEnumerator Despawn()
+    {
+        yield return new WaitForSeconds(postDeathPresence);
+        gameObject.SetActive(false);
     }
 
     public float GetStartingHealth() {

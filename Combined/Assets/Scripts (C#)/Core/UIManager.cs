@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
         //     player.TakeDamage(10); // Assuming you have a method called Die() in your Player script
         // }
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void MainMenu()
@@ -95,6 +95,12 @@ public class UIManager : MonoBehaviour
     {
         SoundManager.instance.ChangeMusicVolume(0.2f); //increase music volume by 20%
     }
+    #endregion
 
+    #region Story
+        public void Story()
+        {
+            SceneManager.LoadScene(1);
+        }
     #endregion
 }

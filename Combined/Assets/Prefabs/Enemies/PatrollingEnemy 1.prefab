@@ -143,7 +143,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08254337, y: -1.3267994}
+  m_Offset: {x: 0.24753094, y: -1.3267994}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -154,7 +154,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.158346, y: 8.419275}
+  m_Size: {x: 6.4981976, y: 8.419275}
   m_EdgeRadius: 0
 --- !u!114 &5995499681219555290
 MonoBehaviour:
@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  postDeathPresence: 10
   invulnerabilityDuration: 0
   numberOfFlashes: 0
   hurtSound: {fileID: 8300000, guid: 47dd9fad0cf0cfc4a8d61bdb4009f5d1, type: 3}
@@ -188,9 +189,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  range: 1.62
+  range: 1.35
   damage: 1
-  colliderDistance: -2.25
+  colliderDistance: -0.87
   boxCollider: {fileID: 6061640671687435969}
   playerLayer:
     serializedVersion: 2
