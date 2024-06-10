@@ -9,13 +9,15 @@ public class Horizontal : MonoBehaviour
     //[SerializeField] private float movementDistace;
     [SerializeField] private float speed;
     private bool movingLeft;
+    // private Animator anim;
     // private float leftEdge;
     // private float rightEdge;
 
     // private void Awake() {
-    //     leftEdge = transform.position.x - movementDistace;
-    //     rightEdge = transform.position.x + movementDistace;
-    // }
+        // leftEdge = transform.position.x - movementDistace;
+        // rightEdge = transform.position.x + movementDistace;
+        // anim = GetComponent<Animator>();
+    // } 
 
     private void Update() {
         if (movingLeft) {

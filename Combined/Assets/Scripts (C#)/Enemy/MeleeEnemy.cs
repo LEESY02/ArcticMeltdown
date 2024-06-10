@@ -35,9 +35,11 @@ public class MeleeEnemy : MonoBehaviour
                 //attack
                 cooldownTimer = 0;
                 anim.SetTrigger("MeleeAttack");
+                anim.SetBool("Moving", false);
             }
         } else {
             gameObject.GetComponent<Horizontal>().enabled = true; // continue moving
+            anim.SetBool("Moving", true);
         }
         
     }
