@@ -13,21 +13,21 @@ public class SoundManager : MonoBehaviour
         musicSource = transform.GetChild(0).GetComponent<AudioSource>();
 
         //Keep this object even when we go to new scene
-        if (instance == null)
-        {
+        // if (instance == null)
+        // {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+        //     DontDestroyOnLoad(gameObject);
 
-            // // Check if the current scene is the menu scene
-            // if (SceneManager.GetActiveScene().name == "_MainMenu")
-            // {
-            //     // Destroy the SoundManager object if in the menu scene
-            //     Destroy(gameObject);
-            // }
-        }
-        //Destroy duplicate gameobjects
-        else if (instance != null && instance != this)
-            Destroy(gameObject);
+        //     // // Check if the current scene is the menu scene
+        //     // if (SceneManager.GetActiveScene().name == "_MainMenu")
+        //     // {
+        //     //     // Destroy the SoundManager object if in the menu scene
+        //     //     Destroy(gameObject);
+        //     // }
+        // }
+        // //Destroy duplicate gameobjects
+        // else if (instance != null && instance != this)
+        //     Destroy(gameObject);
 
         //Assign initial volumes
         ChangeMusicVolume(0);

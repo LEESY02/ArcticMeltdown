@@ -34,6 +34,12 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private float jumpVolume;
 
+    [Header("Colliders")]
+    [SerializeField] private float crouchHeight;
+    [SerializeField] private float crouchWidth;
+    [SerializeField] private float offsetChangeY;
+    [SerializeField] private float crouchRadius;
+
     private Rigidbody2D body;
     private Animator anim;
     private bool isCrouched;
@@ -43,6 +49,11 @@ public class Player : MonoBehaviour
     private bool isFalling;
     private bool isSlamming;
     private UIManager uiManager;
+    private float boxColliderHeight; // original height
+    private float boxColliderWidth; // original width
+    private float boxColliderOffsetY; // original y offset
+    private float circleColliderRadius; // original radius
+
     public int coinCount = 0;
 
     private void Awake()
@@ -52,6 +63,11 @@ public class Player : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         circleCollider = GetComponent<CircleCollider2D>();
         uiManager = Resources.FindObjectsOfTypeAll<UIManager>()[0];
+        boxColliderHeight = boxCollider.size.y; // Store the original height
+        boxColliderWidth = boxCollider.size.x; // Store the original width
+        boxColliderOffsetY = boxCollider.offset.y; // Store the original y offset
+        circleColliderRadius = circleCollider.radius; // Store the original radius
+
     }
 
     private void Update()
@@ -76,10 +92,10 @@ public class Player : MonoBehaviour
         if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
             Crouch();
-        }
-        else
+        } else
+        //if (!(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
-            isCrouched = false;
+            StandUp();
         }
 
         anim.SetBool("Run", horizontalInput != 0);
@@ -189,6 +205,11 @@ public class Player : MonoBehaviour
         {
             isSlamming = true;
         }
+
+         // Reduce the size of the BoxCollider2D when crouching
+        boxCollider.size = new Vector2(crouchWidth, crouchHeight); // Adjust the Y size as needed
+        boxCollider.offset = new Vector2(boxCollider.offset.x, offsetChangeY); // Adjust the Y offset as needed
+        circleCollider.radius = crouchRadius; // Adjust the radius as needed
     }
 
     private bool isGrounded()
@@ -229,5 +250,14 @@ public class Player : MonoBehaviour
     public void GameOver()
     {
         uiManager.GameOver();
+    }
+
+    private void StandUp()
+    {
+        isCrouched = false;
+        // Restore the original size of the BoxCollider2D when standing up
+        boxCollider.size = new Vector2(boxColliderWidth, boxColliderHeight); // Restore original Y size
+        boxCollider.offset = new Vector2(boxCollider.offset.x, boxColliderOffsetY); // Restore orginal offset
+        circleCollider.radius = circleColliderRadius; // Restore original radius
     }
 }

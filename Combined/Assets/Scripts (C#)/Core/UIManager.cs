@@ -49,6 +49,14 @@ public class UIManager : MonoBehaviour
         //     player.TakeDamage(10); // Assuming you have a method called Die() in your Player script
         // }
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        // unpause if needed
+        if (Time.timeScale == 0) 
+        {
+            Time.timeScale = 1; //time continues at 1x speed
+            if (FindFirstObjectByType<Player>() != null)
+                FindFirstObjectByType<Player>().enabled = true;
+        }
         SceneManager.LoadScene(2);
     }
 

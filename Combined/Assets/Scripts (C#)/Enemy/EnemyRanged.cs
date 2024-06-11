@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EnemyRanged : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class EnemyRanged : MonoBehaviour
     private GameObject player;
     private float timer;
     private Animator anim;
+    private bool hasPlayedAlertAnimation;
+    private bool isPlayerInRange;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +34,14 @@ public class EnemyRanged : MonoBehaviour
 
         if (distance < range)
         {
+            isPlayerInRange = true;
+
+            if (!hasPlayedAlertAnimation) // Check if alert animation has already been played
+            {
+                Alerted();
+                hasPlayedAlertAnimation = true; // Set the flag to true after playing alert animation
+            }
+
             timer += Time.deltaTime;
             if (timer > attackCooldown)
             {
@@ -37,6 +49,13 @@ public class EnemyRanged : MonoBehaviour
                 anim.SetTrigger("RangedAttack");
             }
         }
+        else
+        {
+            isPlayerInRange = false;
+            hasPlayedAlertAnimation = false; // Reset the flag when player exits the range
+        }
+
+        anim.SetBool("isInRange", isPlayerInRange); // Update the animator parameter
     }
 
     private void Shoot()
@@ -55,4 +74,27 @@ public class EnemyRanged : MonoBehaviour
                 transform.localScale.z);
         }
     }
+
+    private void Alerted()
+    {
+        anim.SetTrigger("Alerted");
+    }
+
+    private GameObject FindChildWithTag(Transform parent, string tag)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.CompareTag(tag))
+            {
+                return child.gameObject;
+            }
+            GameObject result = FindChildWithTag(child, tag);
+            if (result != null)
+            {
+                return result;
+            }
+        }
+        return null;
+    }
 }
+

@@ -169,9 +169,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.039999995, y: -1.4296559}
+  m_Offset: {x: -0.040000007, y: -1.5025833}
   serializedVersion: 2
-  m_Radius: 0.8155329
+  m_Radius: 0.7426056
 --- !u!114 &165485024435489945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
+  postDeathPresence: 0
   invulnerabilityDuration: 1
   numberOfFlashes: 3
   hurtSound: {fileID: 8300000, guid: 4b4adbb49f21df6478d4776a823a843e, type: 3}
@@ -250,6 +251,10 @@ MonoBehaviour:
   moveDelay: 10
   jumpSound: {fileID: 8300000, guid: 8e397eedde2d3e8408b05d6f4b62b0f3, type: 3}
   jumpVolume: 0.5
+  crouchHeight: 0.9
+  crouchWidth: 2.1
+  offsetChangeY: -1.75
+  crouchRadius: 0
   coinCount: 0
 --- !u!95 &6471395289067444214
 Animator:
