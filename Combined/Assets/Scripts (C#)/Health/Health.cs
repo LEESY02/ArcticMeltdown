@@ -57,6 +57,10 @@ public class Health : MonoBehaviour
             //enemy
             if (GetComponent<MeleeEnemy>() != null)
             {
+                if (GetComponent<EnemyRanged>() != null)
+                {
+                    GetComponent<EnemyRanged>().enabled = false;
+                }
                 GetComponent<MeleeEnemy>().enabled = false; //stop enemy attacking
                 StartCoroutine(Despawn());
             }

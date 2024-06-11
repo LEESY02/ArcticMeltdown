@@ -78,7 +78,7 @@ public class StoryArrow : MonoBehaviour
     private void UpdatePosition()
     {
         rect.position = new Vector3(
-            options[currentPosition].position.x - options[currentPosition].rect.width / 2 - offset,
+            options[currentPosition].position.x - options[currentPosition].rect.width * options[currentPosition].localScale.x / 2 - offset,
             options[currentPosition].position.y,
             0);
     }

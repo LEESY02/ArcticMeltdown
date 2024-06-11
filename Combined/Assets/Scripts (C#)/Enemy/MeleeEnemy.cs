@@ -29,7 +29,10 @@ public class MeleeEnemy : MonoBehaviour
     {
         cooldownTimer += Time.deltaTime;
         if (PlayerInSight()) {
-            gameObject.GetComponent<Horizontal>().enabled = false; // stop enemy from moving
+            if (gameObject.GetComponent<Horizontal>() != null) //check if is patrolling
+            {
+                gameObject.GetComponent<Horizontal>().enabled = false; // stop enemy from moving
+            }
             if (cooldownTimer >= attackCooldown)
             {
                 //attack
@@ -38,8 +41,11 @@ public class MeleeEnemy : MonoBehaviour
                 anim.SetBool("Moving", false);
             }
         } else {
-            gameObject.GetComponent<Horizontal>().enabled = true; // continue moving
-            anim.SetBool("Moving", true);
+            if (gameObject.GetComponent<Horizontal>() != null) //check if is patrolling
+            {
+                gameObject.GetComponent<Horizontal>().enabled = true; // continue moving
+                anim.SetBool("Moving", true);
+            }
         }
         
     }
