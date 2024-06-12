@@ -4,7 +4,7 @@ public class CameraController : MonoBehaviour
 {
     // Room camera
     [SerializeField] private float speed;
-    [SerializeField] private GameObject[] rooms;
+    public GameObject[] rooms;
     [SerializeField] private Player player;
     private GameObject currentRoom;
     private Vector3 velocity = Vector3.zero;

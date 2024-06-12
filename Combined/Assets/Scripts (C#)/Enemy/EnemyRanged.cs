@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -17,22 +16,36 @@ public class EnemyRanged : MonoBehaviour
     private Animator anim;
     private bool hasPlayedAlertAnimation;
     private bool isPlayerInRange;
+    private CameraController cam;
+    private GameObject[] rooms;
+    private Transform currentRoom;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
+        cam = FindObjectOfType<CameraController>();
+        rooms = cam.rooms;
+
+        for (int i = 0; i < rooms.Length; i++)
+        {
+            if ((transform.position.x < rooms[i].transform.position.x + 15 && transform.position.x > rooms[i].transform.position.x - 15)
+             && (transform.position.y < rooms[i].transform.position.y + 10 && transform.position.y > rooms[i].transform.position.y - 10))
+            {
+                currentRoom = rooms[i].transform;
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
-        Debug.Log("Distance of player: " + distance);
+        // Debug.Log("Distance of player: " + distance);
         FacePlayer();
 
-        if (distance < range)
+        if (distance < range && PlayerInSameRoom())
         {
             isPlayerInRange = true;
 
@@ -95,6 +108,13 @@ public class EnemyRanged : MonoBehaviour
             }
         }
         return null;
+    }
+
+    private bool PlayerInSameRoom()
+    {
+        Transform playerPos = player.transform;
+        return (playerPos.position.x < currentRoom.position.x + 15 && playerPos.position.x > currentRoom.position.x - 15)
+             && (playerPos.position.y < currentRoom.position.y + 10 && playerPos.position.y > currentRoom.position.y - 10);
     }
 }
 

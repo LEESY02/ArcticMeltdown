@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float slamDownForce;
     [SerializeField] private float defaultGravity;
 
+    [Header("Paricles")]
+    [SerializeField] private GameObject leftSlideEffect;
+    [SerializeField] private GameObject rightSlideEffect;
+
     [Header("Coyote Time")]
     [SerializeField] private float coyoteTime;
     private float coyoteCounter;
@@ -96,6 +100,22 @@ public class Player : MonoBehaviour
         //if (!(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
             StandUp();
+        }
+
+        if (isCrouched && horizontalInput != 0 && !OnWall())
+        {
+            if (horizontalInput > 0f) {
+                rightSlideEffect.SetActive(true);
+                print("rightslide");
+            } else {
+                leftSlideEffect.SetActive(true);
+                print("leftslide");
+            }
+        }
+        else
+        {
+            leftSlideEffect.SetActive(false);
+            rightSlideEffect.SetActive(false);
         }
 
         anim.SetBool("Run", horizontalInput != 0);
