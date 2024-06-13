@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float offsetChangeY;
     [SerializeField] private float crouchRadius;
 
+    private Tracker tracker;
     private Rigidbody2D body;
     private Animator anim;
     private bool isCrouched;
@@ -61,13 +62,14 @@ public class Player : MonoBehaviour
     private float boxColliderOffsetY; // original y offset
     private float circleColliderRadius; // original radius
 
-    public int coinCount = 0;
+    public int coinCount;
 
     private bool canMoveHorizontally = true; // To handle horizontal movement cooldown
 
 
     private void Awake()
     {
+        tracker = FindObjectOfType<Tracker>();
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
@@ -77,6 +79,7 @@ public class Player : MonoBehaviour
         boxColliderWidth = boxCollider.size.x; // Store the original width
         boxColliderOffsetY = boxCollider.offset.y; // Store the original y offset
         circleColliderRadius = circleCollider.radius; // Store the original radius
+        coinCount = tracker.coinCount;
     }
 
     private void Update()

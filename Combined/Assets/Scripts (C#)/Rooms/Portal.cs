@@ -4,22 +4,28 @@ using UnityEngine.SceneManagement;
 public class Portal : MonoBehaviour
 {
     private int index;
+    private Tracker tracker;
     
     private void Update()
     {
         index = SceneManager.GetActiveScene().buildIndex;
+        tracker = FindObjectOfType<Tracker>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.CompareTag("Player");
-        if (IsLastLevel()) // last page
+        if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene(0);
-        }
-        else
-        {
-            SceneManager.LoadScene(index + 1);
+            tracker.coinCount = collision.gameObject.GetComponent<Player>().coinCount;
+            tracker.mostRecentHealth = collision.gameObject.GetComponent<Health>().currentHealth;
+            if (IsLastLevel()) // last page
+            {
+                SceneManager.LoadScene(0);
+            }
+            else
+            {
+                SceneManager.LoadScene(index + 1);
+            }
         }
     }
 

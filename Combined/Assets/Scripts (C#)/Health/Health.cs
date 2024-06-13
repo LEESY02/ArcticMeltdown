@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [Header ("Health")]
-    [SerializeField] public float startingHealth;
+    private float startingHealth;
     [SerializeField] public float postDeathPresence;
     // [Header ("Camera")]
     // [SerializeField] private CameraController cam;
@@ -21,11 +21,14 @@ public class Health : MonoBehaviour
 
     private SpriteRenderer spriteRend;
     private GameObject room;
+    private Tracker tracker;
     public float currentHealth {get; private set;} //all scripts can access the value, but ONLY this scrpt can set the value
     private Animator anim;
 
     private void Start() {
-        currentHealth = startingHealth;
+        tracker = FindObjectOfType<Tracker>();
+        startingHealth = tracker.startingHealth;
+        currentHealth = tracker.mostRecentHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
     }

@@ -1,6 +1,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEditor;
+using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class UIManager : MonoBehaviour
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
 
+    private Tracker tracker;
+
     private void Awake() 
     {
         gameOverScreen.SetActive(false); //deactivate the gameOverScreen maually
         pauseScreen.SetActive(false); //deactivate the pauseScreen maually
+        tracker = FindObjectOfType<Tracker>();
     }
 
     private void Update()
@@ -41,15 +45,6 @@ public class UIManager : MonoBehaviour
     //game over functions
     public void Restart()
     {
-        // Health player = FindObjectOfType<Health>();
-        // if (player != null)
-        // {
-        //     // Implement your logic for player death here
-        //     // For example:
-        //     player.TakeDamage(10); // Assuming you have a method called Die() in your Player script
-        // }
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
         // unpause if needed
         if (Time.timeScale == 0) 
         {
@@ -57,7 +52,18 @@ public class UIManager : MonoBehaviour
             if (FindFirstObjectByType<Player>() != null)
                 FindFirstObjectByType<Player>().enabled = true;
         }
-        SceneManager.LoadScene(2);
+
+        if (SceneManager.GetActiveScene().buildIndex == 0) // if at main menu
+        {
+            tracker.mostRecentHealth = tracker.startingHealth;
+            tracker.coinCount = 0;
+            SceneManager.LoadScene(2); // load level 1
+        }
+        else
+        {
+            // Reload the scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void MainMenu()
