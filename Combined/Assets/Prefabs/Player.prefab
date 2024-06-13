@@ -40,6 +40,7 @@ Transform:
   - {fileID: 825019884381364596}
   - {fileID: 2285599964340331714}
   - {fileID: 8597425365553438809}
+  - {fileID: 7852388787885935681}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8847851615838028874
@@ -244,15 +245,17 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 256
-  slamDownForce: 10
-  defaultGravity: 2.5
+  slamDownForce: 15
+  defaultGravity: 1.5
   leftSlideEffect: {fileID: 4476433765461621120}
   rightSlideEffect: {fileID: 6266575355780218139}
+  wallSlideEffect: {fileID: 6141853985838590302}
   coyoteTime: 0.25
   extraJumps: 2
-  wallJumpX: 5
+  wallJumpX: 9
   wallBounce: 0.5
   moveDelay: 10
+  horizontalCooldownTime: 0.5
   jumpSound: {fileID: 8300000, guid: 8e397eedde2d3e8408b05d6f4b62b0f3, type: 3}
   jumpVolume: 0.5
   crouchHeight: 0.9
@@ -349,7 +352,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2975804712211448375, guid: fd928ca50a1f82e46a07f9add7ac4578, type: 3}
       propertyPath: m_Name
-      value: LeftSlideParticle
+      value: LeftSlideEffect
       objectReference: {fileID: 0}
     - target: {fileID: 6918481779331800046, guid: fd928ca50a1f82e46a07f9add7ac4578, type: 3}
       propertyPath: m_LocalPosition.x
@@ -406,6 +409,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6918481779331800046, guid: fd928ca50a1f82e46a07f9add7ac4578, type: 3}
   m_PrefabInstance: {fileID: 1680777608459680695}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8752260298152503963
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 709063509284081719}
+    m_Modifications:
+    - target: {fileID: 1553477580916647642, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553477580916647642, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553477580916647642, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553477580916647642, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553477580916647642, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553477580916647642, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553477580916647642, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553477580916647642, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553477580916647642, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553477580916647642, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191497385110635461, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+      propertyPath: m_Name
+      value: WallSlideEffect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+--- !u!1 &6141853985838590302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3191497385110635461, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+  m_PrefabInstance: {fileID: 8752260298152503963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7852388787885935681 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1553477580916647642, guid: 4c2da1e17d0b02943b337cc5b3788c47, type: 3}
+  m_PrefabInstance: {fileID: 8752260298152503963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9204081702869352236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -416,7 +486,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2975804712211448375, guid: 176d170e21758794c8ea2f090208466f, type: 3}
       propertyPath: m_Name
-      value: RightSlideParticle
+      value: RightSlideEffect
       objectReference: {fileID: 0}
     - target: {fileID: 6918481779331800046, guid: 176d170e21758794c8ea2f090208466f, type: 3}
       propertyPath: m_LocalPosition.x

@@ -17,9 +17,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float slamDownForce;
     [SerializeField] private float defaultGravity;
 
-    [Header("Paricles")]
+    [Header("Particles")]
     [SerializeField] private GameObject leftSlideEffect;
     [SerializeField] private GameObject rightSlideEffect;
+    [SerializeField] private GameObject wallSlideEffect;
 
     [Header("Coyote Time")]
     [SerializeField] private float coyoteTime;
@@ -33,6 +34,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float wallJumpX;
     [SerializeField] private float wallBounce;
     [SerializeField] private float moveDelay;
+    [SerializeField] private float horizontalCooldownTime; // Cooldown duration
+    private bool canMoveRight;
 
     [Header("Audio")]
     [SerializeField] private AudioClip jumpSound;
@@ -60,6 +63,9 @@ public class Player : MonoBehaviour
 
     public int coinCount = 0;
 
+    private bool canMoveHorizontally = true; // To handle horizontal movement cooldown
+
+
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
@@ -71,18 +77,23 @@ public class Player : MonoBehaviour
         boxColliderWidth = boxCollider.size.x; // Store the original width
         boxColliderOffsetY = boxCollider.offset.y; // Store the original y offset
         circleColliderRadius = circleCollider.radius; // Store the original radius
-
     }
 
     private void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        isFalling = body.velocity.y < 0 && !isGrounded();
-
-        if (isSlamming)
+        
+        if (!canMoveHorizontally && ((canMoveRight && Input.GetAxis("Horizontal") < 0) || (!canMoveRight && Input.GetAxis("Horizontal") > 0)))
         {
-            body.velocity = new Vector2(0, -slamDownForce);
+            horizontalInput = 0;
+        } 
+        else
+        {
+            horizontalInput = Input.GetAxis("Horizontal");
         }
+
+        Debug.Log("canMoveHorizontally: " + canMoveHorizontally);
+
+        isFalling = body.velocity.y < 0 && !isGrounded();
 
         float xScale = Mathf.Abs(transform.localScale.x);
         float yScale = Mathf.Abs(transform.localScale.y);
@@ -96,20 +107,23 @@ public class Player : MonoBehaviour
         if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
             Crouch();
-        } else
-        //if (!(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
+        }
+        else
         {
             StandUp();
         }
 
-        if (isCrouched && horizontalInput != 0 && !OnWall())
+        if (isCrouched && horizontalInput != 0 && !OnWall() && !isFalling) // sliding
         {
-            if (horizontalInput > 0f) {
+            if (horizontalInput > 0f)
+            {
                 rightSlideEffect.SetActive(true);
-                print("rightslide");
-            } else {
+                // Debug.Log("rightslide");
+            }
+            else
+            {
                 leftSlideEffect.SetActive(true);
-                print("leftslide");
+                // Debug.Log("leftslide");
             }
         }
         else
@@ -124,24 +138,37 @@ public class Player : MonoBehaviour
         anim.SetBool("OnWall", OnWall() && !isGrounded());
         anim.SetBool("Falling", isFalling);
 
-        if (isFalling) {
-            body.gravityScale = defaultGravity * 4;
-        } else {
+        if (isFalling && !OnWall() && !isSlamming)
+        {
+            body.gravityScale = defaultGravity * 2;
+        }
+        else if (OnWall())
+        {
+            body.gravityScale = defaultGravity * 2 / 3;
+        }
+        else
+        {
             body.gravityScale = defaultGravity;
         }
 
-        print("Grounded: " + isGrounded() + "\nWalled: " + OnWall());
+        if (isSlamming)
+        {
+            body.velocity = Vector2.down * slamDownForce;
+        }
+
+        // Debug.Log("Grounded: " + isGrounded() + "\nWalled: " + OnWall());
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             Jump();
 
         if (OnWall() && !isGrounded())
         {
-            body.velocity = new Vector2(horizontalInput * speed, -slideSpeed);
+            wallSlideEffect.SetActive(true);
         }
         else
         {
-            body.gravityScale = 1.5f;
+            wallSlideEffect.SetActive(false);
+            // body.gravityScale = 1.5f;
             if (anim.GetBool("Run") && anim.GetBool("Crouch"))
             {
                 body.velocity = new Vector2(horizontalInput * (speed + speedBoost), body.velocity.y);
@@ -186,28 +213,49 @@ public class Player : MonoBehaviour
 
     private void WallJump()
     {
-        // Determine the direction of the wall (left or right)
-        float wallDirection = transform.localScale.x > 0 ? -1 : 1;
+        // Determine the direction of the wall
+        Vector2 playerPosition = transform.position;
+        RaycastHit2D hitLeft = Physics2D.Raycast(playerPosition, Vector2.left, 0.3f, wallLayer);
+        RaycastHit2D hitRight = Physics2D.Raycast(playerPosition, Vector2.right, 0.3f, wallLayer);
 
-        // Apply the wall jump force only along the Y-axis
-        body.velocity = new Vector2(body.velocity.x, jumpForce);
+        if (hitLeft.collider != null)
+        {
+            // Wall is to the left, jump to the right and upwards
+            StartCoroutine(PerformWallJump(Vector2.right, 1));
+        }
+        else if (hitRight.collider != null)
+        {
+            // Wall is to the right, jump to the left and upwards
+            StartCoroutine(PerformWallJump(Vector2.left, -1));
+        }
 
-        // Disable horizontal input in the direction of the wall for a short moment
-        StartCoroutine(DisableInputForDuration(moveDelay));
-
-        transform.position = new Vector3(
-            transform.position.x + wallBounce * wallDirection, // Adjusted by wall direction
-            transform.position.y,
-            transform.position.z
-        );
         jumpCounter = extraJumps - 1;
     }
 
-    private IEnumerator DisableInputForDuration(float duration)
+    private IEnumerator PerformWallJump(Vector2 wallDirection, int direction)
     {
-        horizontalInput = 0f; // Reset horizontal input
-        yield return new WaitForSeconds(duration);
-        horizontalInput = Input.GetAxis("Horizontal"); // Re-enable horizontal input after the duration
+        // Disable gravity during the initial phase of the jump to avoid the sudden pull down
+        body.gravityScale = 0;
+        canMoveRight = direction == 1;
+        canMoveHorizontally = false; // Prevent horizontal movement
+
+        // Smoothly apply the wall jump force over a short period
+        float jumpDuration = 0.1f; // Duration over which the jump force is applied
+        float elapsedTime = 0;
+
+        while (elapsedTime < jumpDuration)
+        {
+            // Apply force diagonally away from the wall
+            body.velocity = new Vector2(wallDirection.x * wallJumpX, jumpForce);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Restore gravity and enable horizontal movement after a short delay
+        body.gravityScale = defaultGravity;
+        yield return new WaitForSeconds(horizontalCooldownTime);
+        canMoveHorizontally = true;
     }
 
     // Check if the player is sliding down the wall
@@ -226,7 +274,7 @@ public class Player : MonoBehaviour
             isSlamming = true;
         }
 
-         // Reduce the size of the BoxCollider2D when crouching
+        // Reduce the size of the BoxCollider2D when crouching
         boxCollider.size = new Vector2(crouchWidth, crouchHeight); // Adjust the Y size as needed
         boxCollider.offset = new Vector2(boxCollider.offset.x, offsetChangeY); // Adjust the Y offset as needed
         circleCollider.radius = crouchRadius; // Adjust the radius as needed
@@ -241,8 +289,8 @@ public class Player : MonoBehaviour
     private bool OnWall()
     {
         Vector2 playerPosition = transform.position;
-        RaycastHit2D hitLeft = Physics2D.Raycast(playerPosition, Vector2.left, 0.5f, wallLayer);
-        RaycastHit2D hitRight = Physics2D.Raycast(playerPosition, Vector2.right, 0.5f, wallLayer);
+        RaycastHit2D hitLeft = Physics2D.Raycast(playerPosition, Vector2.left, 0.3f, wallLayer);
+        RaycastHit2D hitRight = Physics2D.Raycast(playerPosition, Vector2.right, 0.3f, wallLayer);
         return hitLeft.collider != null || hitRight.collider != null;
     }
 
@@ -277,7 +325,7 @@ public class Player : MonoBehaviour
         isCrouched = false;
         // Restore the original size of the BoxCollider2D when standing up
         boxCollider.size = new Vector2(boxColliderWidth, boxColliderHeight); // Restore original Y size
-        boxCollider.offset = new Vector2(boxCollider.offset.x, boxColliderOffsetY); // Restore orginal offset
+        boxCollider.offset = new Vector2(boxCollider.offset.x, boxColliderOffsetY); // Restore original offset
         circleCollider.radius = circleColliderRadius; // Restore original radius
     }
 }
