@@ -11,7 +11,7 @@ public class Healthbar : MonoBehaviour
     [SerializeField] private Image currentHealthBar;
 
     private void Start() {
-        totalHealthbar.fillAmount = playerHealth.GetStartingHealth() / 10;
+        totalHealthbar.fillAmount = FindObjectOfType<Tracker>().playerStartingHealth / 10;
     }
 
     private void Update() {

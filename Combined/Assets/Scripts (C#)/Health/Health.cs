@@ -27,7 +27,7 @@ public class Health : MonoBehaviour
 
     private void Start() {
         tracker = FindObjectOfType<Tracker>();
-        startingHealth = tracker.startingHealth;
+        startingHealth = gameObject.CompareTag("Player") ? tracker.playerStartingHealth : tracker.enemyStartingHealth;
         currentHealth = tracker.mostRecentHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
@@ -46,8 +46,12 @@ public class Health : MonoBehaviour
         } else {
             anim.SetTrigger("Dead");
             spriteRend.color = Color.red;
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<Rigidbody2D>().gravityScale = 0;
+
+            // Defer disabling of box collider and rigidbody to the FlyingEnemy script
+            if (GetComponent<FlyingEnemy>() == null) {
+                GetComponent<BoxCollider2D>().enabled = false;
+                GetComponent<Rigidbody2D>().gravityScale = 0;
+            }
             
             //player
             if (GetComponent<Player>() != null)
@@ -57,6 +61,7 @@ public class Health : MonoBehaviour
                 GetComponent<CircleCollider2D>().enabled = false;
                 GetComponent<BoxCollider2D>().enabled = false;
             }
+
             //enemy
             if (GetComponent<MeleeEnemy>() != null)
             {
@@ -64,13 +69,21 @@ public class Health : MonoBehaviour
                 {
                     GetComponent<EnemyRanged>().enabled = false;
                 }
-                GetComponent<MeleeEnemy>().enabled = false; //stop enemy attacking
+
+                if (GetComponent<FlyingEnemy>() != null) {
+                    // Defer disabling of box collider and rigidbody to the FlyingEnemy script
+                } else {
+                    GetComponent<MeleeEnemy>().enabled = false; //stop enemy attacking
+                }
                 StartCoroutine(Despawn());
             }
             if (GetComponent<Horizontal>() != null)
                 GetComponent<Horizontal>().enabled = false; //stop enemy moving
+
             SoundManager.instance.PlaySound(deadSound, deadVolume);
             deadSound = null;
+
+            
         }
     }
 
@@ -92,7 +105,7 @@ public class Health : MonoBehaviour
         Physics2D.IgnoreLayerCollision(10, 11, false);
     }
 
-    private IEnumerator Despawn()
+    public IEnumerator Despawn()
     {
         yield return new WaitForSeconds(postDeathPresence);
         gameObject.SetActive(false);

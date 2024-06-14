@@ -107,23 +107,6 @@ MonoBehaviour:
   bulletPosition: {fileID: 912483729939411790}
   range: 11
   attackCooldown: 1.5
-  rooms:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!95 &2114435076220279727
 Animator:
   serializedVersion: 5
@@ -249,13 +232,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e9b87338993ba469833c67b7a8ee12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 4
   postDeathPresence: 10
   invulnerabilityDuration: 0
   numberOfFlashes: 0
   hurtSound: {fileID: 8300000, guid: 23a8e6840b95d2449b65e42add4832bf, type: 3}
   hurtVolume: 1
-  deadSound: {fileID: 8300000, guid: 6b4c8cf6825303247869710f2c20725f, type: 3}
+  deadSound: {fileID: 8300000, guid: be518efcafcd90a4884bf61456e67113, type: 3}
   deadVolume: 0.7
 --- !u!1 &8850962356383116012
 GameObject:

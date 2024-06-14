@@ -7,7 +7,8 @@ public class Tracker : MonoBehaviour
 
     public static Tracker instance {get; private set;}
     public int coinCount;
-    public float startingHealth;
+    public float playerStartingHealth;
+    public float enemyStartingHealth;
     public float mostRecentHealth;
 
     // Start is called before the first frame update
@@ -15,7 +16,7 @@ public class Tracker : MonoBehaviour
     {
         instance = this;
         coinCount = 0;
-        mostRecentHealth = startingHealth;
+        mostRecentHealth = playerStartingHealth;
         DontDestroyOnLoad(gameObject);
     }
 

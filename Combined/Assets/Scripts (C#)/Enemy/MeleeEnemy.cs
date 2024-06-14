@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class MeleeEnemy : MonoBehaviour
@@ -21,11 +22,12 @@ public class MeleeEnemy : MonoBehaviour
     private Animator anim;
     private Health playerHealth;
 
-    private void Awake() {
+    protected virtual void Awake() {
         anim = GetComponent<Animator>();
+        anim.Play("Idle");
     }
 
-    private void Update() 
+    protected virtual void Update() 
     {
         cooldownTimer += Time.deltaTime;
         if (PlayerInSight()) {
@@ -44,8 +46,8 @@ public class MeleeEnemy : MonoBehaviour
             if (gameObject.GetComponent<Horizontal>() != null) //check if is patrolling
             {
                 gameObject.GetComponent<Horizontal>().enabled = true; // continue moving
-                anim.SetBool("Moving", true);
             }
+            anim.SetBool("Moving", true);
         }
         
     }
@@ -60,6 +62,7 @@ public class MeleeEnemy : MonoBehaviour
         if (hit.collider != null)
         {
             playerHealth = hit.transform.GetComponent<Health>();
+            Debug.Log("hit");
         }
 
         return hit.collider != null;
@@ -79,5 +82,10 @@ public class MeleeEnemy : MonoBehaviour
         {
             playerHealth.TakeDamage(damage);
         }
+    }
+
+    public Animator GetAnim()
+    {
+        return anim;
     }
 }

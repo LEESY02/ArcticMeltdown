@@ -7,7 +7,7 @@ public class SpawnEnemy_confirm : MonoBehaviour
     // List containing different enemies (in terms of types)
     public GameObject[] enemy_patrol;
     public GameObject[] enemy_range; 
-    // public GameObject[] enemy_flying;
+    public GameObject[] enemy_flying;
 
     // Spawn locations {Patrol, Range, Flying}
     public GameObject[] spawn_locations;
@@ -29,11 +29,11 @@ public class SpawnEnemy_confirm : MonoBehaviour
                 transform.position = spawn_locations[type].transform.position;
                 Instantiate(enemy_range[range_type], transform.position, Quaternion.identity);
                 break;
-            // case 2:
-            //     int flying_type = Random.Range(0, enemy_flying.Length);
-            //     transform.position = spawn_locations[type].transform.position;
-            //     Instantiate(enemy_flying[flying_type], transform.position, Quaternion.identity);
-            //     break;
+            case 2:
+                int flying_type = Random.Range(0, enemy_flying.Length);
+                transform.position = spawn_locations[type].transform.position;
+                Instantiate(enemy_flying[flying_type], transform.position, Quaternion.identity);
+                break;
         }
     }
 

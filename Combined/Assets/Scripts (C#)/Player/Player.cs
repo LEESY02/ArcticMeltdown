@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         circleCollider = GetComponent<CircleCollider2D>();
-        uiManager = Resources.FindObjectsOfTypeAll<UIManager>()[0];
+        uiManager = FindFirstObjectByType<UIManager>(); // Resources.FindObjectsOfTypeAll<UIManager>()[0];
         boxColliderHeight = boxCollider.size.y; // Store the original height
         boxColliderWidth = boxCollider.size.x; // Store the original width
         boxColliderOffsetY = boxCollider.offset.y; // Store the original y offset
@@ -93,8 +93,6 @@ public class Player : MonoBehaviour
         {
             horizontalInput = Input.GetAxis("Horizontal");
         }
-
-        Debug.Log("canMoveHorizontally: " + canMoveHorizontally);
 
         isFalling = body.velocity.y < 0 && !isGrounded();
 
@@ -121,12 +119,10 @@ public class Player : MonoBehaviour
             if (horizontalInput > 0f)
             {
                 rightSlideEffect.SetActive(true);
-                // Debug.Log("rightslide");
             }
             else
             {
                 leftSlideEffect.SetActive(true);
-                // Debug.Log("leftslide");
             }
         }
         else

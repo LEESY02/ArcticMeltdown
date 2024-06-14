@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex == 0) // if at main menu
         {
-            tracker.mostRecentHealth = tracker.startingHealth;
+            tracker.mostRecentHealth = tracker.playerStartingHealth;
             tracker.coinCount = 0;
             SceneManager.LoadScene(2); // load level 1
         }
