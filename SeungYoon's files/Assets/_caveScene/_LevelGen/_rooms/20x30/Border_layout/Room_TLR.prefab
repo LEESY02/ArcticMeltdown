@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5778708452284942926}
   - component: {fileID: 1098798248972621407}
-  m_Layer: 0
+  - component: {fileID: 3064148461715982010}
+  m_Layer: 8
   m_Name: L16
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +31,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 269419832310884170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1098798248972621407
 MonoBehaviour:
@@ -44,10 +45,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &3064148461715982010
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70997584699367503}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &325154459242812448
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,9 +90,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5104101429139689078}
   - component: {fileID: 1766398035166575299}
-  m_Layer: 0
+  - component: {fileID: 3324277902916761397}
+  m_Layer: 7
   m_Name: B22
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +111,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1766398035166575299
 MonoBehaviour:
@@ -92,10 +125,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &3324277902916761397
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325154459242812448}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &496069309162196999
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,9 +170,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8197292936142569475}
   - component: {fileID: 2255234811010882010}
-  m_Layer: 0
+  - component: {fileID: 4165146309440535072}
+  m_Layer: 7
   m_Name: B28
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +191,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2255234811010882010
 MonoBehaviour:
@@ -140,10 +205,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &4165146309440535072
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496069309162196999}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &704075550073450160
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +250,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5230807701060572418}
   - component: {fileID: 8968835660600969811}
-  m_Layer: 0
+  - component: {fileID: 2829574056175672708}
+  m_Layer: 8
   m_Name: T3
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -174,7 +271,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 5250366412004428507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8968835660600969811
 MonoBehaviour:
@@ -188,10 +285,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &2829574056175672708
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704075550073450160}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &758112335904617060
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +330,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3317396352834707595}
   - component: {fileID: 3827951329456678182}
-  m_Layer: 0
+  - component: {fileID: 1447013904119622264}
+  m_Layer: 8
   m_Name: T2
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -222,7 +351,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 5250366412004428507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3827951329456678182
 MonoBehaviour:
@@ -236,10 +365,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &1447013904119622264
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758112335904617060}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &810142720661167149
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,9 +410,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9153777251145268374}
   - component: {fileID: 5039543152238616748}
-  m_Layer: 0
+  - component: {fileID: 6549575254362416151}
+  m_Layer: 7
   m_Name: B12
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,7 +431,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5039543152238616748
 MonoBehaviour:
@@ -284,10 +445,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &6549575254362416151
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810142720661167149}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1211978177090261108
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,9 +490,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5752982260521889482}
   - component: {fileID: 4302417409743456484}
-  m_Layer: 0
+  - component: {fileID: 8396431988548022605}
+  m_Layer: 8
   m_Name: R16
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,7 +511,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 2502490797766227933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4302417409743456484
 MonoBehaviour:
@@ -332,10 +525,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &8396431988548022605
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211978177090261108}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1263421502972341048
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +570,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8228448379394584978}
   - component: {fileID: 2861814560239407755}
-  m_Layer: 0
+  - component: {fileID: 5314778349061792840}
+  m_Layer: 8
   m_Name: T6
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -366,7 +591,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 5250366412004428507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2861814560239407755
 MonoBehaviour:
@@ -380,10 +605,157 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &5314778349061792840
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263421502972341048}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!1 &1265670832130654733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4191389856287700795}
+  - component: {fileID: 3387311441414210793}
+  - component: {fileID: 1393487388482513909}
+  m_Layer: 8
+  m_Name: TopWall (Right)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4191389856287700795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265670832130654733}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7243986378562467422}
+  - {fileID: 7883238534673107656}
+  - {fileID: 6346634383267125551}
+  - {fileID: 1184749050807640565}
+  - {fileID: 8998410415194648825}
+  - {fileID: 2855051043757117382}
+  - {fileID: 3086093200610020283}
+  - {fileID: 8307460792687280945}
+  - {fileID: 6809706804217949366}
+  - {fileID: 4024964691421146958}
+  - {fileID: 6368460472558373591}
+  m_Father: {fileID: 1243005444396581578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &3387311441414210793
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265670832130654733}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &1393487388482513909
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265670832130654733}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 7009f7bd1d39ea54689c65578779e982, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 9.5, y: 9.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 11, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1271778959343217679
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,9 +766,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8205137610368241642}
   - component: {fileID: 3789293897860957104}
-  m_Layer: 0
+  - component: {fileID: 4135847934836364058}
+  m_Layer: 7
   m_Name: B26
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -414,7 +787,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3789293897860957104
 MonoBehaviour:
@@ -428,10 +801,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &4135847934836364058
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271778959343217679}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1480152876619727664
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,9 +846,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5750164033527435684}
   - component: {fileID: 5373564965914021436}
-  m_Layer: 0
+  - component: {fileID: 8675842405853023713}
+  m_Layer: 8
   m_Name: R15
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -462,7 +867,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 2502490797766227933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5373564965914021436
 MonoBehaviour:
@@ -476,10 +881,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &8675842405853023713
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480152876619727664}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1596444433315487788
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,9 +926,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4312773090340994908}
   - component: {fileID: 2666503701124295793}
-  m_Layer: 0
+  - component: {fileID: 1784241885723009790}
+  m_Layer: 8
   m_Name: L18
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -510,7 +947,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 269419832310884170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2666503701124295793
 MonoBehaviour:
@@ -524,10 +961,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &1784241885723009790
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596444433315487788}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1656429161797423958
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +1006,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6346634383267125551}
   - component: {fileID: 966637366113734472}
-  m_Layer: 0
+  - component: {fileID: 4090876891245626693}
+  m_Layer: 8
   m_Name: T21
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -558,7 +1027,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 4191389856287700795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &966637366113734472
 MonoBehaviour:
@@ -572,10 +1041,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &4090876891245626693
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656429161797423958}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1692342419894278161
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,9 +1086,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7824355696519763583}
   - component: {fileID: 799017550718267481}
-  m_Layer: 0
+  - component: {fileID: 1291502691615778947}
+  m_Layer: 7
   m_Name: B23
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -606,7 +1107,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &799017550718267481
 MonoBehaviour:
@@ -620,10 +1121,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &1291502691615778947
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692342419894278161}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1757054797314722899
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +1166,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7883238534673107656}
   - component: {fileID: 1203591382570971181}
-  m_Layer: 0
+  - component: {fileID: 7232111418734713084}
+  m_Layer: 8
   m_Name: T20
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -654,7 +1187,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 4191389856287700795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1203591382570971181
 MonoBehaviour:
@@ -668,10 +1201,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &7232111418734713084
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757054797314722899}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1781181537132159490
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +1246,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2592397147169496612}
   - component: {fileID: 4152262130680776299}
-  m_Layer: 0
+  - component: {fileID: 1190634347381719394}
+  m_Layer: 8
   m_Name: T10
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -702,7 +1267,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 5250366412004428507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4152262130680776299
 MonoBehaviour:
@@ -716,10 +1281,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &1190634347381719394
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781181537132159490}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1876205764519669945
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,9 +1326,10 @@ GameObject:
   m_Component:
   - component: {fileID: 864017906019044620}
   - component: {fileID: 8786944822933889469}
-  m_Layer: 0
+  - component: {fileID: 3366576608438969229}
+  m_Layer: 8
   m_Name: R2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -750,7 +1347,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6788996233103947187}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8786944822933889469
 MonoBehaviour:
@@ -764,10 +1361,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &3366576608438969229
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876205764519669945}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2124485294314063050
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,9 +1406,10 @@ GameObject:
   m_Component:
   - component: {fileID: 510563320861621420}
   - component: {fileID: 6915088229158788347}
-  m_Layer: 0
+  - component: {fileID: 8199233173207256091}
+  m_Layer: 7
   m_Name: B2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -798,7 +1427,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6915088229158788347
 MonoBehaviour:
@@ -812,10 +1441,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &8199233173207256091
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124485294314063050}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2263364826579561744
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,9 +1486,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9014132851868112461}
   - component: {fileID: 3948337159823339422}
-  m_Layer: 0
+  - component: {fileID: 7364030964710434021}
+  m_Layer: 8
   m_Name: R4
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -846,7 +1507,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6788996233103947187}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3948337159823339422
 MonoBehaviour:
@@ -860,10 +1521,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &7364030964710434021
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2263364826579561744}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2628159981862808150
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,9 +1566,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4668824713568391701}
   - component: {fileID: 5086282934038585151}
-  m_Layer: 0
+  - component: {fileID: 4541984117366073895}
+  m_Layer: 7
   m_Name: B18
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -894,7 +1587,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5086282934038585151
 MonoBehaviour:
@@ -908,10 +1601,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &4541984117366073895
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2628159981862808150}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2671659340042855443
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,9 +1646,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6606694563448278400}
   - component: {fileID: 1827711603298865729}
-  m_Layer: 0
+  - component: {fileID: 6524107306504248600}
+  m_Layer: 7
   m_Name: B17
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -942,7 +1667,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1827711603298865729
 MonoBehaviour:
@@ -956,10 +1681,151 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &6524107306504248600
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2671659340042855443}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!1 &2754431232981895159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 269419832310884170}
+  - component: {fileID: 8636329589395082488}
+  - component: {fileID: 31603855345903319}
+  m_Layer: 8
+  m_Name: LeftWall (Top)
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &269419832310884170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2754431232981895159}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4890414577771667944}
+  - {fileID: 6532321982549254759}
+  - {fileID: 5778708452284942926}
+  - {fileID: 4591952619907312210}
+  - {fileID: 4312773090340994908}
+  m_Father: {fileID: 1243005444396581578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &8636329589395082488
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2754431232981895159}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -14.5, y: 7}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6}
+  m_EdgeRadius: 0
+--- !u!50 &31603855345903319
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2754431232981895159}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &3021172315287495981
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,9 +1836,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2293421431452262145}
   - component: {fileID: 5635479110803011394}
-  m_Layer: 0
+  - component: {fileID: 1475828076108742428}
+  m_Layer: 7
   m_Name: B5
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -990,7 +1857,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5635479110803011394
 MonoBehaviour:
@@ -1004,10 +1871,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &1475828076108742428
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3021172315287495981}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &3110855163111418618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,9 +1916,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1680947250843283217}
   - component: {fileID: 2892348346937636219}
-  m_Layer: 0
+  - component: {fileID: 4788985778283104630}
+  m_Layer: 7
   m_Name: B6
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1038,7 +1937,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2892348346937636219
 MonoBehaviour:
@@ -1052,10 +1951,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &4788985778283104630
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3110855163111418618}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &3118485773744080945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,9 +1996,11 @@ GameObject:
   m_Component:
   - component: {fileID: 269757203907127982}
   - component: {fileID: 8726301479030682212}
-  m_Layer: 0
+  - component: {fileID: 728237879886182852}
+  - component: {fileID: 8103816455217175990}
+  m_Layer: 7
   m_Name: L5
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1100,10 +2032,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &728237879886182852
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118485773744080945}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &8103816455217175990
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118485773744080945}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 7009f7bd1d39ea54689c65578779e982, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &3396330473716955935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,9 +2122,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2385122221044618527}
   - component: {fileID: 6150032827793958066}
-  m_Layer: 0
+  - component: {fileID: 1087633665695528446}
+  m_Layer: 7
   m_Name: B16
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1134,7 +2143,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6150032827793958066
 MonoBehaviour:
@@ -1148,10 +2157,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &1087633665695528446
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396330473716955935}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &3472245858299093642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,7 +2202,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3086093200610020283}
   - component: {fileID: 671757744298937033}
-  m_Layer: 0
+  - component: {fileID: 2847431969588223131}
+  m_Layer: 8
   m_Name: T25
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -1182,7 +2223,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 4191389856287700795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &671757744298937033
 MonoBehaviour:
@@ -1196,10 +2237,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &2847431969588223131
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3472245858299093642}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &3793996221064717080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,7 +2282,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6809706804217949366}
   - component: {fileID: 5910570664215727503}
-  m_Layer: 0
+  - component: {fileID: 6672393695352440058}
+  m_Layer: 8
   m_Name: T27
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -1230,7 +2303,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 4191389856287700795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5910570664215727503
 MonoBehaviour:
@@ -1244,10 +2317,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &6672393695352440058
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3793996221064717080}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &3815139889395846765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,9 +2362,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2518534324756586031}
   - component: {fileID: 4730051903495247066}
-  m_Layer: 0
+  - component: {fileID: 6458957747976684764}
+  m_Layer: 7
   m_Name: B11
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1278,7 +2383,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4730051903495247066
 MonoBehaviour:
@@ -1292,10 +2397,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &6458957747976684764
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815139889395846765}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &3957418558790753736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,9 +2442,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1813232455712307770}
   - component: {fileID: 3163975628069443385}
-  m_Layer: 0
+  - component: {fileID: 5432282069664481121}
+  m_Layer: 8
   m_Name: L4
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1326,7 +2463,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 2037009386582944093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3163975628069443385
 MonoBehaviour:
@@ -1340,10 +2477,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &5432282069664481121
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3957418558790753736}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &4046952410907016226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,9 +2522,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6447054528103659572}
   - component: {fileID: 442417148758048775}
-  m_Layer: 0
+  - component: {fileID: 6546863750941238543}
+  m_Layer: 8
   m_Name: R3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1374,7 +2543,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6788996233103947187}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &442417148758048775
 MonoBehaviour:
@@ -1388,10 +2557,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &6546863750941238543
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046952410907016226}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &4138941343587088811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,7 +2602,8 @@ GameObject:
   m_Component:
   - component: {fileID: 16724870292751989}
   - component: {fileID: 7689268454644800247}
-  m_Layer: 0
+  - component: {fileID: 7431661569336924634}
+  m_Layer: 8
   m_Name: T8
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -1422,7 +2623,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 5250366412004428507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7689268454644800247
 MonoBehaviour:
@@ -1436,10 +2637,151 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &7431661569336924634
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138941343587088811}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!1 &4364755081645602363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2037009386582944093}
+  - component: {fileID: 9032027224929370825}
+  - component: {fileID: 2913648503827075615}
+  m_Layer: 8
+  m_Name: LeftWall (Bottom)
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2037009386582944093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4364755081645602363}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8275742013800234944}
+  - {fileID: 4782139101592899405}
+  - {fileID: 6885037152434476258}
+  - {fileID: 6822226715849406388}
+  - {fileID: 1813232455712307770}
+  m_Father: {fileID: 1243005444396581578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &9032027224929370825
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4364755081645602363}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &2913648503827075615
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4364755081645602363}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -14.5, y: -7.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5}
+  m_EdgeRadius: 0
 --- !u!1 &4435187200663468935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,9 +2792,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3949064632811043657}
   - component: {fileID: 1409142694393937317}
-  m_Layer: 0
+  - component: {fileID: 309846682454344263}
+  m_Layer: 8
   m_Name: R17
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1470,7 +2813,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 2502490797766227933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1409142694393937317
 MonoBehaviour:
@@ -1484,10 +2827,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &309846682454344263
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4435187200663468935}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &4529752710724235065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,9 +2872,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4409452213117600313}
   - component: {fileID: 2970830258263661848}
-  m_Layer: 0
+  - component: {fileID: 343256731232765711}
+  m_Layer: 7
   m_Name: B27
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1518,7 +2893,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2970830258263661848
 MonoBehaviour:
@@ -1532,10 +2907,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &343256731232765711
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4529752710724235065}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &4536931048856043781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,7 +2952,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1287617864341236972}
   - component: {fileID: 3399199667349522335}
-  m_Layer: 0
+  - component: {fileID: 1658942717901041605}
+  m_Layer: 8
   m_Name: T5
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -1566,7 +2973,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 5250366412004428507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3399199667349522335
 MonoBehaviour:
@@ -1580,10 +2987,174 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &1658942717901041605
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4536931048856043781}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!1 &4541708366053337112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6820417042495444848}
+  - component: {fileID: 5075476233578881873}
+  - component: {fileID: 1045758364798651061}
+  m_Layer: 7
+  m_Name: Ground
+  m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6820417042495444848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4541708366053337112}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6460353169541409305}
+  - {fileID: 510563320861621420}
+  - {fileID: 7220841581975786512}
+  - {fileID: 8316206772244989371}
+  - {fileID: 2293421431452262145}
+  - {fileID: 1680947250843283217}
+  - {fileID: 6865857359130003035}
+  - {fileID: 8663417653618573664}
+  - {fileID: 410326660137573542}
+  - {fileID: 4232657254291648575}
+  - {fileID: 2518534324756586031}
+  - {fileID: 9153777251145268374}
+  - {fileID: 2177454695352477416}
+  - {fileID: 6268849765443783590}
+  - {fileID: 6349876442338945408}
+  - {fileID: 2385122221044618527}
+  - {fileID: 6606694563448278400}
+  - {fileID: 4668824713568391701}
+  - {fileID: 7282764128819368281}
+  - {fileID: 6527075444148868814}
+  - {fileID: 6762428949797595210}
+  - {fileID: 5104101429139689078}
+  - {fileID: 7824355696519763583}
+  - {fileID: 8447608680875038224}
+  - {fileID: 4329820691762649816}
+  - {fileID: 8205137610368241642}
+  - {fileID: 4409452213117600313}
+  - {fileID: 8197292936142569475}
+  m_Father: {fileID: 1243005444396581578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &5075476233578881873
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4541708366053337112}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 7009f7bd1d39ea54689c65578779e982, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -9.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 30, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &1045758364798651061
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4541708366053337112}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &4694759617638096756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,9 +3165,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7282764128819368281}
   - component: {fileID: 5329074867803261550}
-  m_Layer: 0
+  - component: {fileID: 817554187755539165}
+  m_Layer: 7
   m_Name: B19
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1614,7 +3186,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5329074867803261550
 MonoBehaviour:
@@ -1628,10 +3200,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &817554187755539165
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4694759617638096756}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &4733020760097855828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,9 +3245,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4393459110760782298}
   - component: {fileID: 1839098083079952299}
-  m_Layer: 0
+  - component: {fileID: 5009455809379778589}
+  m_Layer: 8
   m_Name: R14
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1662,7 +3266,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 2502490797766227933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1839098083079952299
 MonoBehaviour:
@@ -1676,10 +3280,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &5009455809379778589
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4733020760097855828}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &4744779450324184712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,9 +3325,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6865857359130003035}
   - component: {fileID: 3356195815432646715}
-  m_Layer: 0
+  - component: {fileID: 8776965406977257779}
+  m_Layer: 7
   m_Name: B7
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1710,7 +3346,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3356195815432646715
 MonoBehaviour:
@@ -1724,10 +3360,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &8776965406977257779
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4744779450324184712}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &5023673713921242556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,7 +3405,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4024964691421146958}
   - component: {fileID: 3535264641938364478}
-  m_Layer: 0
+  - component: {fileID: 4151777976769476157}
+  m_Layer: 8
   m_Name: T28
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -1758,7 +3426,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 4191389856287700795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3535264641938364478
 MonoBehaviour:
@@ -1772,10 +3440,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &4151777976769476157
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5023673713921242556}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &5139608392029423275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,9 +3485,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8472958732759630002}
   - component: {fileID: 4418864267128065596}
-  m_Layer: 0
+  - component: {fileID: 4329747512593346206}
+  m_Layer: 8
   m_Name: L20
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1806,7 +3506,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 5250366412004428507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4418864267128065596
 MonoBehaviour:
@@ -1820,10 +3520,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &4329747512593346206
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5139608392029423275}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &5270834080458771370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,9 +3565,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6460353169541409305}
   - component: {fileID: 6181787987152230307}
-  m_Layer: 0
+  - component: {fileID: 4491411020013442272}
+  m_Layer: 7
   m_Name: B1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1854,7 +3586,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6181787987152230307
 MonoBehaviour:
@@ -1868,10 +3600,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &4491411020013442272
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270834080458771370}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &5382728897303094372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,78 +3664,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8275742013800234944}
-  - {fileID: 4782139101592899405}
-  - {fileID: 6885037152434476258}
-  - {fileID: 6822226715849406388}
-  - {fileID: 1813232455712307770}
+  - {fileID: 269419832310884170}
+  - {fileID: 2037009386582944093}
+  - {fileID: 2502490797766227933}
+  - {fileID: 6788996233103947187}
+  - {fileID: 5250366412004428507}
+  - {fileID: 4191389856287700795}
+  - {fileID: 6820417042495444848}
   - {fileID: 269757203907127982}
-  - {fileID: 4890414577771667944}
-  - {fileID: 6532321982549254759}
-  - {fileID: 5778708452284942926}
-  - {fileID: 4591952619907312210}
-  - {fileID: 4312773090340994908}
-  - {fileID: 6368460472558373591}
-  - {fileID: 6460353169541409305}
-  - {fileID: 510563320861621420}
-  - {fileID: 7220841581975786512}
-  - {fileID: 8316206772244989371}
-  - {fileID: 2293421431452262145}
-  - {fileID: 1680947250843283217}
-  - {fileID: 6865857359130003035}
-  - {fileID: 8663417653618573664}
-  - {fileID: 410326660137573542}
-  - {fileID: 4232657254291648575}
-  - {fileID: 2518534324756586031}
-  - {fileID: 9153777251145268374}
-  - {fileID: 2177454695352477416}
-  - {fileID: 6268849765443783590}
-  - {fileID: 6349876442338945408}
-  - {fileID: 2385122221044618527}
-  - {fileID: 6606694563448278400}
-  - {fileID: 4668824713568391701}
-  - {fileID: 7282764128819368281}
-  - {fileID: 6527075444148868814}
-  - {fileID: 6762428949797595210}
-  - {fileID: 5104101429139689078}
-  - {fileID: 7824355696519763583}
-  - {fileID: 8447608680875038224}
-  - {fileID: 4329820691762649816}
-  - {fileID: 8205137610368241642}
-  - {fileID: 4409452213117600313}
-  - {fileID: 8197292936142569475}
-  - {fileID: 8472958732759630002}
-  - {fileID: 7678213957329152426}
-  - {fileID: 3317396352834707595}
-  - {fileID: 5230807701060572418}
-  - {fileID: 8911331783740316863}
-  - {fileID: 1287617864341236972}
-  - {fileID: 8228448379394584978}
-  - {fileID: 2294261803471358863}
-  - {fileID: 16724870292751989}
-  - {fileID: 8950001376660572230}
-  - {fileID: 2592397147169496612}
-  - {fileID: 7243986378562467422}
-  - {fileID: 7883238534673107656}
-  - {fileID: 6346634383267125551}
-  - {fileID: 1184749050807640565}
-  - {fileID: 8998410415194648825}
-  - {fileID: 2855051043757117382}
-  - {fileID: 3086093200610020283}
-  - {fileID: 8307460792687280945}
-  - {fileID: 6809706804217949366}
-  - {fileID: 4024964691421146958}
-  - {fileID: 5896476258800820742}
-  - {fileID: 3342509052965727391}
-  - {fileID: 864017906019044620}
-  - {fileID: 6447054528103659572}
-  - {fileID: 9014132851868112461}
   - {fileID: 5005959420451432703}
-  - {fileID: 4393459110760782298}
-  - {fileID: 5750164033527435684}
-  - {fileID: 5752982260521889482}
-  - {fileID: 3949064632811043657}
-  - {fileID: 7855572958107964204}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5469918238550594474
@@ -1985,9 +3685,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4782139101592899405}
   - component: {fileID: 1401891304661280049}
-  m_Layer: 0
+  - component: {fileID: 2671589326297767637}
+  m_Layer: 8
   m_Name: L1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2005,7 +3706,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 2037009386582944093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1401891304661280049
 MonoBehaviour:
@@ -2019,10 +3720,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &2671589326297767637
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5469918238550594474}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &5576204579119146205
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,9 +3765,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4591952619907312210}
   - component: {fileID: 5044400507029450969}
-  m_Layer: 0
+  - component: {fileID: 2436392751433546827}
+  m_Layer: 8
   m_Name: L17
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2053,7 +3786,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 269419832310884170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5044400507029450969
 MonoBehaviour:
@@ -2067,10 +3800,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &2436392751433546827
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5576204579119146205}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &5792743690026910741
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,9 +3845,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6762428949797595210}
   - component: {fileID: 4900297882676735567}
-  m_Layer: 0
+  - component: {fileID: 7008810973854460197}
+  m_Layer: 7
   m_Name: B21
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2101,7 +3866,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4900297882676735567
 MonoBehaviour:
@@ -2115,10 +3880,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &7008810973854460197
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5792743690026910741}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &5805437722190806897
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,9 +3925,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7855572958107964204}
   - component: {fileID: 4868304702460321826}
-  m_Layer: 0
+  - component: {fileID: 5059645889046053747}
+  m_Layer: 8
   m_Name: R18
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2149,7 +3946,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 2502490797766227933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4868304702460321826
 MonoBehaviour:
@@ -2163,10 +3960,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &5059645889046053747
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5805437722190806897}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &5834250201329050458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,9 +4005,10 @@ GameObject:
   m_Component:
   - component: {fileID: 410326660137573542}
   - component: {fileID: 585108599523621249}
-  m_Layer: 0
+  - component: {fileID: 7661965425986206821}
+  m_Layer: 7
   m_Name: B9
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2197,7 +4026,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &585108599523621249
 MonoBehaviour:
@@ -2211,10 +4040,151 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &7661965425986206821
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5834250201329050458}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!1 &5952997591298332630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6788996233103947187}
+  - component: {fileID: 4047299814713306298}
+  - component: {fileID: 6925001516269571270}
+  m_Layer: 8
+  m_Name: RightWall (Bottom)
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6788996233103947187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952997591298332630}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5896476258800820742}
+  - {fileID: 3342509052965727391}
+  - {fileID: 864017906019044620}
+  - {fileID: 6447054528103659572}
+  - {fileID: 9014132851868112461}
+  m_Father: {fileID: 1243005444396581578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &4047299814713306298
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952997591298332630}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &6925001516269571270
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952997591298332630}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 14.5, y: -7.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5}
+  m_EdgeRadius: 0
 --- !u!1 &5972570607237952684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2225,7 +4195,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7678213957329152426}
   - component: {fileID: 612767983787644564}
-  m_Layer: 0
+  - component: {fileID: 7083356703925682039}
+  m_Layer: 8
   m_Name: T1
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -2245,7 +4216,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 5250366412004428507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &612767983787644564
 MonoBehaviour:
@@ -2259,10 +4230,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &7083356703925682039
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972570607237952684}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &6319778590681295837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2273,9 +4275,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6268849765443783590}
   - component: {fileID: 3366854708007607565}
-  m_Layer: 0
+  - component: {fileID: 1965527008819379781}
+  m_Layer: 7
   m_Name: B14
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2293,7 +4296,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3366854708007607565
 MonoBehaviour:
@@ -2307,10 +4310,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &1965527008819379781
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6319778590681295837}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &6514000532438843763
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,7 +4355,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8911331783740316863}
   - component: {fileID: 7851354460607851324}
-  m_Layer: 0
+  - component: {fileID: 8556427514524203000}
+  m_Layer: 8
   m_Name: T4
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -2341,7 +4376,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 5250366412004428507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7851354460607851324
 MonoBehaviour:
@@ -2355,10 +4390,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &8556427514524203000
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6514000532438843763}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &6788218197890258288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,9 +4435,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4232657254291648575}
   - component: {fileID: 1766857437413136847}
-  m_Layer: 0
+  - component: {fileID: 1009901209284108019}
+  m_Layer: 7
   m_Name: B10
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2389,7 +4456,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1766857437413136847
 MonoBehaviour:
@@ -2403,10 +4470,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &1009901209284108019
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6788218197890258288}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &6809780690119476158
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,7 +4515,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8950001376660572230}
   - component: {fileID: 7841275800757215196}
-  m_Layer: 0
+  - component: {fileID: 4617310606185354009}
+  m_Layer: 8
   m_Name: T9
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -2437,7 +4536,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 5250366412004428507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7841275800757215196
 MonoBehaviour:
@@ -2451,10 +4550,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &4617310606185354009
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6809780690119476158}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &6816677959083159422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,9 +4595,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8447608680875038224}
   - component: {fileID: 1313195228558818364}
-  m_Layer: 0
+  - component: {fileID: 5155655696677218129}
+  m_Layer: 7
   m_Name: B24
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2485,7 +4616,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1313195228558818364
 MonoBehaviour:
@@ -2499,10 +4630,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &5155655696677218129
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6816677959083159422}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &6999292972284776289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,9 +4675,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2177454695352477416}
   - component: {fileID: 5508991324497332099}
-  m_Layer: 0
+  - component: {fileID: 7928244007904292947}
+  m_Layer: 7
   m_Name: B13
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2533,7 +4696,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5508991324497332099
 MonoBehaviour:
@@ -2547,10 +4710,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &7928244007904292947
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6999292972284776289}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7091280898412963904
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,9 +4755,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6885037152434476258}
   - component: {fileID: 6929638981596141917}
-  m_Layer: 0
+  - component: {fileID: 1550978373968423007}
+  m_Layer: 8
   m_Name: L2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2581,7 +4776,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 2037009386582944093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6929638981596141917
 MonoBehaviour:
@@ -2595,10 +4790,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &1550978373968423007
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091280898412963904}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7103488550780826530
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,9 +4835,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6368460472558373591}
   - component: {fileID: 3418157123205204199}
-  m_Layer: 0
+  - component: {fileID: 8072320664921306255}
+  m_Layer: 8
   m_Name: L19
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2629,7 +4856,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 4191389856287700795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3418157123205204199
 MonoBehaviour:
@@ -2643,10 +4870,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &8072320664921306255
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7103488550780826530}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7245500759369967290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2657,9 +4915,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6822226715849406388}
   - component: {fileID: 7666932571676833101}
-  m_Layer: 0
+  - component: {fileID: 2647147412651867775}
+  m_Layer: 8
   m_Name: L3
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2677,7 +4936,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 2037009386582944093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7666932571676833101
 MonoBehaviour:
@@ -2691,10 +4950,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &2647147412651867775
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245500759369967290}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7248380779740680702
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,9 +4995,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4329820691762649816}
   - component: {fileID: 5670589647829330612}
-  m_Layer: 0
+  - component: {fileID: 2559154099107314139}
+  m_Layer: 7
   m_Name: B25
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2725,7 +5016,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5670589647829330612
 MonoBehaviour:
@@ -2739,10 +5030,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &2559154099107314139
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7248380779740680702}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7278690124800862586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,9 +5075,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6527075444148868814}
   - component: {fileID: 3135936680053130296}
-  m_Layer: 0
+  - component: {fileID: 4380629350053726595}
+  m_Layer: 7
   m_Name: B20
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2773,7 +5096,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3135936680053130296
 MonoBehaviour:
@@ -2787,10 +5110,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &4380629350053726595
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7278690124800862586}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7290234810927870526
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,9 +5155,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4890414577771667944}
   - component: {fileID: 7295368971574333174}
-  m_Layer: 0
+  - component: {fileID: 2239954303759300134}
+  m_Layer: 8
   m_Name: L14
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2821,7 +5176,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 269419832310884170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7295368971574333174
 MonoBehaviour:
@@ -2835,10 +5190,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &2239954303759300134
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290234810927870526}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7400769617171563691
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,7 +5235,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8998410415194648825}
   - component: {fileID: 1452622516665219273}
-  m_Layer: 0
+  - component: {fileID: 7131406273056448462}
+  m_Layer: 8
   m_Name: T23
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -2869,7 +5256,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 4191389856287700795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1452622516665219273
 MonoBehaviour:
@@ -2883,10 +5270,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &7131406273056448462
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7400769617171563691}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7472364775515333204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,7 +5315,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1184749050807640565}
   - component: {fileID: 8030619342671104774}
-  m_Layer: 0
+  - component: {fileID: 4224879680912739199}
+  m_Layer: 8
   m_Name: T22
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -2917,7 +5336,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 4191389856287700795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8030619342671104774
 MonoBehaviour:
@@ -2931,10 +5350,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &4224879680912739199
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7472364775515333204}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7675678333221582815
 GameObject:
   m_ObjectHideFlags: 0
@@ -2945,9 +5395,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6532321982549254759}
   - component: {fileID: 139846778206548297}
-  m_Layer: 0
+  - component: {fileID: 2280280485298385516}
+  m_Layer: 8
   m_Name: L15
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2965,7 +5416,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 269419832310884170}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &139846778206548297
 MonoBehaviour:
@@ -2979,10 +5430,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &2280280485298385516
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7675678333221582815}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7825799066411300999
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,9 +5475,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6349876442338945408}
   - component: {fileID: 796426800363797330}
-  m_Layer: 0
+  - component: {fileID: 5619589164066482390}
+  m_Layer: 7
   m_Name: B15
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3013,7 +5496,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &796426800363797330
 MonoBehaviour:
@@ -3027,10 +5510,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &5619589164066482390
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7825799066411300999}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7837392337496347045
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,7 +5555,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2294261803471358863}
   - component: {fileID: 2681583541864104124}
-  m_Layer: 0
+  - component: {fileID: 6413230269849946705}
+  m_Layer: 8
   m_Name: T7
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -3061,7 +5576,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 5250366412004428507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2681583541864104124
 MonoBehaviour:
@@ -3075,10 +5590,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &6413230269849946705
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7837392337496347045}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7991723768991439204
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,9 +5635,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3342509052965727391}
   - component: {fileID: 1457783940336116191}
-  m_Layer: 0
+  - component: {fileID: 9052257620496451151}
+  m_Layer: 8
   m_Name: R1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3109,7 +5656,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6788996233103947187}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1457783940336116191
 MonoBehaviour:
@@ -3123,10 +5670,157 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &9052257620496451151
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7991723768991439204}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!1 &8055314935182154703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5250366412004428507}
+  - component: {fileID: 1097106064918851451}
+  - component: {fileID: 6205529261442980522}
+  m_Layer: 8
+  m_Name: TopWall (Left)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5250366412004428507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055314935182154703}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8472958732759630002}
+  - {fileID: 7678213957329152426}
+  - {fileID: 3317396352834707595}
+  - {fileID: 5230807701060572418}
+  - {fileID: 8911331783740316863}
+  - {fileID: 1287617864341236972}
+  - {fileID: 8228448379394584978}
+  - {fileID: 2294261803471358863}
+  - {fileID: 16724870292751989}
+  - {fileID: 8950001376660572230}
+  - {fileID: 2592397147169496612}
+  m_Father: {fileID: 1243005444396581578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1097106064918851451
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055314935182154703}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &6205529261442980522
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055314935182154703}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 7009f7bd1d39ea54689c65578779e982, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -9.5, y: 9.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 11, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &8074537082659443072
 GameObject:
   m_ObjectHideFlags: 0
@@ -3137,9 +5831,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5005959420451432703}
   - component: {fileID: 8982438636238387421}
-  m_Layer: 0
+  - component: {fileID: 7340082170345170929}
+  - component: {fileID: 6560883977595818583}
+  m_Layer: 7
   m_Name: R5
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3171,10 +5867,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &7340082170345170929
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074537082659443072}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &6560883977595818583
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074537082659443072}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 7009f7bd1d39ea54689c65578779e982, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &8124136409950195731
 GameObject:
   m_ObjectHideFlags: 0
@@ -3185,7 +5957,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2855051043757117382}
   - component: {fileID: 3108538762645226615}
-  m_Layer: 0
+  - component: {fileID: 170525459445857543}
+  m_Layer: 8
   m_Name: T24
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -3205,7 +5978,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 4191389856287700795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3108538762645226615
 MonoBehaviour:
@@ -3219,10 +5992,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &170525459445857543
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8124136409950195731}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &8240106179879807928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3233,7 +6037,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7243986378562467422}
   - component: {fileID: 315739316377006435}
-  m_Layer: 0
+  - component: {fileID: 3026836709707497265}
+  m_Layer: 8
   m_Name: T19
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -3253,7 +6058,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 4191389856287700795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &315739316377006435
 MonoBehaviour:
@@ -3267,10 +6072,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &3026836709707497265
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8240106179879807928}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &8336319467361996432
 GameObject:
   m_ObjectHideFlags: 0
@@ -3281,9 +6117,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8663417653618573664}
   - component: {fileID: 9186434549264116093}
-  m_Layer: 0
+  - component: {fileID: 7310540076152199510}
+  m_Layer: 7
   m_Name: B8
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3301,7 +6138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9186434549264116093
 MonoBehaviour:
@@ -3315,10 +6152,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &7310540076152199510
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336319467361996432}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &8564680405188710400
 GameObject:
   m_ObjectHideFlags: 0
@@ -3329,7 +6197,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8307460792687280945}
   - component: {fileID: 6175578246603804820}
-  m_Layer: 0
+  - component: {fileID: 5905541700951489503}
+  m_Layer: 8
   m_Name: T26
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
@@ -3349,7 +6218,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 4191389856287700795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6175578246603804820
 MonoBehaviour:
@@ -3363,10 +6232,151 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &5905541700951489503
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564680405188710400}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!1 &8586685535923666938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2502490797766227933}
+  - component: {fileID: 1211078898774277805}
+  - component: {fileID: 6123371392713388484}
+  m_Layer: 8
+  m_Name: RightWall (Top)
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2502490797766227933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586685535923666938}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4393459110760782298}
+  - {fileID: 5750164033527435684}
+  - {fileID: 5752982260521889482}
+  - {fileID: 3949064632811043657}
+  - {fileID: 7855572958107964204}
+  m_Father: {fileID: 1243005444396581578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1211078898774277805
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586685535923666938}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &6123371392713388484
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586685535923666938}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 14.5, y: 7}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6}
+  m_EdgeRadius: 0
 --- !u!1 &8659684708206973853
 GameObject:
   m_ObjectHideFlags: 0
@@ -3377,9 +6387,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8316206772244989371}
   - component: {fileID: 1830979526070372710}
-  m_Layer: 0
+  - component: {fileID: 6151549014614446424}
+  m_Layer: 7
   m_Name: B4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3397,7 +6408,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1830979526070372710
 MonoBehaviour:
@@ -3411,10 +6422,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &6151549014614446424
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8659684708206973853}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &8743286246849601182
 GameObject:
   m_ObjectHideFlags: 0
@@ -3425,9 +6467,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7220841581975786512}
   - component: {fileID: 842572189436290743}
-  m_Layer: 0
+  - component: {fileID: 3802528939123131264}
+  m_Layer: 7
   m_Name: B3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3445,7 +6488,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6820417042495444848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &842572189436290743
 MonoBehaviour:
@@ -3459,10 +6502,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &3802528939123131264
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8743286246849601182}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &8821520270638930478
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,9 +6547,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5896476258800820742}
   - component: {fileID: 4072362622591257390}
-  m_Layer: 0
+  - component: {fileID: 4033681917748947012}
+  m_Layer: 8
   m_Name: R0
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3493,7 +6568,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 6788996233103947187}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4072362622591257390
 MonoBehaviour:
@@ -3507,10 +6582,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &4033681917748947012
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8821520270638930478}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &9158769425386483655
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,9 +6627,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8275742013800234944}
   - component: {fileID: 7278383190269769986}
-  m_Layer: 0
+  - component: {fileID: 7674848241435676316}
+  m_Layer: 8
   m_Name: L0
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3541,7 +6648,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1243005444396581578}
+  m_Father: {fileID: 2037009386582944093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7278383190269769986
 MonoBehaviour:
@@ -3555,7 +6662,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
+  caveTiles:
   - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
   - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
   - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
+  skyTiles:
+  - {fileID: 7822764437298700816, guid: 82d658b09f2c01145a3bd4cd3d94eb0a, type: 3}
+--- !u!50 &7674848241435676316
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158769425386483655}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7

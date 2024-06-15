@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelGeneration_2030 : MonoBehaviour
 {
@@ -371,6 +372,8 @@ public class LevelGeneration_2030 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+     //   Debug.Log(SceneManager.GetActiveScene().name);
+
         // Fill borders
         int[] open = { Random.Range(0, 4), Random.Range(0, 4), Random.Range(0, 4) };
         fill_all_rows(open);

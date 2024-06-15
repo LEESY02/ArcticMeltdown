@@ -10,12 +10,12 @@ public class SpawnHeart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int rand = Random.Range(0, 2);
+        int rand = Random.Range(0, 3);
         if (rand == 0)
         {
             // Debug.Log("inside");
             int h_or_c = Random.Range(0, 2);
-            if (h_or_c == 0)
+            if (h_or_c == 0 || h_or_c == 1)
             {
                 Instantiate(Heart, transform.position, Quaternion.identity);
             } else
