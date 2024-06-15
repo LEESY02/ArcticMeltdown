@@ -53,7 +53,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62695369c6d71744a80525802db8f302, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -73,7 +73,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 495569253897870618}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 08e35693a84d71943bfb0c10527f82d3, type: 2}
+  m_Material: {fileID: 6200000, guid: c7308635d54dfc547956dc9aba517f7a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -150,13 +150,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1221449611692166837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &1463199393147057812
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,13 +202,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1463199393147057812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &1829943576875512642
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,13 +254,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1829943576875512642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &2055591676619691954
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,13 +306,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2055591676619691954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &2248146738745393278
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +370,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62695369c6d71744a80525802db8f302, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -374,7 +390,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2248146738745393278}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 08e35693a84d71943bfb0c10527f82d3, type: 2}
+  m_Material: {fileID: 6200000, guid: c7308635d54dfc547956dc9aba517f7a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -451,13 +467,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2458779979921518476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &2637258313174443482
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,13 +519,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2637258313174443482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &3035517009710670983
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +581,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62695369c6d71744a80525802db8f302, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -577,7 +601,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3035517009710670983}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 08e35693a84d71943bfb0c10527f82d3, type: 2}
+  m_Material: {fileID: 6200000, guid: c7308635d54dfc547956dc9aba517f7a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -664,7 +688,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62695369c6d71744a80525802db8f302, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -684,7 +708,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3132417708678566906}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 08e35693a84d71943bfb0c10527f82d3, type: 2}
+  m_Material: {fileID: 6200000, guid: c7308635d54dfc547956dc9aba517f7a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -761,13 +785,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3262547620322687415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &3405964830778717825
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +847,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62695369c6d71744a80525802db8f302, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -839,7 +867,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3405964830778717825}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 08e35693a84d71943bfb0c10527f82d3, type: 2}
+  m_Material: {fileID: 6200000, guid: c7308635d54dfc547956dc9aba517f7a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -916,13 +944,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3574672701367848490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &3781614963595146368
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,13 +996,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3781614963595146368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &3825428325211040640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,7 +1058,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62695369c6d71744a80525802db8f302, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1042,7 +1078,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3825428325211040640}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 08e35693a84d71943bfb0c10527f82d3, type: 2}
+  m_Material: {fileID: 6200000, guid: c7308635d54dfc547956dc9aba517f7a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1119,13 +1155,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3912719424058111189}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &3944654891999743344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,13 +1207,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3944654891999743344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &4220812137311382192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,13 +1259,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4220812137311382192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &4259113289021611143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,7 +1363,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62695369c6d71744a80525802db8f302, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1335,7 +1383,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 4501912049118993667}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 08e35693a84d71943bfb0c10527f82d3, type: 2}
+  m_Material: {fileID: 6200000, guid: c7308635d54dfc547956dc9aba517f7a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1422,7 +1470,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62695369c6d71744a80525802db8f302, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1442,7 +1490,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 5006677794083074001}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 08e35693a84d71943bfb0c10527f82d3, type: 2}
+  m_Material: {fileID: 6200000, guid: c7308635d54dfc547956dc9aba517f7a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1519,13 +1567,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5681686405612406812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &5842748305076360151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,13 +1619,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5842748305076360151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &5882602783629348983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,13 +1671,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5882602783629348983}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &5899258546855574601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,7 +1735,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62695369c6d71744a80525802db8f302, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1695,7 +1755,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 5899258546855574601}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 08e35693a84d71943bfb0c10527f82d3, type: 2}
+  m_Material: {fileID: 6200000, guid: c7308635d54dfc547956dc9aba517f7a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1772,13 +1832,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6103208896412567058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &6250399153815310163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,13 +1918,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6347695513624041208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &6489728990004766203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,7 +1980,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62695369c6d71744a80525802db8f302, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1932,7 +2000,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 6489728990004766203}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 08e35693a84d71943bfb0c10527f82d3, type: 2}
+  m_Material: {fileID: 6200000, guid: c7308635d54dfc547956dc9aba517f7a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2009,13 +2077,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6698570628785214969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &6712442479022605360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,7 +2139,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62695369c6d71744a80525802db8f302, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2087,7 +2159,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 6712442479022605360}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 08e35693a84d71943bfb0c10527f82d3, type: 2}
+  m_Material: {fileID: 6200000, guid: c7308635d54dfc547956dc9aba517f7a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2164,13 +2236,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6888085782290736038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &7411930442678563008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2212,13 +2288,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7411930442678563008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &7523543545077773328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,13 +2340,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7523543545077773328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &7658027200092160340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,13 +2392,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7658027200092160340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &7739863177127104705
 GameObject:
   m_ObjectHideFlags: 0
@@ -2356,13 +2444,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7739863177127104705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &7907028486077284756
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,13 +2496,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7907028486077284756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &8341825626136418364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,13 +2548,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8341825626136418364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &8495859553832802260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,13 +2600,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8495859553832802260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &8638009328610882769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,13 +2652,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8638009328610882769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1 &8998961342105582922
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,13 +2704,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8998961342105582922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12923813885ee734280e395e5cd7d21b, type: 3}
+  m_Script: {fileID: 11500000, guid: 319f3ead91ed4ce4b9cfdfac7316c49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 9159115999964211888, guid: a8d68ece957ad8545aee652a12dc8711, type: 3}
-  - {fileID: 4018436940673671538, guid: 1680df657dae22e4a8d1728ca9884f19, type: 3}
-  - {fileID: 582509844235365564, guid: 31903d49dffedb24c86e0cd40933d50a, type: 3}
+  caveTiles:
+  - {fileID: 9159115999964211888, guid: 776f02b919aae3e4a83acc3ac275c7ae, type: 3}
+  - {fileID: 4018436940673671538, guid: 2fa1268fd0309254eb752a3f3e2b66ad, type: 3}
+  - {fileID: 582509844235365564, guid: 611cedfdeca99e34d8c7d2239ded24e5, type: 3}
+  groundTiles:
+  - {fileID: 8019820684340642613, guid: 894a3cc8ac68c504c97dc48317bd37ba, type: 3}
+  snowTiles:
+  - {fileID: 8768175560433297809, guid: ccee46acf0c631a4695dafa6ebf224a5, type: 3}
 --- !u!1001 &3894352670950013989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2613,11 +2725,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 918305566115631116, guid: 3728ae014be39d546b86d422aaed57d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.2
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 918305566115631116, guid: 3728ae014be39d546b86d422aaed57d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.75
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4244389249967642532, guid: 3728ae014be39d546b86d422aaed57d3, type: 3}
       propertyPath: m_Name
@@ -2625,7 +2737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056995540136674940, guid: 3728ae014be39d546b86d422aaed57d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.37
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8508756023978509371, guid: 3728ae014be39d546b86d422aaed57d3, type: 3}
       propertyPath: m_LocalPosition.x

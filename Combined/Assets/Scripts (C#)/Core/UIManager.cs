@@ -14,12 +14,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pauseScreen;
 
     private Tracker tracker;
+    private GameObject backgroudImage;
 
     private void Awake() 
     {
         gameOverScreen.SetActive(false); //deactivate the gameOverScreen maually
         pauseScreen.SetActive(false); //deactivate the pauseScreen maually
         tracker = FindObjectOfType<Tracker>();
+        if (GameObject.FindGameObjectWithTag("Image") != null)
+        {
+            backgroudImage = GameObject.FindGameObjectWithTag("Image");
+            backgroudImage.SetActive(true);
+        }
     }
 
     private void Update()
@@ -57,6 +63,7 @@ public class UIManager : MonoBehaviour
         {
             tracker.mostRecentHealth = tracker.playerStartingHealth;
             tracker.coinCount = 0;
+            backgroudImage.SetActive(false);
             SceneManager.LoadScene(2); // load level 1
         }
         else
