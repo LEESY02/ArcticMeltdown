@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private float attackCooldown;
+    public float attackCooldown; // Edited by SY
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject[] snowballs;
 

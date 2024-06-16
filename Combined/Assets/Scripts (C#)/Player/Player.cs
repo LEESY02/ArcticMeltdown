@@ -8,9 +8,9 @@ public class Player : MonoBehaviour
 {
     [SerializeField] Health health;
     [Header("Movement")]
-    [SerializeField] private float speed;
+    public float speed; // Edited by SY
     [SerializeField] private float speedBoost;
-    [SerializeField] private float jumpForce;
+    public float jumpForce; // Edited by SY
     [SerializeField] private float slideSpeed;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private float coyoteCounter;
 
     [Header("Multiple Jumps")]
-    [SerializeField] private int extraJumps;
+    public int extraJumps; // Edited by SY
     private int jumpCounter;
 
     [Header("Wall Jumping")]

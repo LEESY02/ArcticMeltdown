@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Snowball : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    public float speed; // Edited by SY
     [SerializeField] private GameObject snowballEffect;
     private bool hit;
     private float direction;
