@@ -17,19 +17,31 @@ public class FlyingEnemy : MeleeEnemy
     private float distance;
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
+    private CameraController cam;
+    private GameObject[] rooms;
+    private Transform currentRoom;
 
     // Awake is called when the script instance is being loaded
     protected override void Awake()
     {
         base.Awake(); // Call MeleeEnemy Awake method
-        Debug.Log("Awake called");
+        cam = FindObjectOfType<CameraController>();
+        rooms = cam.rooms;
+
+        for (int i = 0; i < rooms.Length; i++)
+        {
+            if ((transform.position.x < rooms[i].transform.position.x + 15 && transform.position.x > rooms[i].transform.position.x - 15)
+             && (transform.position.y < rooms[i].transform.position.y + 10 && transform.position.y > rooms[i].transform.position.y - 10))
+            {
+                currentRoom = rooms[i].transform;
+            }
+        }
         InitializeComponents();
     }
 
     // OnEnable is called when the object becomes enabled and active
     private void OnEnable()
     {
-        Debug.Log("OnEnable called");
         ResetState();
     }
 
@@ -83,11 +95,11 @@ public class FlyingEnemy : MeleeEnemy
         if (player == null)
             return;
 
-        if (chase && animator.GetBool("Moving") && player.GetComponent<Health>().currentHealth > 0)
+        if (chase && animator.GetBool("Moving") && player.GetComponent<Health>().currentHealth > 0 && PlayerInSameRoom())
         {
             Chase(); // chase player
         }
-        else if ((!chase && animator.GetBool("Moving")) || player.GetComponent<Health>().currentHealth < 1)
+        else if ((!chase && animator.GetBool("Moving")) || player.GetComponent<Health>().currentHealth < 1 || !PlayerInSameRoom())
         {
             ReturnToStartPoint(); // go to starting position
             FaceTarget(startingPosition);
@@ -145,5 +157,12 @@ public class FlyingEnemy : MeleeEnemy
     private bool IsDead()
     {
         return gameObject.GetComponent<Health>().currentHealth < 1;
+    }
+
+    private bool PlayerInSameRoom()
+    {
+        Transform playerPos = player.transform;
+        return (playerPos.position.x < currentRoom.position.x + 15 && playerPos.position.x > currentRoom.position.x - 15)
+             && (playerPos.position.y < currentRoom.position.y + 10 && playerPos.position.y > currentRoom.position.y - 10);
     }
 }

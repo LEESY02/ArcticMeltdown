@@ -2,18 +2,22 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public float attackCooldown; // Edited by SY
+    private float attackCooldown; // Edited by SY
     [SerializeField] private Transform firePoint;
-    [SerializeField] private GameObject[] snowballs;
+    public GameObject[] snowballs;
 
     [Header ("Audio")]
     [SerializeField] private AudioClip attackSound;
     [SerializeField] private float attackVolume;
+    private Tracker tracker;
     private Animator anim;
     private Player playerMovement;
     private float cooldownTimer = Mathf.Infinity;
 
-    private void Awake() {
+    private void Awake()
+    {
+        tracker = FindFirstObjectByType<Tracker>();
+        attackCooldown = tracker.attackCooldown;
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<Player>();
     }
@@ -41,5 +45,10 @@ public class PlayerAttack : MonoBehaviour
             }
         }
         return 0;
-    }    
+    }
+
+    public void RefreshAttackCooldown()
+    {
+        this.attackCooldown = tracker.attackCooldown;
+    }
 }

@@ -1,24 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http.Headers;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Snowball : MonoBehaviour
 {
-    public float speed; // Edited by SY
     [SerializeField] private GameObject snowballEffect;
     private bool hit;
     private float direction;
     private float lifetime;
+    private Tracker tracker;
+    private float speed; // Edited by SY
 
     private CircleCollider2D circleCollider;
     private Animator anim;
 
     private void Awake() {
+        tracker = FindFirstObjectByType<Tracker>();
         anim = GetComponent<Animator>();
         circleCollider = GetComponent<CircleCollider2D>();
+        speed = tracker.snowballSpeed;
+    }
+
+    private void OnEnable()
+    {
+        Debug.Log(speed);
     }
 
     private void Update() {
@@ -60,4 +63,11 @@ public class Snowball : MonoBehaviour
     private void Deactivate() {
         gameObject.SetActive(false);
     }
+
+    public void RefreshSnowballSpeed()
+    {
+        this.speed = tracker.snowballSpeed;
+    }
+
+    
 }

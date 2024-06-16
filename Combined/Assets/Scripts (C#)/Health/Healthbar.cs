@@ -15,6 +15,7 @@ public class Healthbar : MonoBehaviour
     }
 
     private void Update() {
+        totalHealthbar.fillAmount = FindObjectOfType<Tracker>().playerStartingHealth / 10;
         currentHealthBar.fillAmount = playerHealth.currentHealth / 10;
     }
 

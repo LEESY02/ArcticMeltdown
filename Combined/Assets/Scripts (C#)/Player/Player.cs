@@ -8,9 +8,9 @@ public class Player : MonoBehaviour
 {
     [SerializeField] Health health;
     [Header("Movement")]
-    public float speed; // Edited by SY
+    private float speed; // Edited by SY
     [SerializeField] private float speedBoost;
-    public float jumpForce; // Edited by SY
+    private float jumpForce; // Edited by SY
     [SerializeField] private float slideSpeed;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
@@ -26,8 +26,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float coyoteTime;
     private float coyoteCounter;
 
-    [Header("Multiple Jumps")]
-    public int extraJumps; // Edited by SY
+    // multiple jumps
+    private int extraJumps; // Edited by SY
     private int jumpCounter;
 
     [Header("Wall Jumping")]
@@ -80,11 +80,13 @@ public class Player : MonoBehaviour
         boxColliderOffsetY = boxCollider.offset.y; // Store the original y offset
         circleColliderRadius = circleCollider.radius; // Store the original radius
         coinCount = tracker.coinCount;
+        extraJumps = tracker.extraJumps;
+        jumpForce = tracker.jumpForce;
+        speed = tracker.speed;
     }
 
     private void Update()
-    {
-        
+    {        
         if (!canMoveHorizontally && ((canMoveRight && Input.GetAxis("Horizontal") < 0) || (!canMoveRight && Input.GetAxis("Horizontal") > 0)))
         {
             horizontalInput = 0;
@@ -154,8 +156,6 @@ public class Player : MonoBehaviour
         {
             body.velocity = Vector2.down * slamDownForce;
         }
-
-        // Debug.Log("Grounded: " + isGrounded() + "\nWalled: " + OnWall());
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             Jump();
@@ -326,5 +326,20 @@ public class Player : MonoBehaviour
         boxCollider.size = new Vector2(boxColliderWidth, boxColliderHeight); // Restore original Y size
         boxCollider.offset = new Vector2(boxCollider.offset.x, boxColliderOffsetY); // Restore original offset
         circleCollider.radius = circleColliderRadius; // Restore original radius
+    }
+
+    public void RefreshExtraJumps()
+    {
+        this.extraJumps = tracker.extraJumps;
+    }
+
+    public void RefreshJumpForce()
+    {
+        this.jumpForce = tracker.jumpForce;
+    }
+
+    public void RefreshPlayerSpeed()
+    {
+        this.speed = tracker.speed;
     }
 }

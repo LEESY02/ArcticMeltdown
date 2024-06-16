@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class SpawnShopItems : MonoBehaviour
 {
-    Player player;
-    PlayerAttack playerAttack;
-//    Tracker tracker;
-//    Snowball snowball;
-
-    private void Awake()
-    {
-        player = GameObject.Find("Player").GetComponent<Player>();
-        playerAttack = GameObject.Find("Player").GetComponent<PlayerAttack>();
- //       tracker = GameObject.Find("SetTracker").GetComponent<Tracker>();
- //       snowball = GameObject.Find("Snowball").GetComponent<Snowball>();
-    }
-
+    private Player player;
+    private PlayerAttack playerAttack;
+    private Tracker tracker;
+    private GameObject[] snowballs;
+ 
     private int rand;
     private GameObject powerUp;
     private bool receivedPowerUp = false;
@@ -31,35 +23,56 @@ public class SpawnShopItems : MonoBehaviour
     // Gameobject to tell players they do not have enough coins
     public GameObject notEnoughCoins;
 
+    private void Awake()
+    {
+        player = GameObject.Find("Player").GetComponent<Player>();
+        playerAttack = player.GetComponent<PlayerAttack>();
+        tracker = FindFirstObjectByType<Tracker>().GetComponent<Tracker>();
+        snowballs = playerAttack.snowballs;
+    }
+
+    private void Update()
+    {
+        // Debug.Log(snowballs[0] == null);
+    }
+
     void increaseJumpNo_0 ()
     {
         Debug.Log("inside 0");
-        player.extraJumps += 1;
+        tracker.extraJumps += 1;
+        player.RefreshExtraJumps();
     }
     void increaseJumpForce_1 ()
     {
         Debug.Log("inside 1");
-        player.jumpForce += 4;
+        tracker.jumpForce += 4;
+        player.RefreshJumpForce();
     }
-/*    void increaseProjectileSpeed_2 ()
+    void increaseProjectileSpeed_2 ()
     {
         Debug.Log("inside 2");
-        snowball.speed *= 2;
-    }*/
+        tracker.snowballSpeed += 2;
+        for(int i = 0; i < snowballs.Length; i++)
+        {
+            snowballs[i].GetComponent<Snowball>().RefreshSnowballSpeed();
+        }
+    }
     void increaseMoveSpeed_3 ()
     {
         Debug.Log("inside 3");
-        player.speed *= 2;
+        tracker.speed *= 2;
+        player.RefreshPlayerSpeed();
     }
-/*    void increaseMaxHealth_4 ()
+    void increaseMaxHealth_4 ()
     {
         Debug.Log("inside 4");
         tracker.playerStartingHealth += 1;
-    } */
+    } 
     void reduceAtkInterval_5 ()
     {
         Debug.Log("inside 5");
-        playerAttack.attackCooldown /= 2;
+        tracker.attackCooldown /= 2;
+        playerAttack.RefreshAttackCooldown();
     }
 
     /* Not used at the moment
@@ -84,17 +97,17 @@ public class SpawnShopItems : MonoBehaviour
             case 1:
                 increaseJumpForce_1();
                 break;
-/*            case 2:
-                increaseProjectileSpeed_2();
-                break; */
             case 2:
                 increaseMoveSpeed_3();
                 break;
-/*            case 4:
-                increaseMaxHealth_4();
-                break; */
             case 3:
                 reduceAtkInterval_5();
+                break;
+            case 4:
+                increaseMaxHealth_4();
+                break; 
+            case 5:
+                increaseProjectileSpeed_2();
                 break;
         }
     }
