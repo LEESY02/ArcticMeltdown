@@ -4,11 +4,12 @@ using UnityEngine.UI;
 
 public class CoinCounter : MonoBehaviour
 {
-    [SerializeField] private Player player;
+    private Player player;
     private Text counter;
 
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         counter = GetComponent<Text>();
     }
 

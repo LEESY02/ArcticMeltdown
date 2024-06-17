@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !gameOverScreen.activeSelf)
         {
             //if pause screen is already active unpause and viceversa
             if (pauseScreen.activeInHierarchy)
@@ -76,6 +76,7 @@ public class UIManager : MonoBehaviour
     public void MainMenu()
     {
         // SceneManager.UnloadSceneAsync(1);
+        tracker.loadCount++;
         SceneManager.LoadScene(0);
     }
 

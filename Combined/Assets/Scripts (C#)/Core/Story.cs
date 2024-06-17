@@ -5,6 +5,7 @@ public class Story : MonoBehaviour
 {
     [SerializeField] private GameObject[] pages;
     private int pageCount;
+    private Tracker tracker;
 
     // Start is called before the first frame update
     void Start()
@@ -15,10 +16,12 @@ public class Story : MonoBehaviour
             pages[i].SetActive(false);
         }
         pages[pageCount].SetActive(true); // activate the first page
+        tracker = FindFirstObjectByType<Tracker>();
     }
 
     public void MainMenu()
     {
+        tracker.loadCount++;
         SceneManager.LoadScene(0);
     }
 
