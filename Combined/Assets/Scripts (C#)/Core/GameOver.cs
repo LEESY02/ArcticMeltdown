@@ -1,39 +1,41 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
-    [SerializeField] private GameObject imageToDecend;
-    [SerializeField] private float decendDistance;
-    [SerializeField] private float decendSpeed;
+    [SerializeField] private GameObject imageToDescend;
+    [SerializeField] private float descendDuration; // Duration to reach the target position
     [SerializeField] private Transform originalPosition;
+    [SerializeField] private Transform targetPosition;
 
     private void OnDisable()
     {
-        imageToDecend.transform.position = originalPosition.position;
+        imageToDescend.transform.position = originalPosition.position;
     }
 
     private void OnEnable()
     {
         // Reset image position in case it was disabled elsewhere
-        imageToDecend.transform.position = originalPosition.position;
+        imageToDescend.transform.position = originalPosition.position;
 
         // Start the descent coroutine
         StartCoroutine(DescendImage());
     }
 
-    private IEnumerator DescendImage() 
+    private IEnumerator DescendImage()
     {
-        // Calculate the final position based on descent distance
-        Vector3 targetPosition = originalPosition.position + Vector3.down * decendDistance;
+        Vector3 startPosition = originalPosition.position;
+        Vector3 endPosition = targetPosition.position;
+        float elapsedTime = 0;
 
-        // Move the image towards the target position over time
-        while (imageToDecend.transform.position != targetPosition)
+        while (elapsedTime < descendDuration)
         {
-            imageToDecend.transform.position = Vector3.MoveTowards(imageToDecend.transform.position, targetPosition, decendSpeed * Time.deltaTime);
+            imageToDescend.transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / descendDuration);
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
-    }
 
+        // Ensure the image is exactly at the target position at the end
+        imageToDescend.transform.position = endPosition;
+    }
 }
