@@ -18,6 +18,7 @@ public class MenuCamera : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1;
         timer = 0;
         tracker = FindObjectOfType<Tracker>();
         DeactivateButtons();
