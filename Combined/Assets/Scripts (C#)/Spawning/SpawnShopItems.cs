@@ -7,8 +7,8 @@ public class SpawnShopItems : MonoBehaviour
     private Player player;
     private PlayerAttack playerAttack;
     private Tracker tracker;
-    private GameObject[] snowballs;
- 
+    private Snowball[] snowballs;
+
     private int rand;
     private GameObject powerUp;
     private bool receivedPowerUp = false;
@@ -28,65 +28,55 @@ public class SpawnShopItems : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         playerAttack = player.GetComponent<PlayerAttack>();
         tracker = FindFirstObjectByType<Tracker>().GetComponent<Tracker>();
-        snowballs = playerAttack.snowballs;
+/*        snowballs = new Snowball[playerAttack.snowballs.Length];
+        for (int i = 0; i < 10; i ++)
+        {
+            snowballs[i] = playerAttack.snowballs[i].GetComponent<Snowball>();
+        } */
     }
 
-    private void Update()
-    {
-        // Debug.Log(snowballs[0] == null);
-    }
-
-    void increaseJumpNo_0 ()
+    void increaseJumpNo_0()
     {
         Debug.Log("inside 0");
         tracker.extraJumps += 1;
         player.RefreshExtraJumps();
     }
-    void increaseJumpForce_1 ()
+    void increaseJumpForce_1()
     {
         Debug.Log("inside 1");
         tracker.jumpForce += 4;
         player.RefreshJumpForce();
     }
-    void increaseProjectileSpeed_2 ()
+/*    void increaseProjectileSpeed_2()
     {
         Debug.Log("inside 2");
         tracker.snowballSpeed += 2;
-        for(int i = 0; i < snowballs.Length; i++)
+        for (int i = 0; i < snowballs.Length; i++)
         {
-            snowballs[i].GetComponent<Snowball>().RefreshSnowballSpeed();
+            Debug.Log(i);
+            snowballs[i].RefreshSnowballSpeed();
         }
-    }
-    void increaseMoveSpeed_3 ()
+    }*/
+
+    void increaseMoveSpeed_3()
     {
         Debug.Log("inside 3");
         tracker.speed *= 2;
         player.RefreshPlayerSpeed();
     }
-    void increaseMaxHealth_4 ()
+    void increaseMaxHealth_4()
     {
         Debug.Log("inside 4");
         tracker.playerStartingHealth += 1;
-    } 
-    void reduceAtkInterval_5 ()
+    }
+    void reduceAtkInterval_5()
     {
         Debug.Log("inside 5");
         tracker.attackCooldown /= 2;
         playerAttack.RefreshAttackCooldown();
     }
 
-    /* Not used at the moment
-    void increaseMeleeDmg_3 ()
-    {
-
-    }
-    void increaseRangeDmg_4 ()
-    {
-
-    }
-    */
-
-    void applyPowerUp ()
+    void applyPowerUp()
     {
         Debug.Log("inside applyPowerUp");
         switch (rand)
@@ -97,17 +87,17 @@ public class SpawnShopItems : MonoBehaviour
             case 1:
                 increaseJumpForce_1();
                 break;
+/*            case 2:
+                increaseProjectileSpeed_2();
+                break; */
             case 2:
                 increaseMoveSpeed_3();
                 break;
             case 3:
-                reduceAtkInterval_5();
+                increaseMaxHealth_4();
                 break;
             case 4:
-                increaseMaxHealth_4();
-                break; 
-            case 5:
-                increaseProjectileSpeed_2();
+                reduceAtkInterval_5();
                 break;
         }
     }
@@ -130,7 +120,8 @@ public class SpawnShopItems : MonoBehaviour
             // Remove sprite
             Destroy(powerUp); //???? idk
             Destroy(this.gameObject);
-        } else if (!receivedPowerUp)
+        }
+        else if (!receivedPowerUp)
         {
             Debug.Log("Compare Fail");
             // Not enough coins
@@ -145,16 +136,5 @@ public class SpawnShopItems : MonoBehaviour
     {
         rand = Random.Range(0, powerUpSprites.Length);
         powerUp = Instantiate(powerUpSprites[rand], transform.position, Quaternion.identity);
-/*
-        string[] powerUpNames = 
-        {
-            "Increased Jump Count!",
-            "Increased Jump Force!",
-            "Increased Projectile Speed!",
-            "Increased Movement Speed!",
-            "Increased Max Health!",
-            "Reduced Attack Interval!"
-        };
-*/
     }
 }
