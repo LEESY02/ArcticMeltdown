@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
     private void Start() {
         tracker = FindObjectOfType<Tracker>();
         startingHealth = gameObject.CompareTag("Player") ? tracker.playerStartingHealth : tracker.enemyStartingHealth;
-        currentHealth = tracker.mostRecentHealth;
+        currentHealth = gameObject.CompareTag("Player") ? tracker.mostRecentHealth : tracker.enemyStartingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
     }
