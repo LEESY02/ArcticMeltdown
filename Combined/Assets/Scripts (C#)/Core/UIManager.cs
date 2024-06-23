@@ -64,7 +64,7 @@ public class UIManager : MonoBehaviour
             tracker.mostRecentHealth = tracker.playerStartingHealth;
             tracker.coinCount = 0;
             backgroudImage.SetActive(false);
-            SceneManager.LoadScene(2); // load level 1
+            SceneManager.LoadScene(3); // load level 1
         }
         else
         {
@@ -72,14 +72,18 @@ public class UIManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+    #endregion
 
+    #region  Main Menu
     public void MainMenu()
     {
         // SceneManager.UnloadSceneAsync(1);
         tracker.loadCount++;
         SceneManager.LoadScene(0);
     }
+    #endregion
 
+    #region Quit
     public void Quit()
     {
         Application.Quit(); //Quits the game (only works on build)
@@ -124,5 +128,12 @@ public class UIManager : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
+    #endregion
+
+    #region Instructions
+    public void Instructions()
+    {
+        SceneManager.LoadScene(2);
+    }
     #endregion
 }

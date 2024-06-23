@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuSelection : MonoBehaviour
 {
@@ -29,8 +30,10 @@ public class MenuSelection : MonoBehaviour
             ChangePosition(1); //move pointer down
 
         //interact with the options
-        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return)) {
-            Interact();
+        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return)) 
+        {
+            // Interact();
+            options[currentPosition].gameObject.GetComponent<Button>().onClick.Invoke();
         }
     }
 
@@ -53,19 +56,19 @@ public class MenuSelection : MonoBehaviour
             0);
     }
 
-    private void Interact()
-    {
-        if (currentPosition == 0)
-        {
-            ui.Restart();
-        }
-        else if (currentPosition == 1)
-        {
-            ui.Story();
-        }
-        else if (currentPosition == 2)
-        {
-            ui.Quit();
-        }
-    }
+    // private void Interact()
+    // {
+    //     if (currentPosition == 0)
+    //     {
+    //         ui.Restart();
+    //     }
+    //     else if (currentPosition == 1)
+    //     {
+    //         ui.Story();
+    //     }
+    //     else if (currentPosition == 3)
+    //     {
+    //         ui.Quit();
+    //     }
+    // }
 }
