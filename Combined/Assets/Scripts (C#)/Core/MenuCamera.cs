@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,9 +10,23 @@ public class MenuCamera : MonoBehaviour
     [SerializeField] private float panningSpeed;
     [SerializeField] private GameObject[] buttonsAndPointer;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip startSound;
+    [SerializeField] private float startSoundVolume;
+    [SerializeField] private AudioClip movingUpSound;
+    [SerializeField] private float movingUpVolume;
+    [SerializeField] private AudioClip menuMusic;
+    [SerializeField] private float menuMusicVolume;
+
     private float timer;
     private Vector3 velocity = Vector3.zero;
     private Tracker tracker;
+
+    private AudioSource startSoundSource;
+    private AudioSource movingUpSoundSource;
+    private AudioSource menuMusicSource;
+
+    private bool menuMusicPlaying = false;
 
     private void Awake()
     {
@@ -22,6 +34,35 @@ public class MenuCamera : MonoBehaviour
         timer = 0;
         tracker = FindObjectOfType<Tracker>();
         DeactivateButtons();
+        InitializeAudioSources();
+        StartCoroutine(PlayStartAndMovingUpSounds());
+    }
+
+    private void InitializeAudioSources()
+    {
+        startSoundSource = gameObject.AddComponent<AudioSource>();
+        startSoundSource.clip = startSound;
+        startSoundSource.volume = startSoundVolume;
+
+        movingUpSoundSource = gameObject.AddComponent<AudioSource>();
+        movingUpSoundSource.clip = movingUpSound;
+        movingUpSoundSource.volume = movingUpVolume;
+        movingUpSoundSource.loop = true;
+
+        menuMusicSource = gameObject.AddComponent<AudioSource>();
+        menuMusicSource.clip = menuMusic;
+        menuMusicSource.volume = menuMusicVolume;
+        menuMusicSource.loop = true;
+    }
+
+    private IEnumerator PlayStartAndMovingUpSounds()
+    {
+        if (!LoadedBefore())
+        {
+            startSoundSource.Play();
+            yield return new WaitForSeconds(startSound.length);
+            movingUpSoundSource.Play();
+        }
     }
 
     private void Update()
@@ -32,16 +73,31 @@ public class MenuCamera : MonoBehaviour
         {
             transform.position = new Vector3(menuPosition.position.x, menuPosition.position.y, transform.position.z);
             ActivateButtons();
-        } 
+            PlayMenuMusic();
+        }
         else if (timer > durationBeforePanningUpwards)
         {
             transform.position = Vector3.SmoothDamp(
-                transform.position, 
-                new Vector3(menuPosition.position.x, menuPosition.transform.position.y, transform.position.z), 
-                ref velocity, 
+                transform.position,
+                new Vector3(menuPosition.position.x, menuPosition.transform.position.y, transform.position.z),
+                ref velocity,
                 panningSpeed);
 
-            if (timer > durationBeforePanningUpwards + 3) ActivateButtons();
+            if (timer > durationBeforePanningUpwards + 3)
+            {
+                ActivateButtons();
+                PlayMenuMusic();
+                movingUpSoundSource.Stop();
+            }
+        }
+    }
+
+    private void PlayMenuMusic()
+    {
+        if (!menuMusicPlaying)
+        {
+            menuMusicSource.Play();
+            menuMusicPlaying = true;
         }
     }
 

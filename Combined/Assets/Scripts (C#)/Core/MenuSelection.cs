@@ -33,6 +33,7 @@ public class MenuSelection : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return)) 
         {
             // Interact();
+            SoundManager.instance.PlaySound(interactSound, interactSoundVolume);
             options[currentPosition].gameObject.GetComponent<Button>().onClick.Invoke();
         }
     }
