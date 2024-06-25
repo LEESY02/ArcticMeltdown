@@ -13,17 +13,18 @@ public class MenuCamera : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioClip startSound;
     [SerializeField] private float startSoundVolume;
-    [SerializeField] private AudioClip movingUpSound;
-    [SerializeField] private float movingUpVolume;
     [SerializeField] private AudioClip menuMusic;
     [SerializeField] private float menuMusicVolume;
+
+    [Header("Camera Shake")]
+    [SerializeField] private float shakeDuration;
+    [SerializeField] private float shakeMagnitude;
 
     private float timer;
     private Vector3 velocity = Vector3.zero;
     private Tracker tracker;
 
     private AudioSource startSoundSource;
-    private AudioSource movingUpSoundSource;
     private AudioSource menuMusicSource;
 
     private bool menuMusicPlaying = false;
@@ -44,11 +45,6 @@ public class MenuCamera : MonoBehaviour
         startSoundSource.clip = startSound;
         startSoundSource.volume = startSoundVolume;
 
-        movingUpSoundSource = gameObject.AddComponent<AudioSource>();
-        movingUpSoundSource.clip = movingUpSound;
-        movingUpSoundSource.volume = movingUpVolume;
-        movingUpSoundSource.loop = true;
-
         menuMusicSource = gameObject.AddComponent<AudioSource>();
         menuMusicSource.clip = menuMusic;
         menuMusicSource.volume = menuMusicVolume;
@@ -60,8 +56,8 @@ public class MenuCamera : MonoBehaviour
         if (!LoadedBefore())
         {
             startSoundSource.Play();
+            StartCoroutine(ShakeCamera(shakeDuration, shakeMagnitude));
             yield return new WaitForSeconds(startSound.length);
-            movingUpSoundSource.Play();
         }
     }
 
@@ -87,7 +83,6 @@ public class MenuCamera : MonoBehaviour
             {
                 ActivateButtons();
                 PlayMenuMusic();
-                movingUpSoundSource.Stop();
             }
         }
     }
@@ -175,5 +170,26 @@ public class MenuCamera : MonoBehaviour
         }
 
         image.color = targetColor; // Ensure the image color is fully opaque at the end
+    }
+
+    private IEnumerator ShakeCamera(float duration, float magnitude)
+    {
+        Vector3 originalPosition = transform.localPosition;
+
+        float elapsed = 0.0f;
+
+        while (elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+
+            transform.localPosition = new Vector3(originalPosition.x + x, originalPosition.y + y, originalPosition.z);
+
+            elapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        transform.localPosition = originalPosition;
     }
 }
