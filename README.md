@@ -50,6 +50,7 @@ Are you ready to step into the ice and relive the past? Guide Pippin through his
 <img width="846" alt="image" src="https://github.com/LEESY02/ArcticMeltdown/assets/141756475/6d677acf-0ecf-4d1d-9aa0-808cb7670b03">
 Development was tracked using git, on github desktop. Above is an example of how our group used branching during Milestone 2.
 
+
 **Features**
 
 1. Story: <br>
