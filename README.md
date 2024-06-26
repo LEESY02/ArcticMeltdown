@@ -46,6 +46,7 @@ Are you ready to step into the ice and relive the past? Guide Pippin through his
 "Arctic Meltdown" is a 2D platformer game that follows the journey of Pippin, a prehistoric penguin, as he navigates through an ever-changing and melting Arctic environment. Players will guide Pippin from the depths of the Earth’s core, overcoming various obstacles and uncovering the mysteries of his ancient world. It promises an engaging and visually captivating journey that blends adventure and platforming elements. By guiding Pippin through his icy adventure, players will experience a rich storyline and challenging gameplay, making "Arctic Meltdown" a memorable addition to the 2D platformer genre.
 
 **Development**
+
 <img width="846" alt="image" src="https://github.com/LEESY02/ArcticMeltdown/assets/141756475/6d677acf-0ecf-4d1d-9aa0-808cb7670b03">
 Development was tracked using git, on github desktop. Above is an example of how our group used branching during Milestone 2.
 
