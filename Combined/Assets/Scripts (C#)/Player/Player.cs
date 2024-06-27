@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
     private float horizontalInput;
     private bool isFalling;
     private bool isSlamming;
-    private UIManager uiManager;
+    // private UIManager uiManager;
     private float boxColliderHeight; // original height
     private float boxColliderWidth; // original width
     private float boxColliderOffsetY; // original y offset
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         circleCollider = GetComponent<CircleCollider2D>();
-        uiManager = FindFirstObjectByType<UIManager>(); // Resources.FindObjectsOfTypeAll<UIManager>()[0];
+        // uiManager = FindFirstObjectByType<UIManager>(); 
         boxColliderHeight = boxCollider.size.y; // Store the original height
         boxColliderWidth = boxCollider.size.x; // Store the original width
         boxColliderOffsetY = boxCollider.offset.y; // Store the original y offset
@@ -314,10 +314,10 @@ public class Player : MonoBehaviour
         return !OnWall();
     }
 
-    public void GameOver()
-    {
-        uiManager.GameOver();
-    }
+    // public void GameOver()
+    // {
+    //     uiManager.GameOver();
+    // }
 
     private void StandUp()
     {

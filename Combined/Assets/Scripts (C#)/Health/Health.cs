@@ -24,6 +24,7 @@ public class Health : MonoBehaviour
     private Tracker tracker;
     public float currentHealth {get; private set;} //all scripts can access the value, but ONLY this scrpt can set the value
     private Animator anim;
+    private UIManager uiManager;
 
     private void Start() {
         tracker = FindObjectOfType<Tracker>();
@@ -31,6 +32,7 @@ public class Health : MonoBehaviour
         currentHealth = gameObject.CompareTag("Player") ? tracker.mostRecentHealth : tracker.enemyStartingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
+        uiManager = FindFirstObjectByType<UIManager>(); 
     }
 
     public void TakeDamage(float damage) {
@@ -60,6 +62,7 @@ public class Health : MonoBehaviour
                 GetComponent<Rigidbody2D>().gravityScale = 0.2f; //player floats down
                 GetComponent<CircleCollider2D>().enabled = false;
                 GetComponent<BoxCollider2D>().enabled = false;
+                uiManager.GameOver(); 
             }
 
             //enemy
