@@ -13,6 +13,8 @@ Seung-Yoon (A0271949M)
 **Arctic Meltdown**
 
 
+# Contents Page
+
 
 [Project Information	3](#projectinformation3)
 [Project Scope:	4](#projectscope4)
@@ -129,13 +131,13 @@ Are you ready to step into the ice and relive the past? Guide Pippin through his
 
 # Class Hierarchy 
 
-![Enter image alt description](Images/N2y_Image_2.png)
+![Enter image alt description](Images/swb_Image_2.png)
 
 # Randomised Map Concept
 
-![Enter image alt description](Images/2PM_Image_3.png)
+![Enter image alt description](Images/nOK_Image_3.png)
 
-![Enter image alt description](Images/kk4_Image_4.jpeg)
+![Enter image alt description](Images/o1G_Image_4.jpeg)
 
 
 # User Stories
@@ -156,7 +158,7 @@ Are you ready to step into the ice and relive the past? Guide Pippin through his
 
 ## Development
 
-![Enter image alt description](Images/tk2_Image_5.png)
+![Enter image alt description](Images/hhA_Image_5.png)
 
 The above is an example of how we tracked the development using git on Github, through basic branching and merging.
 
@@ -200,11 +202,11 @@ The above is an example of how we tracked the development using git on Github, t
 
 2. Extract the contents of the zip file to your preferred destination.
 
-![Enter image alt description](Images/r4W_Image_6.png)
+![Enter image alt description](Images/0DN_Image_6.png)
 
 4. Once the game file runs, the game will begin. Control Player movements with
 
-![Enter image alt description](Images/7dD_Image_7.png)
+![Enter image alt description](Images/o5d_Image_7.png)
 
 1. “W” or “Space” key to jump.
 
@@ -221,11 +223,11 @@ The above is an example of how we tracked the development using git on Github, t
 
 # Technical Proof
 
-![Enter image alt description](Images/QAv_Image_8.png)
+![Enter image alt description](Images/jvV_Image_8.png)
 
-![Enter image alt description](Images/HCh_Image_9.png)
+![Enter image alt description](Images/OXA_Image_9.png)
 
-![Enter image alt description](Images/blj_Image_10.png)
+![Enter image alt description](Images/nx2_Image_10.png)
 
 # Features
 
@@ -272,7 +274,7 @@ The above is an example of how we tracked the development using git on Github, t
 
 ## Main Menu
 
-![Enter image alt description](Images/qPX_Image_11.png)
+![Enter image alt description](Images/0QO_Image_11.png)
 Upon Entering the game, the user will be brought to the main menu screen where he will be given the option to read the jump right into the game, read the story of Pippin, see the instructions on the controls of the game, and to exit the game.
 
 The STORY button will bring the user to a scene with multiple pages. The user can use the “PREVIOUS” and “NEXT” buttons at the bottom of the screen to navigate between the pages and read up on the story of Pippin.
@@ -454,7 +456,7 @@ We conducted a series of tests to ensure that the following features function as
 
 We have integrated Unity's automated testing unit into our development process to enhance our testing procedures. We've incorporated various test cases within our Test script and utilised the Test Runner to execute them, ensuring the reliability and functionality of our game features.
 
-![Enter image alt description](Images/1HQ_Image_12.png)
+![Enter image alt description](Images/snb_Image_12.png)
 
 This approach streamlines our testing efforts significantly. Instead of manually testing the game after every code update or component addition, we rely on automated tests to verify both existing and newly implemented features, ensuring seamless integration and maintaining overall product quality.
 
@@ -496,7 +498,7 @@ This approach streamlines our testing efforts significantly. Instead of manually
 
 # 
 
-# Credits:
+# Credits
 
 Sound Effects:
 
