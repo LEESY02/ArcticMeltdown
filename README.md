@@ -291,6 +291,7 @@ Upon pressing the *escape key* while the game is active, time within the game wi
 When the player’s health falls below 1, the player will die and a loud bell will ring. This will activate the Death Menu. From here, the player will be able to decide whether to return to the main menu, restart the level, or exit the game. Restarting the level will restart the game from the latest level reached by the player, with full health, and the player’s original coin count.
 
 # Camera Effects
+![Pixel Perfect Camera](https://github.com/LEESY02/ArcticMeltdown/assets/107560823/31505d4e-bc34-41ea-b867-41e3e06d1617)
 
 On top of the respective camera scripts written for the various camera effects such as camera shaking, or following the Player from room to room, we have added a “Pixel Perfect Camera” component to all our camera game objects to change the look of our non pixelated sprites into a pixel art, enhancing our choice of a pixel art design for our game.
 
