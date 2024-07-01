@@ -13,6 +13,10 @@ public class UIManager : MonoBehaviour
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
 
+    [Header("Main Menu Pages")]
+    [SerializeField] private GameObject MainPage;
+    [SerializeField] private GameObject ControlsPage;
+
     private Tracker tracker;
     private GameObject backgroudImage;
 
@@ -64,7 +68,7 @@ public class UIManager : MonoBehaviour
             tracker.mostRecentHealth = tracker.playerStartingHealth;
             tracker.coinCount = 0;
             backgroudImage.SetActive(false);
-            SceneManager.LoadScene(3); // load level 1
+            SceneManager.LoadScene(2); // load level 1
         }
         else
         {
@@ -77,9 +81,15 @@ public class UIManager : MonoBehaviour
     #region  Main Menu
     public void MainMenu()
     {
-        // SceneManager.UnloadSceneAsync(1);
         tracker.loadCount++;
-        SceneManager.LoadScene(0);
+        int index = SceneManager.GetActiveScene().buildIndex;
+        if (index == 0) // if still on the main menu scene
+        {
+            ControlsPage.SetActive(false);
+            MainPage.SetActive(true);
+        } else { // if not on the main menu scene
+            SceneManager.LoadScene(0);
+        }
     }
     #endregion
 
@@ -124,16 +134,18 @@ public class UIManager : MonoBehaviour
     #endregion
 
     #region Story
-        public void Story()
-        {
-            SceneManager.LoadScene(1);
-        }
+    public void Story()
+    {
+        SceneManager.LoadScene(1);
+    }   
     #endregion
 
     #region Instructions
     public void Instructions()
     {
-        SceneManager.LoadScene(2);
+        // SceneManager.LoadScene(2);
+        ControlsPage.SetActive(true);
+        MainPage.SetActive(false);
     }
     #endregion
 }
