@@ -1,9 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
@@ -15,6 +12,7 @@ public class ShopUI : MonoBehaviour
     [Header("Visual Effects")]
     [SerializeField] private float scaleMagnitude;
     [SerializeField] private float fadeDuration;
+    [SerializeField] private GameObject playerStats;
 
     private Player player;
     private PlayerAttack playerAttack;
@@ -23,6 +21,21 @@ public class ShopUI : MonoBehaviour
     private Vector3 originalScale;
     private Vector3 selectedScale;
     private Text purchaseTextComponent;
+    private Text playerStatsText;
+
+    // Player Stats
+    private float currMaxHealth;
+    private float currSpeed;
+    private int currJumpCount;
+    private float currJumpForce;
+    private float currAttackCooldown;
+
+    // Power Up Descriptions
+    private string healthDescription = "Increases Player's health by 1.\n\n";
+    private string movementSpeedDescription = "Doubles Player's movement speed.\n\n";
+    private string jumpCountDescription = "Increases Player's maximum number of jumps by 1.\n\n";
+    private string jumpForceDescription = "Increases Player's jump force by 2 units.\n\n";
+    private string attackCooldownDescription = "Interval between consecutive attacks from the player is halved.\n\n";
 
     // Power Ups
     private const int HEALTH = 0;
@@ -42,10 +55,19 @@ public class ShopUI : MonoBehaviour
         originalScale = powerUps[0].GetComponent<RectTransform>().localScale;
         selectedScale = new Vector3(originalScale.x * scaleMagnitude, originalScale.y * scaleMagnitude, originalScale.z);
         purchaseTextComponent = purchaseText.GetComponent<Text>();
+        playerStatsText = playerStats.GetComponent<Text>();
     }
 
     private void Update()
     {
+        currMaxHealth = tracker.playerStartingHealth;
+        currSpeed = tracker.speed;
+        currJumpCount = tracker.extraJumps + 1;
+        currJumpForce = tracker.jumpForce;
+        currAttackCooldown = tracker.attackCooldown;
+
+        StatsUpdate();
+        DescriptionUpdate();
         ScaleChanger();
 
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) //move pointer right
@@ -94,9 +116,21 @@ public class ShopUI : MonoBehaviour
         for(int i = 0; i < powerUps.Length; i++)
         {
             if (i == currentPos)
+            {
                 powerUps[i].GetComponent<RectTransform>().localScale = selectedScale;
+                // enable shadow effect
+                powerUps[i].GetComponent<Shadow>().enabled = true;
+                powerUps[i].transform.GetChild(0).gameObject.GetComponent<Shadow>().enabled = true;
+                powerUps[i].transform.GetChild(1).gameObject.GetComponent<Shadow>().enabled = true;
+            }   
             else
+            {
                 powerUps[i].GetComponent<RectTransform>().localScale = originalScale;
+                // disable shadown effect
+                powerUps[i].GetComponent<Shadow>().enabled = false;
+                powerUps[i].transform.GetChild(0).gameObject.GetComponent<Shadow>().enabled = false;
+                powerUps[i].transform.GetChild(1).gameObject.GetComponent<Shadow>().enabled = false;
+            }
         }
     }
 
@@ -178,5 +212,34 @@ public class ShopUI : MonoBehaviour
         }
         
         purchaseTextComponent.color = new Color(purchaseTextComponent.color.r, purchaseTextComponent.color.g, purchaseTextComponent.color.b, 0);
+    }
+
+    private void StatsUpdate()
+    {
+        String stats = "Health: " + currMaxHealth.ToString()
+                        + "\nSpeed: " + currSpeed.ToString()
+                        + "\nJump Count: " + currJumpCount.ToString()
+                        + "\nJump Force: " + currJumpForce.ToString()
+                        + "\nAttack Cooldown: " + currAttackCooldown.ToString();
+        playerStatsText.text = stats;
+    }
+
+    private void DescriptionUpdate()
+    {
+        // health
+        powerUps[0].transform.GetChild(1).gameObject.GetComponent<Text>().text 
+            = healthDescription + "Hearts increase from " + currMaxHealth.ToString() + " >> " + (currMaxHealth + 1).ToString();
+        // movement speed
+        powerUps[1].transform.GetChild(1).gameObject.GetComponent<Text>().text 
+            = healthDescription + "Speed increases from " + currSpeed.ToString() + " >> " + (currSpeed * 2).ToString();
+        // jump count
+        powerUps[2].transform.GetChild(1).gameObject.GetComponent<Text>().text 
+            = healthDescription + "Jumps increase from " + currJumpCount.ToString() + " >> " + (currJumpCount + 1).ToString();
+        // jump force
+        powerUps[3].transform.GetChild(1).gameObject.GetComponent<Text>().text 
+            = healthDescription + "Jump Force\n increases from\n" + currJumpForce.ToString() + " >> " + (currJumpForce + 2).ToString();
+        // attack cooldown
+        powerUps[4].transform.GetChild(1).gameObject.GetComponent<Text>().text 
+            = healthDescription + "Attack Cooldown drops from\n" + currAttackCooldown.ToString() + " >> " + (currAttackCooldown / 2).ToString();
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2029371523505529128}
   - component: {fileID: 2817942205557542937}
   - component: {fileID: 7742939589823686763}
+  - component: {fileID: 6071584925934375643}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -81,6 +82,21 @@ MonoBehaviour:
   m_Text: 'Reduce Attack Cooldown
 
 '
+--- !u!114 &6071584925934375643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30000711587396448}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &237020998802507850
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +108,7 @@ GameObject:
   - component: {fileID: 3573363286780223324}
   - component: {fileID: 4820668664569862226}
   - component: {fileID: 793594695261723624}
+  - component: {fileID: 6572257113157757076}
   m_Layer: 5
   m_Name: MovementSpeed
   m_TagString: Untagged
@@ -158,6 +175,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6572257113157757076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237020998802507850}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &649334778104915701
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +201,7 @@ GameObject:
   - component: {fileID: 3811347955070174210}
   - component: {fileID: 2304639565724169763}
   - component: {fileID: 5685804164899701437}
+  - component: {fileID: 1621862964234046295}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -236,7 +269,22 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Maximum number of hearts the Player can possess will be increased by one.
+  m_Text: 
+--- !u!114 &1621862964234046295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649334778104915701}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &682756375541225920
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +337,7 @@ GameObject:
   - component: {fileID: 7575201329927984536}
   - component: {fileID: 8250432842878104276}
   - component: {fileID: 2744159419653216078}
+  - component: {fileID: 6218381089593878853}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -355,6 +404,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6218381089593878853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937156103693889646}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1195802193915210343
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +430,7 @@ GameObject:
   - component: {fileID: 4887295159419450808}
   - component: {fileID: 7159247899573992918}
   - component: {fileID: 6039457633337285135}
+  - component: {fileID: 720221391675128753}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -433,8 +498,22 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The duration of the interval between consecutive attacks from the player
-    is reduced.
+  m_Text: 
+--- !u!114 &720221391675128753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195802193915210343}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1319266927753968301
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -327, y: 184.49997}
+  m_AnchoredPosition: {x: -292.8, y: 184.49997}
   m_SizeDelta: {x: 150, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6985943636893837144
@@ -538,6 +617,7 @@ GameObject:
   - component: {fileID: 886626428590642731}
   - component: {fileID: 8918540542307743482}
   - component: {fileID: 608733804275931136}
+  - component: {fileID: 1428151876758203317}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -605,10 +685,22 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Maximum number of consecutive jumps before landing on the ground or wall
-    is increased by one.
-
-'
+  m_Text: 
+--- !u!114 &1428151876758203317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611231042110332169}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2024135276802944101
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -252.20003, y: 223}
+  m_AnchoredPosition: {x: -218, y: 223}
   m_SizeDelta: {x: 1225, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3387637184794600128
@@ -1247,6 +1339,7 @@ GameObject:
   - component: {fileID: 2438388425957484390}
   - component: {fileID: 9199972101794008850}
   - component: {fileID: 7227972577671195444}
+  - component: {fileID: 4665996200284869330}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -1315,6 +1408,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Increased Jump Count
+--- !u!114 &4665996200284869330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000350937246753676}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3029171209159691492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,7 +1609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 0, y: -40}
+  m_EffectDistance: {x: 0, y: -30}
   m_UseGraphicAlpha: 1
 --- !u!114 &4256612585950643241
 MonoBehaviour:
@@ -1564,6 +1672,7 @@ GameObject:
   - component: {fileID: 6623384909627387289}
   - component: {fileID: 4075907506988688904}
   - component: {fileID: 6910078991815597947}
+  - component: {fileID: 394738052665122766}
   m_Layer: 5
   m_Name: AttackCooldown
   m_TagString: Untagged
@@ -1630,6 +1739,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &394738052665122766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622293237210868344}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3708416965828639533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,6 +1948,7 @@ GameObject:
   - component: {fileID: 7254705497022644208}
   - component: {fileID: 829145362674761261}
   - component: {fileID: 7669589690196320194}
+  - component: {fileID: 8425048987308121831}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -1892,6 +2017,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Increased Jump Force
+--- !u!114 &8425048987308121831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4702654926800045101}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4710394963850099522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,7 +2090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16470589, g: 0.28604576, b: 0.32941177, a: 0.5058824}
+  m_Color: {r: 0.16470589, g: 0.28604576, b: 0.32941177, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1978,6 +2118,7 @@ GameObject:
   - component: {fileID: 6432071766666838236}
   - component: {fileID: 8532988973544119563}
   - component: {fileID: 4834017099911393710}
+  - component: {fileID: 6336130719089653572}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -2046,6 +2187,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Increased Maximum Health
+--- !u!114 &6336130719089653572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4771623167410323107}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4950591982219058605
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,7 +2408,6 @@ RectTransform:
   - {fileID: 7410662029105800969}
   - {fileID: 7138770442176987607}
   - {fileID: 5552156013528867322}
-  - {fileID: 6189978384548256755}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2680,6 +2835,85 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &5568258165134216164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2445450147276182563}
+  - component: {fileID: 3314912558960193575}
+  - component: {fileID: 2027741329254438805}
+  m_Layer: 5
+  m_Name: PlayerStats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2445450147276182563
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5568258165134216164}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5552156013528867322}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 173, y: -85}
+  m_SizeDelta: {x: 260, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3314912558960193575
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5568258165134216164}
+  m_CullTransparentMesh: 1
+--- !u!114 &2027741329254438805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5568258165134216164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9056604, g: 0.84871507, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: dba2713a5eb25ee45946d0d53c5b9bba, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 0.7
+  m_Text: 
 --- !u!1 &5568684053957302978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2691,6 +2925,7 @@ GameObject:
   - component: {fileID: 8333815248380381162}
   - component: {fileID: 3261272916197496528}
   - component: {fileID: 8908711158721174544}
+  - component: {fileID: 1912846629661621368}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -2758,9 +2993,22 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Height of  jumps are increased by 2 units.
-
-'
+  m_Text: 
+--- !u!114 &1912846629661621368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5568684053957302978}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &5573490389709055214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3422,6 +3670,7 @@ GameObject:
   - component: {fileID: 6665371001877610960}
   - component: {fileID: 8378672317352803838}
   - component: {fileID: 4672226243626293384}
+  - component: {fileID: 6751780270517164880}
   m_Layer: 5
   m_Name: JumpCount
   m_TagString: Untagged
@@ -3488,6 +3737,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6751780270517164880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6765752817500329359}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7063048831132246131
 GameObject:
   m_ObjectHideFlags: 0
@@ -3499,6 +3763,7 @@ GameObject:
   - component: {fileID: 7934852984518943315}
   - component: {fileID: 7645368195426655061}
   - component: {fileID: 8497790566635512363}
+  - component: {fileID: 5001509941433322612}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -3569,6 +3834,21 @@ MonoBehaviour:
   m_Text: 'Increased Movement Speed
 
 '
+--- !u!114 &5001509941433322612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7063048831132246131}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7077333211016580904
 GameObject:
   m_ObjectHideFlags: 0
@@ -4179,6 +4459,7 @@ GameObject:
   - component: {fileID: 1922663509086739891}
   - component: {fileID: 4382035489572020373}
   - component: {fileID: 7114317335996099853}
+  - component: {fileID: 4658429630367058009}
   m_Layer: 5
   m_Name: JumpForce
   m_TagString: Untagged
@@ -4245,6 +4526,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4658429630367058009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7935753274798182544}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7950263635349211032
 GameObject:
   m_ObjectHideFlags: 0
@@ -4498,6 +4794,7 @@ GameObject:
   - component: {fileID: 8930259919679720694}
   - component: {fileID: 275915063460548359}
   - component: {fileID: 5431968442827193919}
+  - component: {fileID: 7038395509473299197}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -4565,7 +4862,22 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Player\u2019s horizontal movement speed is doubled."
+  m_Text: 
+--- !u!114 &7038395509473299197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8919534490559016406}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -10.63, y: -9}
+  m_UseGraphicAlpha: 1
 --- !u!1 &9003150881281527961
 GameObject:
   m_ObjectHideFlags: 0
@@ -4600,7 +4912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -390.5, y: 184}
+  m_AnchoredPosition: {x: -356.3, y: 184}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1089500083356513519
@@ -4671,7 +4983,7 @@ RectTransform:
   m_LocalScale: {x: 0.70000005, y: 0.70000005, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5938203493497834294}
+  m_Father: {fileID: 5552156013528867322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4754,7 +5066,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -252.20003, y: 222.99997}
+  m_AnchoredPosition: {x: -218, y: 222.99997}
   m_SizeDelta: {x: 1225, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9096554492322802696
@@ -4811,7 +5123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5552156013528867322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4828,6 +5140,8 @@ RectTransform:
   - {fileID: 2522381795521553202}
   - {fileID: 7290200080394556441}
   - {fileID: 3735599042686539751}
+  - {fileID: 2445450147276182563}
+  - {fileID: 6189978384548256755}
   m_Father: {fileID: 5938203493497834294}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4856,3 +5170,4 @@ MonoBehaviour:
   purchaseText: {fileID: 9150248394437498944}
   scaleMagnitude: 1.1
   fadeDuration: 1
+  playerStats: {fileID: 5568258165134216164}
