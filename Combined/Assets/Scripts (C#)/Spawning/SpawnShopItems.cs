@@ -7,8 +7,6 @@ public class SpawnShopItems : MonoBehaviour
     private Player player;
     private PlayerAttack playerAttack;
     private Tracker tracker;
-    private Snowball[] snowballs;
-
     private int rand;
     private GameObject powerUp;
     private bool receivedPowerUp = false;
@@ -28,11 +26,6 @@ public class SpawnShopItems : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Player>();
         playerAttack = player.GetComponent<PlayerAttack>();
         tracker = FindFirstObjectByType<Tracker>().GetComponent<Tracker>();
-/*        snowballs = new Snowball[playerAttack.snowballs.Length];
-        for (int i = 0; i < 10; i ++)
-        {
-            snowballs[i] = playerAttack.snowballs[i].GetComponent<Snowball>();
-        } */
     }
 
     void increaseJumpNo_0()
@@ -47,16 +40,6 @@ public class SpawnShopItems : MonoBehaviour
         tracker.jumpForce += 4;
         player.RefreshJumpForce();
     }
-/*    void increaseProjectileSpeed_2()
-    {
-        Debug.Log("inside 2");
-        tracker.snowballSpeed += 2;
-        for (int i = 0; i < snowballs.Length; i++)
-        {
-            Debug.Log(i);
-            snowballs[i].RefreshSnowballSpeed();
-        }
-    }*/
 
     void increaseMoveSpeed_3()
     {
@@ -78,7 +61,7 @@ public class SpawnShopItems : MonoBehaviour
 
     void applyPowerUp()
     {
-        Debug.Log("inside applyPowerUp");
+        // Debug.Log("inside applyPowerUp");
         switch (rand)
         {
             case 0:
@@ -87,9 +70,6 @@ public class SpawnShopItems : MonoBehaviour
             case 1:
                 increaseJumpForce_1();
                 break;
-/*            case 2:
-                increaseProjectileSpeed_2();
-                break; */
             case 2:
                 increaseMoveSpeed_3();
                 break;
@@ -104,10 +84,10 @@ public class SpawnShopItems : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("inside Collider");
+        // Debug.Log("inside Collider");
         if (collision.CompareTag("Player") && player.coinCount >= price)
         {
-            Debug.Log("Compare Match");
+            // Debug.Log("Compare Match");
             // Give powerup
             applyPowerUp();
             receivedPowerUp = true;
@@ -123,7 +103,7 @@ public class SpawnShopItems : MonoBehaviour
         }
         else if (!receivedPowerUp)
         {
-            Debug.Log("Compare Fail");
+            // Debug.Log("Compare Fail");
             // Not enough coins
             GameObject copy2 = Instantiate(notEnoughCoins, transform.position, Quaternion.identity);
             Destroy(copy2, 3f);

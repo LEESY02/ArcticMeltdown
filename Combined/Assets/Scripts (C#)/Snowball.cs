@@ -19,10 +19,10 @@ public class Snowball : MonoBehaviour
         speed = tracker.snowballSpeed;
     }
 
-    private void OnEnable()
-    {
-        Debug.Log(speed);
-    }
+    // private void OnEnable()
+    // {
+    //     Debug.Log(speed);
+    // }
 
     private void Update() {
         if (hit) return;

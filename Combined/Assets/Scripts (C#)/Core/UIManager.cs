@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private AudioClip gameOverSound;
     [SerializeField] private float volume;
 
+    [Header("Shopping")]
+    [SerializeField] private GameObject shoppingScreen;
+
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
 
@@ -24,6 +27,7 @@ public class UIManager : MonoBehaviour
     {
         gameOverScreen.SetActive(false); //deactivate the gameOverScreen maually
         pauseScreen.SetActive(false); //deactivate the pauseScreen maually
+        shoppingScreen.SetActive(false); //deactivate the shopScreen maually
         tracker = FindObjectOfType<Tracker>();
         if (GameObject.FindGameObjectWithTag("Image") != null)
         {
@@ -34,13 +38,19 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !gameOverScreen.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && !gameOverScreen.activeSelf && !shoppingScreen.activeSelf)
         {
             //if pause screen is already active unpause and viceversa
             if (pauseScreen.activeInHierarchy)
                 PauseGame(false);
             else
                 PauseGame(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && shoppingScreen.activeSelf)
+        {
+            Time.timeScale = 1;         
+            shoppingScreen.SetActive(false);
         }
     }
 
