@@ -17,6 +17,12 @@ public class LevelGeneration_2030 : MonoBehaviour
     public GameObject[] top_layout;
     public GameObject[] bot_layout;
 
+    // Saferoom
+    public GameObject saferoom;
+
+    // Background
+    public GameObject background;
+
     // Exit
     public GameObject exit_layout;
 
@@ -285,12 +291,16 @@ public class LevelGeneration_2030 : MonoBehaviour
     }
     void fill_interior_once(int row, int col, int exit)
     {
-        // Exit room?
-        if (col == exit + 1 && row == 1)
+        if (col == exit + 1 && row == 1) // Exit room?
         {           
             transform.position = row1[col - 1].transform.position;
             Instantiate(exit_layout, transform.position, Quaternion.identity);
         }
+        else if (row == 4 && col == 1) // Safe room?
+        {
+            transform.position = row4[0].transform.position;
+            Instantiate(saferoom, transform.position, Quaternion.identity);
+        } 
         else
         {
             // Get random layout
@@ -321,6 +331,7 @@ public class LevelGeneration_2030 : MonoBehaviour
             Instantiate(top_layout[top], transform.position, Quaternion.identity);
             Instantiate(bot_layout[bot], transform.position, Quaternion.identity);
         }
+        Instantiate(background, transform.position, Quaternion.identity);
     }
 
     // Fill in the traps
@@ -384,7 +395,7 @@ public class LevelGeneration_2030 : MonoBehaviour
     void Start()
     {
         // Fill borders
-        int[] open = { Random.Range(0, 4), Random.Range(0, 4), Random.Range(0, 4) };
+        int[] open = { Random.Range(0, 4), Random.Range(0, 4), Random.Range(1, 4) };
         fill_all_rows(open);
 
         // Fill interior
