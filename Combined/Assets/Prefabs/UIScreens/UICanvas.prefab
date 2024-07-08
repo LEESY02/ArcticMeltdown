@@ -4987,7 +4987,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 372, y: 127.3}
+  m_AnchoredPosition: {x: 403, y: 116}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7316191714179193456
@@ -5123,7 +5123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5552156013528867322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5171,3 +5171,9 @@ MonoBehaviour:
   scaleMagnitude: 1.1
   fadeDuration: 1
   playerStats: {fileID: 5568258165134216164}
+  changeSound: {fileID: 8300000, guid: e108bdda24c85254da1e9c0c25ddc871, type: 3}
+  changeSoundVolume: 1.5
+  purchaseSound: {fileID: 8300000, guid: 1363790fe5f473e4594785a6899425bf, type: 3}
+  purchaseSoundVolume: 1
+  rejectedSound: {fileID: 8300000, guid: 0b0d5a3c628909845939ae5cbfe0c6e5, type: 3}
+  rejectedSoundVolume: 1

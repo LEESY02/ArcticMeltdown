@@ -14,6 +14,14 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private float fadeDuration;
     [SerializeField] private GameObject playerStats;
 
+    [Header("Audio Effects")]
+    [SerializeField] private AudioClip changeSound;
+    [SerializeField] private float changeSoundVolume;
+    [SerializeField] private AudioClip purchaseSound;
+    [SerializeField] private float purchaseSoundVolume;
+    [SerializeField] private AudioClip rejectedSound;
+    [SerializeField] private float rejectedSoundVolume;
+
     private Player player;
     private PlayerAttack playerAttack;
     private Tracker tracker;
@@ -109,6 +117,7 @@ public class ShopUI : MonoBehaviour
         {
             currentPos += pos;
         }
+        SoundManager.instance.PlaySound(changeSound, changeSoundVolume);
     }
 
     private void ScaleChanger()
@@ -154,6 +163,7 @@ public class ShopUI : MonoBehaviour
                 ReduceAtkInterval();
                 break;
         }
+        SoundManager.instance.PlaySound(purchaseSound, purchaseSoundVolume);
         purchaseTextComponent.color = Color.green;
         purchaseTextComponent.text = "-3";
         StartCoroutine(FadeOutText());
@@ -194,6 +204,7 @@ public class ShopUI : MonoBehaviour
     {
         purchaseTextComponent.color = Color.red;
         purchaseTextComponent.text = "Not Enough Coins!";
+        SoundManager.instance.PlaySound(rejectedSound, rejectedSoundVolume);
         StartCoroutine(FadeOutText());
     }
 
@@ -231,15 +242,15 @@ public class ShopUI : MonoBehaviour
             = healthDescription + "Hearts increase from " + currMaxHealth.ToString() + " >> " + (currMaxHealth + 1).ToString();
         // movement speed
         powerUps[1].transform.GetChild(1).gameObject.GetComponent<Text>().text 
-            = healthDescription + "Speed increases from " + currSpeed.ToString() + " >> " + (currSpeed * 2).ToString();
+            = movementSpeedDescription + "Speed increases from " + currSpeed.ToString() + " >> " + (currSpeed * 2).ToString();
         // jump count
         powerUps[2].transform.GetChild(1).gameObject.GetComponent<Text>().text 
-            = healthDescription + "Jumps increase from " + currJumpCount.ToString() + " >> " + (currJumpCount + 1).ToString();
+            = jumpCountDescription + "Jumps increase from " + currJumpCount.ToString() + " >> " + (currJumpCount + 1).ToString();
         // jump force
         powerUps[3].transform.GetChild(1).gameObject.GetComponent<Text>().text 
-            = healthDescription + "Jump Force\n increases from\n" + currJumpForce.ToString() + " >> " + (currJumpForce + 2).ToString();
+            = jumpForceDescription + "Jump Force\n increases from\n" + currJumpForce.ToString() + " >> " + (currJumpForce + 2).ToString();
         // attack cooldown
         powerUps[4].transform.GetChild(1).gameObject.GetComponent<Text>().text 
-            = healthDescription + "Attack Cooldown drops from\n" + currAttackCooldown.ToString() + " >> " + (currAttackCooldown / 2).ToString();
+            = attackCooldownDescription + "Attack Cooldown drops from\n" + currAttackCooldown.ToString() + " >> " + (currAttackCooldown / 2).ToString();
     }
 }
