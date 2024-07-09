@@ -40,10 +40,10 @@ public class ShopUI : MonoBehaviour
 
     // Power Up Descriptions
     private string healthDescription = "Increases Player's health by 1.\n\n";
-    private string movementSpeedDescription = "Doubles Player's movement speed.\n\n";
+    private string movementSpeedDescription = "Increases Player's movement speed by 2 units.\n\n";
     private string jumpCountDescription = "Increases Player's maximum number of jumps by 1.\n\n";
     private string jumpForceDescription = "Increases Player's jump force by 2 units.\n\n";
-    private string attackCooldownDescription = "Interval between consecutive attacks from the player is halved.\n\n";
+    private string attackCooldownDescription = "Interval of consecutive attacks is halved.\n\n";
 
     // Power Ups
     private const int HEALTH = 0;
@@ -184,7 +184,7 @@ public class ShopUI : MonoBehaviour
 
     private void IncreaseMoveSpeed()
     {
-        tracker.speed *= 2;
+        tracker.speed += 2;
         player.RefreshPlayerSpeed();
     }
 
