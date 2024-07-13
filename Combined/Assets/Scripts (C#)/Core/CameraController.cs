@@ -3,13 +3,21 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     // Room camera
-    [SerializeField] private float speed;
+    [SerializeField] private float startingSpeed;
+    [SerializeField] private float followingSpeed;
+    [SerializeField] private float durationOfStart;
     public GameObject[] rooms;
     [SerializeField] private Player player;
     private GameObject currentRoom;
     private Vector3 velocity = Vector3.zero;
+    private float currentSpeed;
+    private float time = 0;
 
     private void Update() {
+        time += Time.deltaTime;
+        currentSpeed = time < durationOfStart ? startingSpeed : followingSpeed;
+        Debug.Log(time);
+
         for (int i = 0; i < rooms.Length; i++)
         {
             float roomPositionX = rooms[i].transform.position.x;
@@ -28,6 +36,6 @@ public class CameraController : MonoBehaviour
             transform.position, 
             new Vector3(currentRoom.transform.position.x, currentRoom.transform.position.y, transform.position.z), 
             ref velocity, 
-            speed);
+            currentSpeed);
     }
 }

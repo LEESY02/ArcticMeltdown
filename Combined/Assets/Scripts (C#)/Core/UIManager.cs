@@ -1,6 +1,5 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using UnityEditor;
 using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
@@ -17,8 +16,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pauseScreen;
 
     [Header("Main Menu Pages")]
-    [SerializeField] private GameObject MainPage;
-    [SerializeField] private GameObject ControlsPage;
+    [SerializeField] private GameObject mainPage;
+    [SerializeField] private GameObject controlsPage;
 
     private Tracker tracker;
     private GameObject backgroudImage;
@@ -38,7 +37,11 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !gameOverScreen.activeSelf && !shoppingScreen.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) 
+            && !gameOverScreen.activeSelf 
+            && !shoppingScreen.activeSelf 
+            && SceneManager.GetActiveScene().buildIndex != 0 
+            && SceneManager.GetActiveScene().buildIndex != 5)
         {
             //if pause screen is already active unpause and viceversa
             if (pauseScreen.activeInHierarchy)
@@ -51,6 +54,11 @@ public class UIManager : MonoBehaviour
         {
             Time.timeScale = 1;         
             shoppingScreen.SetActive(false);
+        }
+
+        if ((Input.GetKeyDown(KeyCode.Escape) && controlsPage.activeSelf) || (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex == 5))
+        {
+            MainMenu();
         }
     }
 
@@ -95,8 +103,8 @@ public class UIManager : MonoBehaviour
         int index = SceneManager.GetActiveScene().buildIndex;
         if (index == 0) // if still on the main menu scene
         {
-            ControlsPage.SetActive(false);
-            MainPage.SetActive(true);
+            controlsPage.SetActive(false);
+            mainPage.SetActive(true);
         } else { // if not on the main menu scene
             SceneManager.LoadScene(0);
         }
@@ -154,8 +162,8 @@ public class UIManager : MonoBehaviour
     public void Instructions()
     {
         // SceneManager.LoadScene(2);
-        ControlsPage.SetActive(true);
-        MainPage.SetActive(false);
+        controlsPage.SetActive(true);
+        mainPage.SetActive(false);
     }
     #endregion
 }

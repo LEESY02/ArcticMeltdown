@@ -19,6 +19,14 @@ public class Story : MonoBehaviour
         tracker = FindFirstObjectByType<Tracker>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            MainMenu();
+        }
+    }
+
     public void MainMenu()
     {
         tracker.loadCount++;
