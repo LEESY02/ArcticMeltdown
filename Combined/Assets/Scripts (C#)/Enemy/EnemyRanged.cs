@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class EnemyRanged : MonoBehaviour
+public class EnemyRanged : Enemy
 {
     public GameObject bullet;
     public Transform bulletPosition;

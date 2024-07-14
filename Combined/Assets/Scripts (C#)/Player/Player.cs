@@ -47,6 +47,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float offsetChangeY;
     [SerializeField] private float crouchRadius;
 
+    public int killCount = 0;
+
     private Tracker tracker;
     private Rigidbody2D body;
     private Animator anim;

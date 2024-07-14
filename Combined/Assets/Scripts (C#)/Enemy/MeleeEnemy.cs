@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
-public class MeleeEnemy : MonoBehaviour
+public class MeleeEnemy : Enemy
 {
     [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;

@@ -26,6 +26,8 @@ public class Health : MonoBehaviour
     private Animator anim;
     private UIManager uiManager;
 
+    private Player player;
+
     private void Start() {
         tracker = FindObjectOfType<Tracker>();
         startingHealth = gameObject.CompareTag("Player") ? tracker.playerStartingHealth : tracker.enemyStartingHealth;
@@ -33,6 +35,7 @@ public class Health : MonoBehaviour
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
         uiManager = FindFirstObjectByType<UIManager>(); 
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     public void TakeDamage(float damage) {
@@ -68,6 +71,7 @@ public class Health : MonoBehaviour
             //enemy
             if (GetComponent<MeleeEnemy>() != null)
             {
+                player.killCount++;
                 if (GetComponent<EnemyRanged>() != null)
                 {
                     GetComponent<EnemyRanged>().enabled = false;

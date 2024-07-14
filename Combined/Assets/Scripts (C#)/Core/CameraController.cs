@@ -13,11 +13,22 @@ public class CameraController : MonoBehaviour
     private float currentSpeed;
     private float time = 0;
 
-    private void Update() {
+    private void Update() 
+    {
         time += Time.deltaTime;
         currentSpeed = time < durationOfStart ? startingSpeed : followingSpeed;
-        Debug.Log(time);
 
+        UpdateCurrentRoom();
+
+        transform.position = Vector3.SmoothDamp(
+            transform.position, 
+            new Vector3(currentRoom.transform.position.x, currentRoom.transform.position.y, transform.position.z), 
+            ref velocity, 
+            currentSpeed);
+    }
+
+    private void UpdateCurrentRoom()
+    {
         for (int i = 0; i < rooms.Length; i++)
         {
             float roomPositionX = rooms[i].transform.position.x;
@@ -31,11 +42,5 @@ public class CameraController : MonoBehaviour
                 currentRoom = rooms[i];
             }
         }
-
-        transform.position = Vector3.SmoothDamp(
-            transform.position, 
-            new Vector3(currentRoom.transform.position.x, currentRoom.transform.position.y, transform.position.z), 
-            ref velocity, 
-            currentSpeed);
     }
 }
