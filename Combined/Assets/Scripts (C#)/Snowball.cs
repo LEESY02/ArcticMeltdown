@@ -7,8 +7,7 @@ public class Snowball : MonoBehaviour
     private float direction;
     private float lifetime;
     private Tracker tracker;
-    private float speed; // Edited by SY
-
+    private float speed;
     private CircleCollider2D circleCollider;
     private Animator anim;
 
@@ -18,11 +17,6 @@ public class Snowball : MonoBehaviour
         circleCollider = GetComponent<CircleCollider2D>();
         speed = tracker.snowballSpeed;
     }
-
-    // private void OnEnable()
-    // {
-    //     Debug.Log(speed);
-    // }
 
     private void Update() {
         if (hit) return;
@@ -68,6 +62,5 @@ public class Snowball : MonoBehaviour
     {
         this.speed = tracker.snowballSpeed;
     }
-
     
 }
