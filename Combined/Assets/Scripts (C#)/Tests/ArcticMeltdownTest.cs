@@ -15,13 +15,6 @@ public class ArcticMeltdownTest
     private const string Level1SceneName = "Level1";
     private const float TestTimeScale = 2f;
 
-    // A Test behaves as an ordinary method
-    // [Test]
-    // public void CheckForStatsTracker()
-    // {
-        
-    // }
-
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
     // `yield return null;` to skip a frame.
     [UnityTest]
@@ -163,16 +156,5 @@ public class ArcticMeltdownTest
 
         // Find the player
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        
-        // player.GetComponent<Health>().TakeDamage(3);
-
-        // // Wait for a moment to allow the game over screen to potentially appear
-        // yield return new WaitForSeconds(1);
-
-        // // Find the game over screen
-        // GameObject deathScreen = GameObject.Find("GameOverScreen");
-
-        // // Assert that the game over screen is active
-        // Assert.IsTrue(deathScreen.activeSelf, "Game over screen should be active after player death.");
     }
 }
